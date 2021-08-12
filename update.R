@@ -1,3 +1,5 @@
+#!/bin/Rscript
+
 library(data.table)
 
 flatten <- function(x) {
