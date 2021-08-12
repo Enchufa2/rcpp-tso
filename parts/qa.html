@@ -1,0 +1,66 @@
+<article class="qa" id="qa-{% question_id %}">
+
+  <div class="question">
+
+    <div class="stats">
+      <div class="votes">
+        <span class="score">{% question_score %}</span>
+        <div class="viewcount">votes</div>
+      </div>
+      <div class="views">
+        <span class="score">{% question_view_count %}</span>
+        <div class="viewcount">views</div>
+      </div>
+    </div>
+
+    <div class="content">
+      <div class="title">
+        <h3>{% question_title %}</h3>
+        <a href="{% question_link %}" target="_blank">[see original]</a>
+      </div>
+      <div class="tags">{% question_tags %}</div>
+      <div class="author">
+        <span class="gravatar">
+          <a href="{% question_owner.link %}" target="_blank"><img src="{% question_owner.profile_image %}" alt="" width="32" height="32"></a>
+        </span>
+        <a href="{% question_owner.link %}" target="_blank">{% question_owner.display_name %}</a>
+        asked {% question_creation_date %}
+      </div>
+      <div class="body">
+        <details>
+          <summary>Click to expand question</summary>
+          {% question_body %}
+        </details>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="answer">
+
+    <div class="stats">
+      <div class="votes answer-accepted-{% answer_is_accepted %}">
+        <span class="score">{% answer_score %}</span>
+        <div class="viewcount">votes</div>
+      </div>
+    </div>
+
+    <div class="content">
+      <div class="author">
+        <span class="gravatar">
+          <a href="{% answer_owner.link %}" target="_blank"><img src="{% answer_owner.profile_image %}" alt="" width="32" height="32"></a>
+        </span>
+        <a href="{% answer_owner.link %}" target="_blank">{% answer_owner.display_name %}</a>
+        replied {% answer_creation_date %}
+      </div>
+      <div class="body">
+        <details>
+          <summary>Click to expand answer</summary>
+          {% question_body %}
+        </details>
+      </div>
+    </div>
+
+  </div>
+
+</article>

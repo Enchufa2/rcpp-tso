@@ -1,0 +1,132 @@
+@import "wcloud.css";
+
+:root {
+  --toc-width: 300px;
+}
+
+@media screen and (min-width: 960px) {
+  main {
+    max-width: 1200px;
+    display: grid;
+    grid-template-columns: var(--toc-width) 1fr;
+    grid-template-rows: auto auto;
+  }
+  nav {
+    grid-row: 1 / -1;
+    grid-column: 1 / 2;
+    border: none;
+    margin: 0;
+    width: --toc-width;
+    font-size: 15px;
+  }
+  nav > ul {
+    padding: 0 0 0 20px;
+    position: sticky;
+    max-height: 100vh;
+    overflow-y: auto;
+    top: 0;
+    border: none;
+  }
+  nav > ul > li {
+    padding: 2px 0;
+  }
+}
+
+header, section {
+  padding: 0 20px;
+}
+
+summary {
+  cursor: pointer;
+  margin: 2px;
+  padding: .3em .5em;
+  font-size: 13px;
+  line-height: 1;
+  color: #333;
+  background-color: #ddd;
+  border-width: 1px;
+  border-style: solid;
+  border-radius: 3px;
+  border-color: transparent;
+}
+
+.qa {
+  margin: 20px 0;
+  border: 1px solid;
+  border-radius: 3px;
+  border-color: #ccc;
+}
+
+.stats {
+  width: 58px;
+  padding-right: 20px;
+  text-align: center;
+  color: #6a737c;
+  font-size: 12px;
+}
+
+.votes {
+  margin-bottom: 8px;
+  padding: 5px;
+  border: 1px solid;
+  border-radius: 3px;
+  border-color: #ccc;
+}
+
+.answer-accepted-TRUE {
+  color: white;
+  background-color: #5eba7d;
+  border-color: transparent;
+}
+
+.score {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.question, .answer {
+  display: grid;
+  grid-template-columns: max-content minmax(0, 1fr);
+  padding: 20px;
+}
+
+.title, .author, .tags {
+  padding-bottom: 10px;
+}
+
+.title > h3 {
+  display: inline;
+}
+
+.author {
+  color: #555;
+}
+
+.tags > span {
+  display: inline-block;
+  margin: 2px;
+  padding: .3em .5em;
+  font-size: 12px;
+  line-height: 1;
+  color: #39739d;
+  background-color: #e1ecf4;
+  border-width: 1px;
+  border-style: solid;
+  border-radius: 3px;
+  border-color: #00000000;
+}
+
+.gravatar {
+  vertical-align: top;
+}
+
+pre {
+  font-size: 13px;
+  line-height: 1.30769231;
+  color: #2f3337;
+  background-color: #f6f6f6;
+  border-radius: 5px;
+  margin: 0;
+  padding: 12px;
+  overflow: auto;
+}
