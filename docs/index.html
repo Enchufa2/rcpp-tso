@@ -40,22 +40,22 @@
   </header>
   <nav><ul><li><a href='#qa-2908822'>Speed up the loop operation in R</a></li>
 <li><a href='#qa-11300048'>Rcpp pass by reference vs. by value</a></li>
+<li><a href='#qa-68416435'>Rcpp package doesn&#39;t include Rcpp_precious_remove</a></li>
 <li><a href='#qa-6074310'>Using Rcpp within parallel code via snow to make a cluster</a></li>
 <li><a href='#qa-11275187'>Replace negative values by zero</a></li>
-<li><a href='#qa-68416435'>Rcpp package doesn&#39;t include Rcpp_precious_remove</a></li>
 <li><a href='#qa-43597632'>Understanding the contents of the Makevars file in R (macros, variables, ~/.R/Makevars and pkg/src/Makevars)</a></li>
 <li><a href='#qa-48069990'>Multithreaded &amp; SIMD vectorized Mandelbrot in R using Rcpp &amp; OpenMP</a></li>
 <li><a href='#qa-5233769'>Practical limits of R data frame</a></li>
 <li><a href='#qa-26241085'>Rcpp function check if missing value</a></li>
 <li><a href='#qa-20474303'>using C function from other package in Rcpp</a></li>
 <li><a href='#qa-36594628'>Call a function from c++ via environment Rcpp</a></li>
-<li><a href='#qa-18570526'>How to build a R package which use Rcpp with external c++ libraries?</a></li>
 <li><a href='#qa-19823915'>how can I handle vectors without knowing the type in Rcpp</a></li>
 <li><a href='#qa-38016851'>Call R functions in Rcpp</a></li>
 <li><a href='#qa-22828361'>Rcpp function to select (and to return) a sub-dataframe</a></li>
 <li><a href='#qa-21225662'>calling a user-defined R function from C++ using Rcpp</a></li>
 <li><a href='#qa-43221681'>Changing R&#39;s Seed from Rcpp to Guarantee Reproducibility</a></li>
 <li><a href='#qa-51110244'>In Rcpp, how to get a user-defined structure from C into R</a></li>
+<li><a href='#qa-18570526'>How to build a R package which use Rcpp with external c++ libraries?</a></li>
 <li><a href='#qa-9949202'>1-dimensional Matrix is changed to a vector in R</a></li>
 <li><a href='#qa-45549992'>Group vector on conditional sum</a></li>
 <li><a href='#qa-46039132'>Renaming and Hiding an Exported Rcpp function in an R Package</a></li>
@@ -67,7 +67,7 @@
 <li><a href='#qa-37060211'>efficiently locf by groups in a single R data.table</a></li>
 <li><a href='#qa-30628333'>Building a tiny R package with CUDA and Rcpp</a></li>
 <li><a href='#qa-19686892'>passing unevaluated expressions to C/C++</a></li>
-<li><a href='#qa-24622918'>Initialize a variable with different type based on a switch statement</a></li></ul></nav>
+<li><a href='#qa-45947880'>Pass a c++ object as a pointer an reuse in another function in Rcpp</a></li></ul></nav>
   <section><article class="qa" id="qa-2908822">
 
   <div class="question">
@@ -338,6 +338,85 @@ cpp_if &lt;- cxxfunction(signature(a=&quot;numeric&quot;), cpp_if_src, plugin=&q
 
   </div>
 
+</article> <article class="qa" id="qa-68416435">
+
+  <div class="question">
+
+    <div class="stats">
+      <div class="votes">
+        <span class="score">19</span>
+        <div class="viewcount">votes</div>
+      </div>
+      <div class="views">
+        <span class="score">17k</span>
+        <div class="viewcount">views</div>
+      </div>
+    </div>
+
+    <div class="content">
+      <div class="title">
+        <h3>Rcpp package doesn&#39;t include Rcpp_precious_remove</h3>
+        <a href="https://stackoverflow.com/questions/68416435/rcpp-package-doesnt-include-rcpp-precious-remove" target="_blank">[see original]</a>
+      </div>
+      <div class="tags"><span>r</span><span>rcpp</span></div>
+      <div class="author">
+        <span class="gravatar">
+          <a href="https://stackoverflow.com/users/16325624/laxmi-agarwal" target="_blank"><img src="https://www.gravatar.com/avatar/b2fc901c27ca6c4aa10b69b90755cc29?s=128&d=identicon&r=PG&f=1" alt="" width="32" height="32"></a>
+        </span>
+        <a href="https://stackoverflow.com/users/16325624/laxmi-agarwal" target="_blank">Laxmi Agarwal</a>
+        asked Jul 17 '21 at 00:14
+      </div>
+      <div class="body">
+        <details>
+          <summary>Click to expand question</summary>
+          <p>I have been trying to create a database and installed &quot;DBI&quot; package but still facing this error.I reinstalled DBI and RSQLite package but they dont seem to work.</p>
+<pre><code>con &lt;- dbConnect
+(RSQLite::SQLite(), dbname = &quot;:memory:&quot;)
+dbListTables(con)```
+
+Error :Error in connection_connect(dbname, loadable.extensions, flags, vfs, extended_types) : function 'Rcpp_precious_remove' not provided by package 'Rcpp'
+</code></pre>
+
+        </details>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="answer">
+
+    <div class="stats">
+      <div class="votes answer-accepted-TRUE">
+        <span class="score">24</span>
+        <div class="viewcount">votes</div>
+      </div>
+    </div>
+
+    <div class="content">
+      <div class="author">
+        <span class="gravatar">
+          <a href="https://stackoverflow.com/users/16474343/daniela" target="_blank"><img src="https://lh3.googleusercontent.com/a/AATXAJx-bCrWkAhJO6SMiFsagpguHgnl25UKu7qjUKl6=k-s128" alt="" width="32" height="32"></a>
+        </span>
+        <a href="https://stackoverflow.com/users/16474343/daniela" target="_blank">Daniela</a>
+        replied Jul 18 '21 at 12:46
+      </div>
+      <div class="body">
+        <details>
+          <summary>Click to expand answer</summary>
+          <p>I have been trying to create a database and installed &quot;DBI&quot; package but still facing this error.I reinstalled DBI and RSQLite package but they dont seem to work.</p>
+<pre><code>con &lt;- dbConnect
+(RSQLite::SQLite(), dbname = &quot;:memory:&quot;)
+dbListTables(con)```
+
+Error :Error in connection_connect(dbname, loadable.extensions, flags, vfs, extended_types) : function 'Rcpp_precious_remove' not provided by package 'Rcpp'
+</code></pre>
+
+        </details>
+      </div>
+    </div>
+
+  </div>
+
 </article> <article class="qa" id="qa-6074310">
 
   <div class="question">
@@ -477,7 +556,7 @@ clusterCall(cl, funCPP1, A, 0.5)
         <div class="viewcount">votes</div>
       </div>
       <div class="views">
-        <span class="score">72.6k</span>
+        <span class="score">72.7k</span>
         <div class="viewcount">views</div>
       </div>
     </div>
@@ -552,85 +631,6 @@ for (i in nrow(pred_precipitation))
   if (pred_precipitation[i]&lt;0) {pred_precipitation[i] = 0}
   else{pred_precipitation[i] = pred_precipitation[i]}
 }
-</code></pre>
-
-        </details>
-      </div>
-    </div>
-
-  </div>
-
-</article> <article class="qa" id="qa-68416435">
-
-  <div class="question">
-
-    <div class="stats">
-      <div class="votes">
-        <span class="score">18</span>
-        <div class="viewcount">votes</div>
-      </div>
-      <div class="views">
-        <span class="score">15.8k</span>
-        <div class="viewcount">views</div>
-      </div>
-    </div>
-
-    <div class="content">
-      <div class="title">
-        <h3>Rcpp package doesn&#39;t include Rcpp_precious_remove</h3>
-        <a href="https://stackoverflow.com/questions/68416435/rcpp-package-doesnt-include-rcpp-precious-remove" target="_blank">[see original]</a>
-      </div>
-      <div class="tags"><span>r</span><span>rcpp</span></div>
-      <div class="author">
-        <span class="gravatar">
-          <a href="https://stackoverflow.com/users/16325624/laxmi-agarwal" target="_blank"><img src="https://www.gravatar.com/avatar/b2fc901c27ca6c4aa10b69b90755cc29?s=128&d=identicon&r=PG&f=1" alt="" width="32" height="32"></a>
-        </span>
-        <a href="https://stackoverflow.com/users/16325624/laxmi-agarwal" target="_blank">Laxmi Agarwal</a>
-        asked Jul 17 '21 at 00:14
-      </div>
-      <div class="body">
-        <details>
-          <summary>Click to expand question</summary>
-          <p>I have been trying to create a database and installed &quot;DBI&quot; package but still facing this error.I reinstalled DBI and RSQLite package but they dont seem to work.</p>
-<pre><code>con &lt;- dbConnect
-(RSQLite::SQLite(), dbname = &quot;:memory:&quot;)
-dbListTables(con)```
-
-Error :Error in connection_connect(dbname, loadable.extensions, flags, vfs, extended_types) : function 'Rcpp_precious_remove' not provided by package 'Rcpp'
-</code></pre>
-
-        </details>
-      </div>
-    </div>
-
-  </div>
-
-  <div class="answer">
-
-    <div class="stats">
-      <div class="votes answer-accepted-TRUE">
-        <span class="score">22</span>
-        <div class="viewcount">votes</div>
-      </div>
-    </div>
-
-    <div class="content">
-      <div class="author">
-        <span class="gravatar">
-          <a href="https://stackoverflow.com/users/16474343/daniela" target="_blank"><img src="https://lh3.googleusercontent.com/a/AATXAJx-bCrWkAhJO6SMiFsagpguHgnl25UKu7qjUKl6=k-s128" alt="" width="32" height="32"></a>
-        </span>
-        <a href="https://stackoverflow.com/users/16474343/daniela" target="_blank">Daniela</a>
-        replied Jul 18 '21 at 12:46
-      </div>
-      <div class="body">
-        <details>
-          <summary>Click to expand answer</summary>
-          <p>I have been trying to create a database and installed &quot;DBI&quot; package but still facing this error.I reinstalled DBI and RSQLite package but they dont seem to work.</p>
-<pre><code>con &lt;- dbConnect
-(RSQLite::SQLite(), dbname = &quot;:memory:&quot;)
-dbListTables(con)```
-
-Error :Error in connection_connect(dbname, loadable.extensions, flags, vfs, extended_types) : function 'Rcpp_precious_remove' not provided by package 'Rcpp'
 </code></pre>
 
         </details>
@@ -1127,7 +1127,7 @@ myMatr=matr;
         <div class="viewcount">votes</div>
       </div>
       <div class="views">
-        <span class="score">2.5k</span>
+        <span class="score">2.6k</span>
         <div class="viewcount">views</div>
       </div>
     </div>
@@ -1406,83 +1406,6 @@ NumericVector callFunction(NumericVector x, Function f) {
 </code></pre>
 
 <p>But still wondering why first method failed.</p>
-
-        </details>
-      </div>
-    </div>
-
-  </div>
-
-</article> <article class="qa" id="qa-18570526">
-
-  <div class="question">
-
-    <div class="stats">
-      <div class="votes">
-        <span class="score">9</span>
-        <div class="viewcount">votes</div>
-      </div>
-      <div class="views">
-        <span class="score">5.6k</span>
-        <div class="viewcount">views</div>
-      </div>
-    </div>
-
-    <div class="content">
-      <div class="title">
-        <h3>How to build a R package which use Rcpp with external c++ libraries?</h3>
-        <a href="https://stackoverflow.com/questions/18570526/how-to-build-a-r-package-which-use-rcpp-with-external-c-libraries" target="_blank">[see original]</a>
-      </div>
-      <div class="tags"><span>rcpp</span></div>
-      <div class="author">
-        <span class="gravatar">
-          <a href="https://stackoverflow.com/users/1246858/xiaobo-gu" target="_blank"><img src="https://www.gravatar.com/avatar/b840260ce2faaf4f7c2f93ad5cb6c168?s=128&d=identicon&r=PG&f=1" alt="" width="32" height="32"></a>
-        </span>
-        <a href="https://stackoverflow.com/users/1246858/xiaobo-gu" target="_blank">Xiaobo Gu</a>
-        asked Sep 02 '13 at 10:04
-      </div>
-      <div class="body">
-        <details>
-          <summary>Click to expand question</summary>
-          <p>Such as boost, where can I specify the following: </p>
-
-<pre><code>1.External c++ header file include path 
-2.External c++ source file 
-3.External c++ link library file path
-</code></pre>
-
-        </details>
-      </div>
-    </div>
-
-  </div>
-
-  <div class="answer">
-
-    <div class="stats">
-      <div class="votes answer-accepted-FALSE">
-        <span class="score">15</span>
-        <div class="viewcount">votes</div>
-      </div>
-    </div>
-
-    <div class="content">
-      <div class="author">
-        <span class="gravatar">
-          <a href="https://stackoverflow.com/users/143305/dirk-eddelbuettel" target="_blank"><img src="https://www.gravatar.com/avatar/4e96ca7ae02c37e7d940d17997d780e5?s=128&d=identicon&r=PG" alt="" width="32" height="32"></a>
-        </span>
-        <a href="https://stackoverflow.com/users/143305/dirk-eddelbuettel" target="_blank">Dirk Eddelbuettel</a>
-        replied Sep 02 '13 at 18:01
-      </div>
-      <div class="body">
-        <details>
-          <summary>Click to expand answer</summary>
-          <p>Such as boost, where can I specify the following: </p>
-
-<pre><code>1.External c++ header file include path 
-2.External c++ source file 
-3.External c++ link library file path
-</code></pre>
 
         </details>
       </div>
@@ -2117,7 +2040,7 @@ vec randdraw(int d, int n){
         <div class="viewcount">votes</div>
       </div>
       <div class="views">
-        <span class="score">668</span>
+        <span class="score">670</span>
         <div class="viewcount">views</div>
       </div>
     </div>
@@ -2221,6 +2144,83 @@ vec randdraw(int d, int n){
 <p>I'm pretty sure that I could package the entries in the header back into a StringVector, but that seems like a brute-force approach. My question is whether a more elegant solution exists. It is not clear to me what form such a structure would even have in R: a named List?</p>
 
 <p>Thanks!</p>
+
+        </details>
+      </div>
+    </div>
+
+  </div>
+
+</article> <article class="qa" id="qa-18570526">
+
+  <div class="question">
+
+    <div class="stats">
+      <div class="votes">
+        <span class="score">9</span>
+        <div class="viewcount">votes</div>
+      </div>
+      <div class="views">
+        <span class="score">5.6k</span>
+        <div class="viewcount">views</div>
+      </div>
+    </div>
+
+    <div class="content">
+      <div class="title">
+        <h3>How to build a R package which use Rcpp with external c++ libraries?</h3>
+        <a href="https://stackoverflow.com/questions/18570526/how-to-build-a-r-package-which-use-rcpp-with-external-c-libraries" target="_blank">[see original]</a>
+      </div>
+      <div class="tags"><span>rcpp</span></div>
+      <div class="author">
+        <span class="gravatar">
+          <a href="https://stackoverflow.com/users/1246858/xiaobo-gu" target="_blank"><img src="https://www.gravatar.com/avatar/b840260ce2faaf4f7c2f93ad5cb6c168?s=128&d=identicon&r=PG&f=1" alt="" width="32" height="32"></a>
+        </span>
+        <a href="https://stackoverflow.com/users/1246858/xiaobo-gu" target="_blank">Xiaobo Gu</a>
+        asked Sep 02 '13 at 10:04
+      </div>
+      <div class="body">
+        <details>
+          <summary>Click to expand question</summary>
+          <p>Such as boost, where can I specify the following: </p>
+
+<pre><code>1.External c++ header file include path 
+2.External c++ source file 
+3.External c++ link library file path
+</code></pre>
+
+        </details>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="answer">
+
+    <div class="stats">
+      <div class="votes answer-accepted-FALSE">
+        <span class="score">15</span>
+        <div class="viewcount">votes</div>
+      </div>
+    </div>
+
+    <div class="content">
+      <div class="author">
+        <span class="gravatar">
+          <a href="https://stackoverflow.com/users/143305/dirk-eddelbuettel" target="_blank"><img src="https://www.gravatar.com/avatar/4e96ca7ae02c37e7d940d17997d780e5?s=128&d=identicon&r=PG" alt="" width="32" height="32"></a>
+        </span>
+        <a href="https://stackoverflow.com/users/143305/dirk-eddelbuettel" target="_blank">Dirk Eddelbuettel</a>
+        replied Sep 02 '13 at 18:01
+      </div>
+      <div class="body">
+        <details>
+          <summary>Click to expand answer</summary>
+          <p>Such as boost, where can I specify the following: </p>
+
+<pre><code>1.External c++ header file include path 
+2.External c++ source file 
+3.External c++ link library file path
+</code></pre>
 
         </details>
       </div>
@@ -2335,7 +2335,7 @@ I would like to keep 1-D matrix as a matrix. Actually, I need to throw many kind
         <div class="viewcount">votes</div>
       </div>
       <div class="views">
-        <span class="score">340</span>
+        <span class="score">342</span>
         <div class="viewcount">views</div>
       </div>
     </div>
@@ -2754,7 +2754,7 @@ Rcpp::List callOptimFun(SEXP x) {
         <div class="viewcount">votes</div>
       </div>
       <div class="views">
-        <span class="score">470</span>
+        <span class="score">471</span>
         <div class="viewcount">views</div>
       </div>
     </div>
@@ -3979,7 +3979,7 @@ f(x*y*z)
 
   </div>
 
-</article> <article class="qa" id="qa-24622918">
+</article> <article class="qa" id="qa-45947880">
 
   <div class="question">
 
@@ -3989,110 +3989,57 @@ f(x*y*z)
         <div class="viewcount">votes</div>
       </div>
       <div class="views">
-        <span class="score">1.2k</span>
+        <span class="score">545</span>
         <div class="viewcount">views</div>
       </div>
     </div>
 
     <div class="content">
       <div class="title">
-        <h3>Initialize a variable with different type based on a switch statement</h3>
-        <a href="https://stackoverflow.com/questions/24622918/initialize-a-variable-with-different-type-based-on-a-switch-statement" target="_blank">[see original]</a>
+        <h3>Pass a c++ object as a pointer an reuse in another function in Rcpp</h3>
+        <a href="https://stackoverflow.com/questions/45947880/pass-a-c-object-as-a-pointer-an-reuse-in-another-function-in-rcpp" target="_blank">[see original]</a>
       </div>
-      <div class="tags"><span>rcpp</span></div>
+      <div class="tags"><span>c++</span><span>r</span><span>rcpp</span></div>
       <div class="author">
         <span class="gravatar">
-          <a href="https://stackoverflow.com/users/2341679/scott-ritchie" target="_blank"><img src="https://i.stack.imgur.com/tR2h3.jpg?s=128&g=1" alt="" width="32" height="32"></a>
+          <a href="https://stackoverflow.com/users/3297472/daniel-falbel" target="_blank"><img src="https://i.stack.imgur.com/s4W2K.png?s=128&g=1" alt="" width="32" height="32"></a>
         </span>
-        <a href="https://stackoverflow.com/users/2341679/scott-ritchie" target="_blank">Scott Ritchie</a>
-        asked Jul 08 '14 at 02:48
+        <a href="https://stackoverflow.com/users/3297472/daniel-falbel" target="_blank">Daniel Falbel</a>
+        asked Aug 29 '17 at 20:31
       </div>
       <div class="body">
         <details>
           <summary>Click to expand question</summary>
-          <p>I am developing some functions in <code>Rcpp</code> that operate on <code>big.matrix</code> objects from the <code>bigmemory</code> package. These objects are passed to <code>Rcpp</code> as <code>SEXP</code> objects which i then have to cast to an <code>XPtr&lt;BigMatrix&gt;</code>, and then to a <code>MatrixAccessor</code> object to access elements of the matrix.</p>
+          <p>Suppose a I have the following 2 functions in C++:</p>
 
-<p>For example, if I want to implement a function that get's the diagonal:</p>
+<pre><code>// [[Rcpp::export]]
+SEXP foo() {
 
-<pre class="lang-cpp prettyprint-override"><code>#include &lt;Rcpp.h&gt;
-using namespace Rcpp;
+  int a = 1;
 
-// [[Rcpp::depends(BH, bigmemory)
-#include &lt;bigmemory/MatrixAccessor.hpp&gt;
+  Rcpp::XPtr&lt;int&gt; ptr(&amp;a, true);
 
-#include &lt;numeric&gt;
+  return ptr;
+}
 
 // [[Rcpp::export]]
-NumericVector GetDiag(SEXP pmat) {
-  XPtr&lt;BigMatrix&gt; xpMat(pMat); // allows you to access attributes
-  MatrixAccessor&lt;double&gt; mat(*xpMat); // allows you to access matrix elements
+int bar(SEXP a){
 
-  NumericVector diag(xpMat-&gt;nrow()); // Assume matrix is square
-  for (int i = 0; i &lt; xpMat-&gt;nrow(); i++) { 
-    diag[i] = mat[i][i];
-  }
-  return diag;
+  Rcpp::XPtr&lt;int&gt; x(a);
+  int b = *x;
+
+  return b;
 }
 </code></pre>
 
-<p>This function works beautifully, provided the <code>big.matrix</code> object in R is filled with doubles. </p>
+<p>I want to be able to call something like the following in R. 
+Of course, in this example I could return an <code>int</code> to R in <code>foo</code>, but in my original code, <code>a</code> is a somewhat complex data structure and I wan't to return only the pointer to this, so it can be reused by another C++ function called <code>bar</code></p>
 
-<p>However, if you call this function on an integer matrix (e.g. <code>diag(as.big.matrix(matrix(1:9, 3))@address)</code>), You get garbage as a result, because the <code>MatrixAccessor</code> has been initialized as <code>&lt;double&gt;</code>.</p>
-
-<p>Internally, <code>big.matrix</code> objects can come in four types:</p>
-
-<pre class="lang-cpp prettyprint-override"><code>void typeof(SEXP pMat) {
-  XPtr&lt;BigMatrix&gt; xpMat(pMat);
-  int type = xpMat-&gt;matrix_type();
-  type == 1 // char
-  type == 2 // short
-  type == 4 // int
-  type == 8 // double
-}
+<pre><code>a &lt;- foo()
+bar(a)
 </code></pre>
 
-<p>Since all we're doing is accessing the elements of the matrix, the <code>diag</code> function should be able to handle each of these types. But for now, since our function signature is <code>NumericVector</code>, I'll ignore character matrices.</p>
-
-<p>To handle this, I figured I could just throw in a switch statement, initializing the corresponding <code>mat</code> with the appropriate type at runtime:</p>
-
-<pre class="lang-cpp prettyprint-override"><code>// [[Rcpp::export]]
-NumericVector GetDiag(SEXP pmat) {
-  XPtr&lt;BigMatrix&gt; xpMat(pMat);
-  // Determine the typeof(pmat), and initialize accordingly:
-  switch(xpMat-&gt;matrix_type()) {
-    case == 1:
-    {
-       // Function expects to return a NumericVector.
-       throw; 
-    }
-    case == 2:
-    {
-      MatrixAccessor&lt;short&gt; mat(*xpMat);
-      break;
-    }
-    case == 4:
-    {
-      MatrixAccessor&lt;int&gt; mat(*xpMat);
-      break;
-    }
-    case == 8:
-    {
-      MatrixAccessor&lt;double&gt; mat(*xpMat);
-    }
-  }
-  MatrixAccessor&lt;double&gt; mat(*xpMat); // allows you to access matrix elements
-
-  NumericVector diag(xpMat-&gt;nrow()); // Assume matrix is square
-  for (int i = 0; i &lt; xpMat-&gt;nrow(); i++) { 
-    diag[i] = mat[i][i];
-  }
-  return diag;
-}
-</code></pre>
-
-<p>However, this results in compiler errors, because I'm redefining <code>mat</code> after it has been declared already in the first <code>case</code>.</p>
-
-<p>The only way I can see to do this, is to write three different <code>diag</code> functions, one for each type, whose code is the same with the exception of the initialization of <code>mat</code>. Is there a better way?</p>
+<p>In this example I expected that <code>bar(a)</code> returned 1 instead of 0. How can I fix this?</p>
 
         </details>
       </div>
@@ -4103,8 +4050,8 @@ NumericVector GetDiag(SEXP pmat) {
   <div class="answer">
 
     <div class="stats">
-      <div class="votes answer-accepted-FALSE">
-        <span class="score">10</span>
+      <div class="votes answer-accepted-TRUE">
+        <span class="score">12</span>
         <div class="viewcount">votes</div>
       </div>
     </div>
@@ -4112,97 +4059,44 @@ NumericVector GetDiag(SEXP pmat) {
     <div class="content">
       <div class="author">
         <span class="gravatar">
-          <a href="https://stackoverflow.com/users/1342082/kevin-ushey" target="_blank"><img src="https://www.gravatar.com/avatar/1ef12d2cf78f28d7a1e76c8fc60978c8?s=128&d=identicon&r=PG" alt="" width="32" height="32"></a>
+          <a href="https://stackoverflow.com/users/3204250/cdeterman" target="_blank"><img src="https://www.gravatar.com/avatar/b9bff153828ae0d1323d2aa5d6ab70ae?s=128&d=identicon&r=PG&f=1" alt="" width="32" height="32"></a>
         </span>
-        <a href="https://stackoverflow.com/users/1342082/kevin-ushey" target="_blank">Kevin Ushey</a>
-        replied Jul 08 '14 at 03:46
+        <a href="https://stackoverflow.com/users/3204250/cdeterman" target="_blank">cdeterman</a>
+        replied Aug 29 '17 at 20:37
       </div>
       <div class="body">
         <details>
           <summary>Click to expand answer</summary>
-          <p>I am developing some functions in <code>Rcpp</code> that operate on <code>big.matrix</code> objects from the <code>bigmemory</code> package. These objects are passed to <code>Rcpp</code> as <code>SEXP</code> objects which i then have to cast to an <code>XPtr&lt;BigMatrix&gt;</code>, and then to a <code>MatrixAccessor</code> object to access elements of the matrix.</p>
+          <p>Suppose a I have the following 2 functions in C++:</p>
 
-<p>For example, if I want to implement a function that get's the diagonal:</p>
+<pre><code>// [[Rcpp::export]]
+SEXP foo() {
 
-<pre class="lang-cpp prettyprint-override"><code>#include &lt;Rcpp.h&gt;
-using namespace Rcpp;
+  int a = 1;
 
-// [[Rcpp::depends(BH, bigmemory)
-#include &lt;bigmemory/MatrixAccessor.hpp&gt;
+  Rcpp::XPtr&lt;int&gt; ptr(&amp;a, true);
 
-#include &lt;numeric&gt;
+  return ptr;
+}
 
 // [[Rcpp::export]]
-NumericVector GetDiag(SEXP pmat) {
-  XPtr&lt;BigMatrix&gt; xpMat(pMat); // allows you to access attributes
-  MatrixAccessor&lt;double&gt; mat(*xpMat); // allows you to access matrix elements
+int bar(SEXP a){
 
-  NumericVector diag(xpMat-&gt;nrow()); // Assume matrix is square
-  for (int i = 0; i &lt; xpMat-&gt;nrow(); i++) { 
-    diag[i] = mat[i][i];
-  }
-  return diag;
+  Rcpp::XPtr&lt;int&gt; x(a);
+  int b = *x;
+
+  return b;
 }
 </code></pre>
 
-<p>This function works beautifully, provided the <code>big.matrix</code> object in R is filled with doubles. </p>
+<p>I want to be able to call something like the following in R. 
+Of course, in this example I could return an <code>int</code> to R in <code>foo</code>, but in my original code, <code>a</code> is a somewhat complex data structure and I wan't to return only the pointer to this, so it can be reused by another C++ function called <code>bar</code></p>
 
-<p>However, if you call this function on an integer matrix (e.g. <code>diag(as.big.matrix(matrix(1:9, 3))@address)</code>), You get garbage as a result, because the <code>MatrixAccessor</code> has been initialized as <code>&lt;double&gt;</code>.</p>
-
-<p>Internally, <code>big.matrix</code> objects can come in four types:</p>
-
-<pre class="lang-cpp prettyprint-override"><code>void typeof(SEXP pMat) {
-  XPtr&lt;BigMatrix&gt; xpMat(pMat);
-  int type = xpMat-&gt;matrix_type();
-  type == 1 // char
-  type == 2 // short
-  type == 4 // int
-  type == 8 // double
-}
+<pre><code>a &lt;- foo()
+bar(a)
 </code></pre>
 
-<p>Since all we're doing is accessing the elements of the matrix, the <code>diag</code> function should be able to handle each of these types. But for now, since our function signature is <code>NumericVector</code>, I'll ignore character matrices.</p>
-
-<p>To handle this, I figured I could just throw in a switch statement, initializing the corresponding <code>mat</code> with the appropriate type at runtime:</p>
-
-<pre class="lang-cpp prettyprint-override"><code>// [[Rcpp::export]]
-NumericVector GetDiag(SEXP pmat) {
-  XPtr&lt;BigMatrix&gt; xpMat(pMat);
-  // Determine the typeof(pmat), and initialize accordingly:
-  switch(xpMat-&gt;matrix_type()) {
-    case == 1:
-    {
-       // Function expects to return a NumericVector.
-       throw; 
-    }
-    case == 2:
-    {
-      MatrixAccessor&lt;short&gt; mat(*xpMat);
-      break;
-    }
-    case == 4:
-    {
-      MatrixAccessor&lt;int&gt; mat(*xpMat);
-      break;
-    }
-    case == 8:
-    {
-      MatrixAccessor&lt;double&gt; mat(*xpMat);
-    }
-  }
-  MatrixAccessor&lt;double&gt; mat(*xpMat); // allows you to access matrix elements
-
-  NumericVector diag(xpMat-&gt;nrow()); // Assume matrix is square
-  for (int i = 0; i &lt; xpMat-&gt;nrow(); i++) { 
-    diag[i] = mat[i][i];
-  }
-  return diag;
-}
-</code></pre>
-
-<p>However, this results in compiler errors, because I'm redefining <code>mat</code> after it has been declared already in the first <code>case</code>.</p>
-
-<p>The only way I can see to do this, is to write three different <code>diag</code> functions, one for each type, whose code is the same with the exception of the initialization of <code>mat</code>. Is there a better way?</p>
+<p>In this example I expected that <code>bar(a)</code> returned 1 instead of 0. How can I fix this?</p>
 
         </details>
       </div>
