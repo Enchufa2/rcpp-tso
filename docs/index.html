@@ -21,7 +21,7 @@
 <li><a data-weight='1' href='https://stackoverflow.com/users/2542702/z-boson'>Z boson</a></li>
 <li><a data-weight='3' href='https://stackoverflow.com/users/3204250/cdeterman'>cdeterman</a></li>
 <li><a data-weight='1' href='https://stackoverflow.com/users/3048453/david'>David</a></li>
-<li><a data-weight='4' href='https://stackoverflow.com/users/499163/romain-francois'>Romain Francois</a></li>
+<li><a data-weight='5' href='https://stackoverflow.com/users/499163/romain-francois'>Romain Francois</a></li>
 <li><a data-weight='1' href='https://stackoverflow.com/users/2414948/alexis-laz'>alexis_laz</a></li>
 <li><a data-weight='1' href='https://stackoverflow.com/users/316644/digemall'>digEmAll</a></li>
 <li><a data-weight='1' href='https://stackoverflow.com/users/378229/allan-engelhardt'>Allan Engelhardt</a></li>
@@ -33,7 +33,6 @@
 <li><a data-weight='1' href='https://stackoverflow.com/users/65863/remy-lebeau'>Remy Lebeau</a></li>
 <li><a data-weight='1' href='https://stackoverflow.com/users/324364/joran'>joran</a></li>
 <li><a data-weight='1' href='https://stackoverflow.com/users/559784/arun'>Arun</a></li>
-<li><a data-weight='1' href='https://stackoverflow.com/users/8203448/henine'>henine</a></li>
 <li><a data-weight='1' href='https://stackoverflow.com/users/1315472/florian'>Florian</a></li>
 <li><a data-weight='1' href='https://stackoverflow.com/users/1968/konrad-rudolph'>Konrad Rudolph</a></li>
 <li><a data-weight='1' href='https://stackoverflow.com/users/173985/thell'>Thell</a></li>
@@ -42,8 +41,8 @@
   <nav><ul><li><a href='#qa-2908822'>Speed up the loop operation in R</a></li>
 <li><a href='#qa-11300048'>Rcpp pass by reference vs. by value</a></li>
 <li><a href='#qa-68416435'>Rcpp package doesn&#39;t include Rcpp_precious_remove</a></li>
-<li><a href='#qa-6074310'>Using Rcpp within parallel code via snow to make a cluster</a></li>
 <li><a href='#qa-11275187'>Replace negative values by zero</a></li>
+<li><a href='#qa-6074310'>Using Rcpp within parallel code via snow to make a cluster</a></li>
 <li><a href='#qa-43597632'>Understanding the contents of the Makevars file in R (macros, variables, ~/.R/Makevars and pkg/src/Makevars)</a></li>
 <li><a href='#qa-48069990'>Multithreaded &amp; SIMD vectorized Mandelbrot in R using Rcpp &amp; OpenMP</a></li>
 <li><a href='#qa-5233769'>Practical limits of R data frame</a></li>
@@ -62,13 +61,13 @@
 <li><a href='#qa-46039132'>Renaming and Hiding an Exported Rcpp function in an R Package</a></li>
 <li><a href='#qa-46473895'>Calling R&#39;s optim function from within C++ using Rcpp</a></li>
 <li><a href='#qa-27371543'>how many vectors can be added in DataFrame::create( vec1, vec2 ... )?</a></li>
+<li><a href='#qa-38518387'>Using Rcpp functions inside of R&#39;s par*apply functions from the parallel package</a></li>
 <li><a href='#qa-3088650'>How do I create a list of vectors in Rcpp?</a></li>
 <li><a href='#qa-41602024'>Should I prefer Rcpp::NumericVector over std::vector?</a></li>
 <li><a href='#qa-48363076'>Declare a variable as a reference in Rcpp</a></li>
-<li><a href='#qa-37060211'>efficiently locf by groups in a single R data.table</a></li>
 <li><a href='#qa-30628333'>Building a tiny R package with CUDA and Rcpp</a></li>
-<li><a href='#qa-19686892'>passing unevaluated expressions to C/C++</a></li>
-<li><a href='#qa-24622918'>Initialize a variable with different type based on a switch statement</a></li></ul></nav>
+<li><a href='#qa-37060211'>efficiently locf by groups in a single R data.table</a></li>
+<li><a href='#qa-19686892'>passing unevaluated expressions to C/C++</a></li></ul></nav>
   <section><article class="qa" id="qa-2908822">
 
   <div class="question">
@@ -79,7 +78,7 @@
         <div class="viewcount">votes</div>
       </div>
       <div class="views">
-        <span class="score">96k</span>
+        <span class="score">96.2k</span>
         <div class="viewcount">views</div>
       </div>
     </div>
@@ -345,11 +344,11 @@ cpp_if &lt;- cxxfunction(signature(a=&quot;numeric&quot;), cpp_if_src, plugin=&q
 
     <div class="stats">
       <div class="votes">
-        <span class="score">31</span>
+        <span class="score">33</span>
         <div class="viewcount">votes</div>
       </div>
       <div class="views">
-        <span class="score">23.7k</span>
+        <span class="score">26.6k</span>
         <div class="viewcount">views</div>
       </div>
     </div>
@@ -388,7 +387,7 @@ Error :Error in connection_connect(dbname, loadable.extensions, flags, vfs, exte
 
     <div class="stats">
       <div class="votes answer-accepted-FALSE">
-        <span class="score">30</span>
+        <span class="score">32</span>
         <div class="viewcount">votes</div>
       </div>
     </div>
@@ -410,6 +409,99 @@ Error :Error in connection_connect(dbname, loadable.extensions, flags, vfs, exte
 dbListTables(con)```
 
 Error :Error in connection_connect(dbname, loadable.extensions, flags, vfs, extended_types) : function 'Rcpp_precious_remove' not provided by package 'Rcpp'
+</code></pre>
+
+        </details>
+      </div>
+    </div>
+
+  </div>
+
+</article> <article class="qa" id="qa-11275187">
+
+  <div class="question">
+
+    <div class="stats">
+      <div class="votes">
+        <span class="score">27</span>
+        <div class="viewcount">votes</div>
+      </div>
+      <div class="views">
+        <span class="score">73.3k</span>
+        <div class="viewcount">views</div>
+      </div>
+    </div>
+
+    <div class="content">
+      <div class="title">
+        <h3>Replace negative values by zero</h3>
+        <a href="https://stackoverflow.com/questions/11275187/replace-negative-values-by-zero" target="_blank">[see original]</a>
+      </div>
+      <div class="tags"><span>r</span><span>if-statement</span><span>for-loop</span><span>conditional-statements</span><span>rcpp</span></div>
+      <div class="author">
+        <span class="gravatar">
+          <a href="https://stackoverflow.com/users/1403232/fabian-stolz" target="_blank"><img src="https://www.gravatar.com/avatar/83158c1b3e818e3e3477baa50b2afa02?s=128&d=identicon&r=PG" alt="" width="32" height="32"></a>
+        </span>
+        <a href="https://stackoverflow.com/users/1403232/fabian-stolz" target="_blank">Fabian Stolz</a>
+        asked Jun 30 '12 at 15:09
+      </div>
+      <div class="body">
+        <details>
+          <summary>Click to expand question</summary>
+          <p>We want to set all values in an array zero that are negative.</p>
+
+<p>I tried out a a lot of stuff but did not yet achieve a working solution.
+I thought about a for loop with condition, however this seems not to work.</p>
+
+<pre><code>#pred_precipitation is our array
+pred_precipitation &lt;-rnorm(25,2,4)     
+
+for (i in nrow(pred_precipitation))
+{
+  if (pred_precipitation[i]&lt;0) {pred_precipitation[i] = 0}
+  else{pred_precipitation[i] = pred_precipitation[i]}
+}
+</code></pre>
+
+        </details>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="answer">
+
+    <div class="stats">
+      <div class="votes answer-accepted-TRUE">
+        <span class="score">64</span>
+        <div class="viewcount">votes</div>
+      </div>
+    </div>
+
+    <div class="content">
+      <div class="author">
+        <span class="gravatar">
+          <a href="https://stackoverflow.com/users/636656/ari-b-friedman" target="_blank"><img src="https://www.gravatar.com/avatar/5a804caeb905aec31a7531d38314bf16?s=128&d=identicon&r=PG" alt="" width="32" height="32"></a>
+        </span>
+        <a href="https://stackoverflow.com/users/636656/ari-b-friedman" target="_blank">Ari B. Friedman</a>
+        replied Jun 30 '12 at 15:15
+      </div>
+      <div class="body">
+        <details>
+          <summary>Click to expand answer</summary>
+          <p>We want to set all values in an array zero that are negative.</p>
+
+<p>I tried out a a lot of stuff but did not yet achieve a working solution.
+I thought about a for loop with condition, however this seems not to work.</p>
+
+<pre><code>#pred_precipitation is our array
+pred_precipitation &lt;-rnorm(25,2,4)     
+
+for (i in nrow(pred_precipitation))
+{
+  if (pred_precipitation[i]&lt;0) {pred_precipitation[i] = 0}
+  else{pred_precipitation[i] = pred_precipitation[i]}
+}
 </code></pre>
 
         </details>
@@ -547,99 +639,6 @@ clusterCall(cl, funCPP1, A, 0.5)
 
   </div>
 
-</article> <article class="qa" id="qa-11275187">
-
-  <div class="question">
-
-    <div class="stats">
-      <div class="votes">
-        <span class="score">27</span>
-        <div class="viewcount">votes</div>
-      </div>
-      <div class="views">
-        <span class="score">73.1k</span>
-        <div class="viewcount">views</div>
-      </div>
-    </div>
-
-    <div class="content">
-      <div class="title">
-        <h3>Replace negative values by zero</h3>
-        <a href="https://stackoverflow.com/questions/11275187/replace-negative-values-by-zero" target="_blank">[see original]</a>
-      </div>
-      <div class="tags"><span>r</span><span>if-statement</span><span>for-loop</span><span>conditional-statements</span><span>rcpp</span></div>
-      <div class="author">
-        <span class="gravatar">
-          <a href="https://stackoverflow.com/users/1403232/fabian-stolz" target="_blank"><img src="https://www.gravatar.com/avatar/83158c1b3e818e3e3477baa50b2afa02?s=128&d=identicon&r=PG" alt="" width="32" height="32"></a>
-        </span>
-        <a href="https://stackoverflow.com/users/1403232/fabian-stolz" target="_blank">Fabian Stolz</a>
-        asked Jun 30 '12 at 15:09
-      </div>
-      <div class="body">
-        <details>
-          <summary>Click to expand question</summary>
-          <p>We want to set all values in an array zero that are negative.</p>
-
-<p>I tried out a a lot of stuff but did not yet achieve a working solution.
-I thought about a for loop with condition, however this seems not to work.</p>
-
-<pre><code>#pred_precipitation is our array
-pred_precipitation &lt;-rnorm(25,2,4)     
-
-for (i in nrow(pred_precipitation))
-{
-  if (pred_precipitation[i]&lt;0) {pred_precipitation[i] = 0}
-  else{pred_precipitation[i] = pred_precipitation[i]}
-}
-</code></pre>
-
-        </details>
-      </div>
-    </div>
-
-  </div>
-
-  <div class="answer">
-
-    <div class="stats">
-      <div class="votes answer-accepted-TRUE">
-        <span class="score">64</span>
-        <div class="viewcount">votes</div>
-      </div>
-    </div>
-
-    <div class="content">
-      <div class="author">
-        <span class="gravatar">
-          <a href="https://stackoverflow.com/users/636656/ari-b-friedman" target="_blank"><img src="https://www.gravatar.com/avatar/5a804caeb905aec31a7531d38314bf16?s=128&d=identicon&r=PG" alt="" width="32" height="32"></a>
-        </span>
-        <a href="https://stackoverflow.com/users/636656/ari-b-friedman" target="_blank">Ari B. Friedman</a>
-        replied Jun 30 '12 at 15:15
-      </div>
-      <div class="body">
-        <details>
-          <summary>Click to expand answer</summary>
-          <p>We want to set all values in an array zero that are negative.</p>
-
-<p>I tried out a a lot of stuff but did not yet achieve a working solution.
-I thought about a for loop with condition, however this seems not to work.</p>
-
-<pre><code>#pred_precipitation is our array
-pred_precipitation &lt;-rnorm(25,2,4)     
-
-for (i in nrow(pred_precipitation))
-{
-  if (pred_precipitation[i]&lt;0) {pred_precipitation[i] = 0}
-  else{pred_precipitation[i] = pred_precipitation[i]}
-}
-</code></pre>
-
-        </details>
-      </div>
-    </div>
-
-  </div>
-
 </article> <article class="qa" id="qa-43597632">
 
   <div class="question">
@@ -650,7 +649,7 @@ for (i in nrow(pred_precipitation))
         <div class="viewcount">votes</div>
       </div>
       <div class="views">
-        <span class="score">26.1k</span>
+        <span class="score">26.3k</span>
         <div class="viewcount">views</div>
       </div>
     </div>
@@ -968,7 +967,7 @@ Using Armadillo classes as suggested in the answer below make things very slight
         <div class="viewcount">votes</div>
       </div>
       <div class="views">
-        <span class="score">75.3k</span>
+        <span class="score">75.4k</span>
         <div class="viewcount">views</div>
       </div>
     </div>
@@ -1932,7 +1931,7 @@ int mySuminC(){
         <div class="viewcount">votes</div>
       </div>
       <div class="views">
-        <span class="score">1.3k</span>
+        <span class="score">1.4k</span>
         <div class="viewcount">views</div>
       </div>
     </div>
@@ -2041,7 +2040,7 @@ vec randdraw(int d, int n){
         <div class="viewcount">votes</div>
       </div>
       <div class="views">
-        <span class="score">675</span>
+        <span class="score">681</span>
         <div class="viewcount">views</div>
       </div>
     </div>
@@ -2755,7 +2754,7 @@ Rcpp::List callOptimFun(SEXP x) {
         <div class="viewcount">votes</div>
       </div>
       <div class="views">
-        <span class="score">475</span>
+        <span class="score">476</span>
         <div class="viewcount">views</div>
       </div>
     </div>
@@ -2901,6 +2900,99 @@ Rcpp::List callOptimFun(SEXP x) {
 <li>Have I hit a hard limit?</li>
 <li>Is there a workaround to allow me to add more than 20 vectors to a data frame?</li>
 </ol>
+
+        </details>
+      </div>
+    </div>
+
+  </div>
+
+</article> <article class="qa" id="qa-38518387">
+
+  <div class="question">
+
+    <div class="stats">
+      <div class="votes">
+        <span class="score">1</span>
+        <div class="viewcount">votes</div>
+      </div>
+      <div class="views">
+        <span class="score">1.3k</span>
+        <div class="viewcount">views</div>
+      </div>
+    </div>
+
+    <div class="content">
+      <div class="title">
+        <h3>Using Rcpp functions inside of R&#39;s par*apply functions from the parallel package</h3>
+        <a href="https://stackoverflow.com/questions/38518387/using-rcpp-functions-inside-of-rs-parapply-functions-from-the-parallel-package" target="_blank">[see original]</a>
+      </div>
+      <div class="tags"><span>r</span><span>parallel-processing</span><span>rcpp</span></div>
+      <div class="author">
+        <span class="gravatar">
+          <a href="https://stackoverflow.com/users/6610205/scott-white" target="_blank"><img src="https://www.gravatar.com/avatar/b2374ecc343f7e9e98bf0180db487083?s=128&d=identicon&r=PG&f=1" alt="" width="32" height="32"></a>
+        </span>
+        <a href="https://stackoverflow.com/users/6610205/scott-white" target="_blank">Scott White</a>
+        asked Jul 22 '16 at 04:50
+      </div>
+      <div class="body">
+        <details>
+          <summary>Click to expand question</summary>
+          <p>I'm trying to understand what is happening behind the <code>Rcpp::sourceCpp()</code> call on a parallelized environment. Recently, this was partially addressed in the question: <a href="https://stackoverflow.com/questions/25606733/using-rcpp-function-in-parlapply-on-windows/25606950">Using Rcpp function in parLapply on Windows</a>.</p>
+
+<p>Within this post, Dirk said,</p>
+
+<blockquote>
+  <p>"You need to run the sourceCpp() call in each spawned process, or else get them your code."</p>
+</blockquote>
+
+<p>This was in response to questioner's use of distributing the <em>Rcpp</em> function to the worker processes. The questioner was sending the <em>Rcpp</em> function via:</p>
+
+<pre><code>clusterExport(cl = cl, varlist = "payoff")
+</code></pre>
+
+<p>I'm confused as to why this doesn't work. My thoughts are that this was what the objective of the <code>clusterExport()</code> is for.</p>
+
+        </details>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="answer">
+
+    <div class="stats">
+      <div class="votes answer-accepted-TRUE">
+        <span class="score">4</span>
+        <div class="viewcount">votes</div>
+      </div>
+    </div>
+
+    <div class="content">
+      <div class="author">
+        <span class="gravatar">
+          <a href="https://stackoverflow.com/users/1345455/coatless" target="_blank"><img src="https://i.stack.imgur.com/DrBTs.jpg?s=128&g=1" alt="" width="32" height="32"></a>
+        </span>
+        <a href="https://stackoverflow.com/users/1345455/coatless" target="_blank">coatless</a>
+        replied Jul 22 '16 at 05:11
+      </div>
+      <div class="body">
+        <details>
+          <summary>Click to expand answer</summary>
+          <p>I'm trying to understand what is happening behind the <code>Rcpp::sourceCpp()</code> call on a parallelized environment. Recently, this was partially addressed in the question: <a href="https://stackoverflow.com/questions/25606733/using-rcpp-function-in-parlapply-on-windows/25606950">Using Rcpp function in parLapply on Windows</a>.</p>
+
+<p>Within this post, Dirk said,</p>
+
+<blockquote>
+  <p>"You need to run the sourceCpp() call in each spawned process, or else get them your code."</p>
+</blockquote>
+
+<p>This was in response to questioner's use of distributing the <em>Rcpp</em> function to the worker processes. The questioner was sending the <em>Rcpp</em> function via:</p>
+
+<pre><code>clusterExport(cl = cl, varlist = "payoff")
+</code></pre>
+
+<p>I'm confused as to why this doesn't work. My thoughts are that this was what the objective of the <code>clusterExport()</code> is for.</p>
 
         </details>
       </div>
@@ -3220,195 +3312,6 @@ x_i = value;
 <pre><code>error: non-const lvalue reference to type 'IntegerVector'
       (aka 'Vector&lt;13&gt;') cannot bind to a temporary of type 'Proxy' (aka 'generic_proxy&lt;19&gt;')
 </code></pre>
-
-        </details>
-      </div>
-    </div>
-
-  </div>
-
-</article> <article class="qa" id="qa-37060211">
-
-  <div class="question">
-
-    <div class="stats">
-      <div class="votes">
-        <span class="score">12</span>
-        <div class="viewcount">votes</div>
-      </div>
-      <div class="views">
-        <span class="score">2.8k</span>
-        <div class="viewcount">views</div>
-      </div>
-    </div>
-
-    <div class="content">
-      <div class="title">
-        <h3>efficiently locf by groups in a single R data.table</h3>
-        <a href="https://stackoverflow.com/questions/37060211/efficiently-locf-by-groups-in-a-single-r-data-table" target="_blank">[see original]</a>
-      </div>
-      <div class="tags"><span>r</span><span>dataframe</span><span>data.table</span><span>dplyr</span><span>rcpp</span></div>
-      <div class="author">
-        <span class="gravatar">
-          <a href="https://stackoverflow.com/users/280708/carl-anderson" target="_blank"><img src="https://i.stack.imgur.com/NS0O4.png?s=128&g=1" alt="" width="32" height="32"></a>
-        </span>
-        <a href="https://stackoverflow.com/users/280708/carl-anderson" target="_blank">carl.anderson</a>
-        asked May 05 '16 at 20:59
-      </div>
-      <div class="body">
-        <details>
-          <summary>Click to expand question</summary>
-          <p>I have a large, wide <code>data.table</code> (20m rows) keyed by a person ID but with lots of columns (~150) that have lots of null values.  Each column is a recorded state / attribute that I wish to carry forward for each person.  Each person may have anywhere from 10 to 10,000 observations and there are about 500,000 people in the set.  Values from one person can not 'bleed' into the following person, so my solution must respect the person ID column and group appropriately.</p>
-
-<p>For demonstration purposes - here's a very small sample input:</p>
-
-<pre><code>DT = data.table(
-  id=c(1, 1, 1, 1, 2, 2, 2, 2, 3, 3, 3, 3),
-  aa=c("A", NA, "B", "C", NA, NA, "D", "E", "F", NA, NA, NA),
-  bb=c(NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA),
-  cc=c(1, NA, NA, NA, NA, 4, NA, 5, 6, NA, 7, NA)
-)
-</code></pre>
-
-<p>It looks like this:</p>
-
-<pre><code>    id aa bb cc
- 1:  1  A NA  1
- 2:  1 NA NA NA
- 3:  1  B NA NA
- 4:  1  C NA NA
- 5:  2 NA NA NA
- 6:  2 NA NA  4
- 7:  2  D NA NA
- 8:  2  E NA  5
- 9:  3  F NA  6
-10:  3 NA NA NA
-11:  3 NA NA  7
-12:  3 NA NA NA
-</code></pre>
-
-<p>My expected output looks like this:</p>
-
-<pre><code>    id aa bb cc
- 1:  1  A NA  1
- 2:  1  A NA  1
- 3:  1  B NA  1
- 4:  1  C NA  1
- 5:  2 NA NA NA
- 6:  2 NA NA  4
- 7:  2  D NA  4
- 8:  2  E NA  5
- 9:  3  F NA  6
-10:  3  F NA  6
-11:  3  F NA  7
-12:  3  F NA  7
-</code></pre>
-
-<p>I've found a <code>data.table</code> solution that works, but it's terribly slow on my large data sets:</p>
-
-<pre><code>DT[, na.locf(.SD, na.rm=FALSE), by=id]
-</code></pre>
-
-<p>I've found equivalent solutions using dplyr that are equally slow.</p>
-
-<pre><code>GRP = DT %&gt;% group_by(id)
-data.table(GRP %&gt;% mutate_each(funs(blah=na.locf(., na.rm=FALSE))))
-</code></pre>
-
-<p>I was hopeful that I could come up with a rolling 'self' join using the <code>data.table</code> functionality, but I just can't seem to get it right (I suspect I would need to use <code>.N</code> but I just haven't figured it out).</p>
-
-<p>At this point I'm thinking I'll have to write something in Rcpp to efficiently apply the grouped locf.  </p>
-
-<p>I'm new to R, but I'm not new to C++ - so I'm confident I can do it.  I just feel like there should be an efficient way to do this in R using <code>data.table</code>.</p>
-
-        </details>
-      </div>
-    </div>
-
-  </div>
-
-  <div class="answer">
-
-    <div class="stats">
-      <div class="votes answer-accepted-TRUE">
-        <span class="score">24</span>
-        <div class="viewcount">votes</div>
-      </div>
-    </div>
-
-    <div class="content">
-      <div class="author">
-        <span class="gravatar">
-          <a href="https://stackoverflow.com/users/2414948/alexis-laz" target="_blank"><img src="https://www.gravatar.com/avatar/f4a4db8db8724f88b7de4340a42778a5?s=128&d=identicon&r=PG" alt="" width="32" height="32"></a>
-        </span>
-        <a href="https://stackoverflow.com/users/2414948/alexis-laz" target="_blank">alexis_laz</a>
-        replied May 06 '16 at 09:16
-      </div>
-      <div class="body">
-        <details>
-          <summary>Click to expand answer</summary>
-          <p>I have a large, wide <code>data.table</code> (20m rows) keyed by a person ID but with lots of columns (~150) that have lots of null values.  Each column is a recorded state / attribute that I wish to carry forward for each person.  Each person may have anywhere from 10 to 10,000 observations and there are about 500,000 people in the set.  Values from one person can not 'bleed' into the following person, so my solution must respect the person ID column and group appropriately.</p>
-
-<p>For demonstration purposes - here's a very small sample input:</p>
-
-<pre><code>DT = data.table(
-  id=c(1, 1, 1, 1, 2, 2, 2, 2, 3, 3, 3, 3),
-  aa=c("A", NA, "B", "C", NA, NA, "D", "E", "F", NA, NA, NA),
-  bb=c(NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA),
-  cc=c(1, NA, NA, NA, NA, 4, NA, 5, 6, NA, 7, NA)
-)
-</code></pre>
-
-<p>It looks like this:</p>
-
-<pre><code>    id aa bb cc
- 1:  1  A NA  1
- 2:  1 NA NA NA
- 3:  1  B NA NA
- 4:  1  C NA NA
- 5:  2 NA NA NA
- 6:  2 NA NA  4
- 7:  2  D NA NA
- 8:  2  E NA  5
- 9:  3  F NA  6
-10:  3 NA NA NA
-11:  3 NA NA  7
-12:  3 NA NA NA
-</code></pre>
-
-<p>My expected output looks like this:</p>
-
-<pre><code>    id aa bb cc
- 1:  1  A NA  1
- 2:  1  A NA  1
- 3:  1  B NA  1
- 4:  1  C NA  1
- 5:  2 NA NA NA
- 6:  2 NA NA  4
- 7:  2  D NA  4
- 8:  2  E NA  5
- 9:  3  F NA  6
-10:  3  F NA  6
-11:  3  F NA  7
-12:  3  F NA  7
-</code></pre>
-
-<p>I've found a <code>data.table</code> solution that works, but it's terribly slow on my large data sets:</p>
-
-<pre><code>DT[, na.locf(.SD, na.rm=FALSE), by=id]
-</code></pre>
-
-<p>I've found equivalent solutions using dplyr that are equally slow.</p>
-
-<pre><code>GRP = DT %&gt;% group_by(id)
-data.table(GRP %&gt;% mutate_each(funs(blah=na.locf(., na.rm=FALSE))))
-</code></pre>
-
-<p>I was hopeful that I could come up with a rolling 'self' join using the <code>data.table</code> functionality, but I just can't seem to get it right (I suspect I would need to use <code>.N</code> but I just haven't figured it out).</p>
-
-<p>At this point I'm thinking I'll have to write something in Rcpp to efficiently apply the grouped locf.  </p>
-
-<p>I'm new to R, but I'm not new to C++ - so I'm confident I can do it.  I just feel like there should be an efficient way to do this in R using <code>data.table</code>.</p>
 
         </details>
       </div>
@@ -3857,6 +3760,195 @@ Slot "y":
 
   </div>
 
+</article> <article class="qa" id="qa-37060211">
+
+  <div class="question">
+
+    <div class="stats">
+      <div class="votes">
+        <span class="score">12</span>
+        <div class="viewcount">votes</div>
+      </div>
+      <div class="views">
+        <span class="score">2.8k</span>
+        <div class="viewcount">views</div>
+      </div>
+    </div>
+
+    <div class="content">
+      <div class="title">
+        <h3>efficiently locf by groups in a single R data.table</h3>
+        <a href="https://stackoverflow.com/questions/37060211/efficiently-locf-by-groups-in-a-single-r-data-table" target="_blank">[see original]</a>
+      </div>
+      <div class="tags"><span>r</span><span>dataframe</span><span>data.table</span><span>dplyr</span><span>rcpp</span></div>
+      <div class="author">
+        <span class="gravatar">
+          <a href="https://stackoverflow.com/users/280708/carl-anderson" target="_blank"><img src="https://i.stack.imgur.com/NS0O4.png?s=128&g=1" alt="" width="32" height="32"></a>
+        </span>
+        <a href="https://stackoverflow.com/users/280708/carl-anderson" target="_blank">carl.anderson</a>
+        asked May 05 '16 at 20:59
+      </div>
+      <div class="body">
+        <details>
+          <summary>Click to expand question</summary>
+          <p>I have a large, wide <code>data.table</code> (20m rows) keyed by a person ID but with lots of columns (~150) that have lots of null values.  Each column is a recorded state / attribute that I wish to carry forward for each person.  Each person may have anywhere from 10 to 10,000 observations and there are about 500,000 people in the set.  Values from one person can not 'bleed' into the following person, so my solution must respect the person ID column and group appropriately.</p>
+
+<p>For demonstration purposes - here's a very small sample input:</p>
+
+<pre><code>DT = data.table(
+  id=c(1, 1, 1, 1, 2, 2, 2, 2, 3, 3, 3, 3),
+  aa=c("A", NA, "B", "C", NA, NA, "D", "E", "F", NA, NA, NA),
+  bb=c(NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA),
+  cc=c(1, NA, NA, NA, NA, 4, NA, 5, 6, NA, 7, NA)
+)
+</code></pre>
+
+<p>It looks like this:</p>
+
+<pre><code>    id aa bb cc
+ 1:  1  A NA  1
+ 2:  1 NA NA NA
+ 3:  1  B NA NA
+ 4:  1  C NA NA
+ 5:  2 NA NA NA
+ 6:  2 NA NA  4
+ 7:  2  D NA NA
+ 8:  2  E NA  5
+ 9:  3  F NA  6
+10:  3 NA NA NA
+11:  3 NA NA  7
+12:  3 NA NA NA
+</code></pre>
+
+<p>My expected output looks like this:</p>
+
+<pre><code>    id aa bb cc
+ 1:  1  A NA  1
+ 2:  1  A NA  1
+ 3:  1  B NA  1
+ 4:  1  C NA  1
+ 5:  2 NA NA NA
+ 6:  2 NA NA  4
+ 7:  2  D NA  4
+ 8:  2  E NA  5
+ 9:  3  F NA  6
+10:  3  F NA  6
+11:  3  F NA  7
+12:  3  F NA  7
+</code></pre>
+
+<p>I've found a <code>data.table</code> solution that works, but it's terribly slow on my large data sets:</p>
+
+<pre><code>DT[, na.locf(.SD, na.rm=FALSE), by=id]
+</code></pre>
+
+<p>I've found equivalent solutions using dplyr that are equally slow.</p>
+
+<pre><code>GRP = DT %&gt;% group_by(id)
+data.table(GRP %&gt;% mutate_each(funs(blah=na.locf(., na.rm=FALSE))))
+</code></pre>
+
+<p>I was hopeful that I could come up with a rolling 'self' join using the <code>data.table</code> functionality, but I just can't seem to get it right (I suspect I would need to use <code>.N</code> but I just haven't figured it out).</p>
+
+<p>At this point I'm thinking I'll have to write something in Rcpp to efficiently apply the grouped locf.  </p>
+
+<p>I'm new to R, but I'm not new to C++ - so I'm confident I can do it.  I just feel like there should be an efficient way to do this in R using <code>data.table</code>.</p>
+
+        </details>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="answer">
+
+    <div class="stats">
+      <div class="votes answer-accepted-TRUE">
+        <span class="score">24</span>
+        <div class="viewcount">votes</div>
+      </div>
+    </div>
+
+    <div class="content">
+      <div class="author">
+        <span class="gravatar">
+          <a href="https://stackoverflow.com/users/2414948/alexis-laz" target="_blank"><img src="https://www.gravatar.com/avatar/f4a4db8db8724f88b7de4340a42778a5?s=128&d=identicon&r=PG" alt="" width="32" height="32"></a>
+        </span>
+        <a href="https://stackoverflow.com/users/2414948/alexis-laz" target="_blank">alexis_laz</a>
+        replied May 06 '16 at 09:16
+      </div>
+      <div class="body">
+        <details>
+          <summary>Click to expand answer</summary>
+          <p>I have a large, wide <code>data.table</code> (20m rows) keyed by a person ID but with lots of columns (~150) that have lots of null values.  Each column is a recorded state / attribute that I wish to carry forward for each person.  Each person may have anywhere from 10 to 10,000 observations and there are about 500,000 people in the set.  Values from one person can not 'bleed' into the following person, so my solution must respect the person ID column and group appropriately.</p>
+
+<p>For demonstration purposes - here's a very small sample input:</p>
+
+<pre><code>DT = data.table(
+  id=c(1, 1, 1, 1, 2, 2, 2, 2, 3, 3, 3, 3),
+  aa=c("A", NA, "B", "C", NA, NA, "D", "E", "F", NA, NA, NA),
+  bb=c(NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA),
+  cc=c(1, NA, NA, NA, NA, 4, NA, 5, 6, NA, 7, NA)
+)
+</code></pre>
+
+<p>It looks like this:</p>
+
+<pre><code>    id aa bb cc
+ 1:  1  A NA  1
+ 2:  1 NA NA NA
+ 3:  1  B NA NA
+ 4:  1  C NA NA
+ 5:  2 NA NA NA
+ 6:  2 NA NA  4
+ 7:  2  D NA NA
+ 8:  2  E NA  5
+ 9:  3  F NA  6
+10:  3 NA NA NA
+11:  3 NA NA  7
+12:  3 NA NA NA
+</code></pre>
+
+<p>My expected output looks like this:</p>
+
+<pre><code>    id aa bb cc
+ 1:  1  A NA  1
+ 2:  1  A NA  1
+ 3:  1  B NA  1
+ 4:  1  C NA  1
+ 5:  2 NA NA NA
+ 6:  2 NA NA  4
+ 7:  2  D NA  4
+ 8:  2  E NA  5
+ 9:  3  F NA  6
+10:  3  F NA  6
+11:  3  F NA  7
+12:  3  F NA  7
+</code></pre>
+
+<p>I've found a <code>data.table</code> solution that works, but it's terribly slow on my large data sets:</p>
+
+<pre><code>DT[, na.locf(.SD, na.rm=FALSE), by=id]
+</code></pre>
+
+<p>I've found equivalent solutions using dplyr that are equally slow.</p>
+
+<pre><code>GRP = DT %&gt;% group_by(id)
+data.table(GRP %&gt;% mutate_each(funs(blah=na.locf(., na.rm=FALSE))))
+</code></pre>
+
+<p>I was hopeful that I could come up with a rolling 'self' join using the <code>data.table</code> functionality, but I just can't seem to get it right (I suspect I would need to use <code>.N</code> but I just haven't figured it out).</p>
+
+<p>At this point I'm thinking I'll have to write something in Rcpp to efficiently apply the grouped locf.  </p>
+
+<p>I'm new to R, but I'm not new to C++ - so I'm confident I can do it.  I just feel like there should be an efficient way to do this in R using <code>data.table</code>.</p>
+
+        </details>
+      </div>
+    </div>
+
+  </div>
+
 </article> <article class="qa" id="qa-19686892">
 
   <div class="question">
@@ -3867,7 +3959,7 @@ Slot "y":
         <div class="viewcount">votes</div>
       </div>
       <div class="views">
-        <span class="score">532</span>
+        <span class="score">534</span>
         <div class="viewcount">views</div>
       </div>
     </div>
@@ -3973,237 +4065,6 @@ f(x*y*z)
 </code></pre>
 
 <p>What other options do I have? Clearly it's possible to do as R itself does it for a number of functions, e.g. <code>substitute</code> itself, but I don't understand how to do it. I added the <code>rcpp</code> tag because my eventual usage of this is going to be in <code>Rcpp</code>.</p>
-
-        </details>
-      </div>
-    </div>
-
-  </div>
-
-</article> <article class="qa" id="qa-24622918">
-
-  <div class="question">
-
-    <div class="stats">
-      <div class="votes">
-        <span class="score">9</span>
-        <div class="viewcount">votes</div>
-      </div>
-      <div class="views">
-        <span class="score">1.2k</span>
-        <div class="viewcount">views</div>
-      </div>
-    </div>
-
-    <div class="content">
-      <div class="title">
-        <h3>Initialize a variable with different type based on a switch statement</h3>
-        <a href="https://stackoverflow.com/questions/24622918/initialize-a-variable-with-different-type-based-on-a-switch-statement" target="_blank">[see original]</a>
-      </div>
-      <div class="tags"><span>rcpp</span></div>
-      <div class="author">
-        <span class="gravatar">
-          <a href="https://stackoverflow.com/users/2341679/scott-ritchie" target="_blank"><img src="https://i.stack.imgur.com/tR2h3.jpg?s=128&g=1" alt="" width="32" height="32"></a>
-        </span>
-        <a href="https://stackoverflow.com/users/2341679/scott-ritchie" target="_blank">Scott Ritchie</a>
-        asked Jul 08 '14 at 02:48
-      </div>
-      <div class="body">
-        <details>
-          <summary>Click to expand question</summary>
-          <p>I am developing some functions in <code>Rcpp</code> that operate on <code>big.matrix</code> objects from the <code>bigmemory</code> package. These objects are passed to <code>Rcpp</code> as <code>SEXP</code> objects which i then have to cast to an <code>XPtr&lt;BigMatrix&gt;</code>, and then to a <code>MatrixAccessor</code> object to access elements of the matrix.</p>
-
-<p>For example, if I want to implement a function that get's the diagonal:</p>
-
-<pre class="lang-cpp prettyprint-override"><code>#include &lt;Rcpp.h&gt;
-using namespace Rcpp;
-
-// [[Rcpp::depends(BH, bigmemory)
-#include &lt;bigmemory/MatrixAccessor.hpp&gt;
-
-#include &lt;numeric&gt;
-
-// [[Rcpp::export]]
-NumericVector GetDiag(SEXP pmat) {
-  XPtr&lt;BigMatrix&gt; xpMat(pMat); // allows you to access attributes
-  MatrixAccessor&lt;double&gt; mat(*xpMat); // allows you to access matrix elements
-
-  NumericVector diag(xpMat-&gt;nrow()); // Assume matrix is square
-  for (int i = 0; i &lt; xpMat-&gt;nrow(); i++) { 
-    diag[i] = mat[i][i];
-  }
-  return diag;
-}
-</code></pre>
-
-<p>This function works beautifully, provided the <code>big.matrix</code> object in R is filled with doubles. </p>
-
-<p>However, if you call this function on an integer matrix (e.g. <code>diag(as.big.matrix(matrix(1:9, 3))@address)</code>), You get garbage as a result, because the <code>MatrixAccessor</code> has been initialized as <code>&lt;double&gt;</code>.</p>
-
-<p>Internally, <code>big.matrix</code> objects can come in four types:</p>
-
-<pre class="lang-cpp prettyprint-override"><code>void typeof(SEXP pMat) {
-  XPtr&lt;BigMatrix&gt; xpMat(pMat);
-  int type = xpMat-&gt;matrix_type();
-  type == 1 // char
-  type == 2 // short
-  type == 4 // int
-  type == 8 // double
-}
-</code></pre>
-
-<p>Since all we're doing is accessing the elements of the matrix, the <code>diag</code> function should be able to handle each of these types. But for now, since our function signature is <code>NumericVector</code>, I'll ignore character matrices.</p>
-
-<p>To handle this, I figured I could just throw in a switch statement, initializing the corresponding <code>mat</code> with the appropriate type at runtime:</p>
-
-<pre class="lang-cpp prettyprint-override"><code>// [[Rcpp::export]]
-NumericVector GetDiag(SEXP pmat) {
-  XPtr&lt;BigMatrix&gt; xpMat(pMat);
-  // Determine the typeof(pmat), and initialize accordingly:
-  switch(xpMat-&gt;matrix_type()) {
-    case == 1:
-    {
-       // Function expects to return a NumericVector.
-       throw; 
-    }
-    case == 2:
-    {
-      MatrixAccessor&lt;short&gt; mat(*xpMat);
-      break;
-    }
-    case == 4:
-    {
-      MatrixAccessor&lt;int&gt; mat(*xpMat);
-      break;
-    }
-    case == 8:
-    {
-      MatrixAccessor&lt;double&gt; mat(*xpMat);
-    }
-  }
-  MatrixAccessor&lt;double&gt; mat(*xpMat); // allows you to access matrix elements
-
-  NumericVector diag(xpMat-&gt;nrow()); // Assume matrix is square
-  for (int i = 0; i &lt; xpMat-&gt;nrow(); i++) { 
-    diag[i] = mat[i][i];
-  }
-  return diag;
-}
-</code></pre>
-
-<p>However, this results in compiler errors, because I'm redefining <code>mat</code> after it has been declared already in the first <code>case</code>.</p>
-
-<p>The only way I can see to do this, is to write three different <code>diag</code> functions, one for each type, whose code is the same with the exception of the initialization of <code>mat</code>. Is there a better way?</p>
-
-        </details>
-      </div>
-    </div>
-
-  </div>
-
-  <div class="answer">
-
-    <div class="stats">
-      <div class="votes answer-accepted-FALSE">
-        <span class="score">10</span>
-        <div class="viewcount">votes</div>
-      </div>
-    </div>
-
-    <div class="content">
-      <div class="author">
-        <span class="gravatar">
-          <a href="https://stackoverflow.com/users/1342082/kevin-ushey" target="_blank"><img src="https://www.gravatar.com/avatar/1ef12d2cf78f28d7a1e76c8fc60978c8?s=128&d=identicon&r=PG" alt="" width="32" height="32"></a>
-        </span>
-        <a href="https://stackoverflow.com/users/1342082/kevin-ushey" target="_blank">Kevin Ushey</a>
-        replied Jul 08 '14 at 03:46
-      </div>
-      <div class="body">
-        <details>
-          <summary>Click to expand answer</summary>
-          <p>I am developing some functions in <code>Rcpp</code> that operate on <code>big.matrix</code> objects from the <code>bigmemory</code> package. These objects are passed to <code>Rcpp</code> as <code>SEXP</code> objects which i then have to cast to an <code>XPtr&lt;BigMatrix&gt;</code>, and then to a <code>MatrixAccessor</code> object to access elements of the matrix.</p>
-
-<p>For example, if I want to implement a function that get's the diagonal:</p>
-
-<pre class="lang-cpp prettyprint-override"><code>#include &lt;Rcpp.h&gt;
-using namespace Rcpp;
-
-// [[Rcpp::depends(BH, bigmemory)
-#include &lt;bigmemory/MatrixAccessor.hpp&gt;
-
-#include &lt;numeric&gt;
-
-// [[Rcpp::export]]
-NumericVector GetDiag(SEXP pmat) {
-  XPtr&lt;BigMatrix&gt; xpMat(pMat); // allows you to access attributes
-  MatrixAccessor&lt;double&gt; mat(*xpMat); // allows you to access matrix elements
-
-  NumericVector diag(xpMat-&gt;nrow()); // Assume matrix is square
-  for (int i = 0; i &lt; xpMat-&gt;nrow(); i++) { 
-    diag[i] = mat[i][i];
-  }
-  return diag;
-}
-</code></pre>
-
-<p>This function works beautifully, provided the <code>big.matrix</code> object in R is filled with doubles. </p>
-
-<p>However, if you call this function on an integer matrix (e.g. <code>diag(as.big.matrix(matrix(1:9, 3))@address)</code>), You get garbage as a result, because the <code>MatrixAccessor</code> has been initialized as <code>&lt;double&gt;</code>.</p>
-
-<p>Internally, <code>big.matrix</code> objects can come in four types:</p>
-
-<pre class="lang-cpp prettyprint-override"><code>void typeof(SEXP pMat) {
-  XPtr&lt;BigMatrix&gt; xpMat(pMat);
-  int type = xpMat-&gt;matrix_type();
-  type == 1 // char
-  type == 2 // short
-  type == 4 // int
-  type == 8 // double
-}
-</code></pre>
-
-<p>Since all we're doing is accessing the elements of the matrix, the <code>diag</code> function should be able to handle each of these types. But for now, since our function signature is <code>NumericVector</code>, I'll ignore character matrices.</p>
-
-<p>To handle this, I figured I could just throw in a switch statement, initializing the corresponding <code>mat</code> with the appropriate type at runtime:</p>
-
-<pre class="lang-cpp prettyprint-override"><code>// [[Rcpp::export]]
-NumericVector GetDiag(SEXP pmat) {
-  XPtr&lt;BigMatrix&gt; xpMat(pMat);
-  // Determine the typeof(pmat), and initialize accordingly:
-  switch(xpMat-&gt;matrix_type()) {
-    case == 1:
-    {
-       // Function expects to return a NumericVector.
-       throw; 
-    }
-    case == 2:
-    {
-      MatrixAccessor&lt;short&gt; mat(*xpMat);
-      break;
-    }
-    case == 4:
-    {
-      MatrixAccessor&lt;int&gt; mat(*xpMat);
-      break;
-    }
-    case == 8:
-    {
-      MatrixAccessor&lt;double&gt; mat(*xpMat);
-    }
-  }
-  MatrixAccessor&lt;double&gt; mat(*xpMat); // allows you to access matrix elements
-
-  NumericVector diag(xpMat-&gt;nrow()); // Assume matrix is square
-  for (int i = 0; i &lt; xpMat-&gt;nrow(); i++) { 
-    diag[i] = mat[i][i];
-  }
-  return diag;
-}
-</code></pre>
-
-<p>However, this results in compiler errors, because I'm redefining <code>mat</code> after it has been declared already in the first <code>case</code>.</p>
-
-<p>The only way I can see to do this, is to write three different <code>diag</code> functions, one for each type, whose code is the same with the exception of the initialization of <code>mat</code>. Is there a better way?</p>
 
         </details>
       </div>
