@@ -39,8 +39,8 @@
 <li><a data-weight='1' href='https://stackoverflow.com/users/1191259/frank'>Frank</a></li></ul>
   </header>
   <nav><ul><li><a href='#qa-2908822'>Speed up the loop operation in R</a></li>
-<li><a href='#qa-11300048'>Rcpp pass by reference vs. by value</a></li>
 <li><a href='#qa-68416435'>Rcpp package doesn&#39;t include Rcpp_precious_remove</a></li>
+<li><a href='#qa-11300048'>Rcpp pass by reference vs. by value</a></li>
 <li><a href='#qa-11275187'>Replace negative values by zero</a></li>
 <li><a href='#qa-6074310'>Using Rcpp within parallel code via snow to make a cluster</a></li>
 <li><a href='#qa-43597632'>Understanding the contents of the Makevars file in R (macros, variables, ~/.R/Makevars and pkg/src/Makevars)</a></li>
@@ -78,7 +78,7 @@
         <div class="viewcount">votes</div>
       </div>
       <div class="views">
-        <span class="score">96.2k</span>
+        <span class="score">96.3k</span>
         <div class="viewcount">views</div>
       </div>
     </div>
@@ -168,6 +168,91 @@
 </code></pre>
 
 <p>Any ideas how to speed up this operation?</p>
+
+        </details>
+      </div>
+    </div>
+
+  </div>
+
+</article> <article class="qa" id="qa-68416435">
+
+  <div class="question">
+
+    <div class="stats">
+      <div class="votes">
+        <span class="score">37</span>
+        <div class="viewcount">votes</div>
+      </div>
+      <div class="views">
+        <span class="score">29.4k</span>
+        <div class="viewcount">views</div>
+      </div>
+    </div>
+
+    <div class="content">
+      <div class="title">
+        <h3>Rcpp package doesn&#39;t include Rcpp_precious_remove</h3>
+        <a href="https://stackoverflow.com/questions/68416435/rcpp-package-doesnt-include-rcpp-precious-remove" target="_blank">[see original]</a>
+      </div>
+      <div class="tags"><span>r</span><span>rcpp</span></div>
+      <div class="author">
+        <span class="gravatar">
+          <a href="https://stackoverflow.com/users/16325624/laxmi-agarwal" target="_blank"><img src="https://www.gravatar.com/avatar/b2fc901c27ca6c4aa10b69b90755cc29?s=128&d=identicon&r=PG&f=1" alt="" width="32" height="32"></a>
+        </span>
+        <a href="https://stackoverflow.com/users/16325624/laxmi-agarwal" target="_blank">Laxmi Agarwal</a>
+        asked Jul 17 '21 at 00:14
+      </div>
+      <div class="body">
+        <details>
+          <summary>Click to expand question</summary>
+          <p>I have been trying to create a database and installed the &quot;DBI&quot; package, but I am still facing this error. I reinstalled DBI and RSQLite package, but they don’t seem to work.</p>
+<pre><code>library(&quot;DBI&quot;)
+con &lt;- dbConnect
+(RSQLite::SQLite(), dbname = &quot;:memory:&quot;)
+dbListTables(con)
+</code></pre>
+<p>Error:</p>
+<blockquote>
+<p>Error in connection_connect(dbname, loadable.extensions, flags, vfs, extended_types) : function 'Rcpp_precious_remove' not provided by package 'Rcpp'</p>
+</blockquote>
+
+        </details>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="answer">
+
+    <div class="stats">
+      <div class="votes answer-accepted-FALSE">
+        <span class="score">37</span>
+        <div class="viewcount">votes</div>
+      </div>
+    </div>
+
+    <div class="content">
+      <div class="author">
+        <span class="gravatar">
+          <a href="https://stackoverflow.com/users/16474343/daniela" target="_blank"><img src="https://lh3.googleusercontent.com/a/AATXAJx-bCrWkAhJO6SMiFsagpguHgnl25UKu7qjUKl6=k-s128" alt="" width="32" height="32"></a>
+        </span>
+        <a href="https://stackoverflow.com/users/16474343/daniela" target="_blank">Daniela</a>
+        replied Jul 18 '21 at 12:46
+      </div>
+      <div class="body">
+        <details>
+          <summary>Click to expand answer</summary>
+          <p>I have been trying to create a database and installed the &quot;DBI&quot; package, but I am still facing this error. I reinstalled DBI and RSQLite package, but they don’t seem to work.</p>
+<pre><code>library(&quot;DBI&quot;)
+con &lt;- dbConnect
+(RSQLite::SQLite(), dbname = &quot;:memory:&quot;)
+dbListTables(con)
+</code></pre>
+<p>Error:</p>
+<blockquote>
+<p>Error in connection_connect(dbname, loadable.extensions, flags, vfs, extended_types) : function 'Rcpp_precious_remove' not provided by package 'Rcpp'</p>
+</blockquote>
 
         </details>
       </div>
@@ -338,85 +423,6 @@ cpp_if &lt;- cxxfunction(signature(a=&quot;numeric&quot;), cpp_if_src, plugin=&q
 
   </div>
 
-</article> <article class="qa" id="qa-68416435">
-
-  <div class="question">
-
-    <div class="stats">
-      <div class="votes">
-        <span class="score">33</span>
-        <div class="viewcount">votes</div>
-      </div>
-      <div class="views">
-        <span class="score">26.6k</span>
-        <div class="viewcount">views</div>
-      </div>
-    </div>
-
-    <div class="content">
-      <div class="title">
-        <h3>Rcpp package doesn&#39;t include Rcpp_precious_remove</h3>
-        <a href="https://stackoverflow.com/questions/68416435/rcpp-package-doesnt-include-rcpp-precious-remove" target="_blank">[see original]</a>
-      </div>
-      <div class="tags"><span>r</span><span>rcpp</span></div>
-      <div class="author">
-        <span class="gravatar">
-          <a href="https://stackoverflow.com/users/16325624/laxmi-agarwal" target="_blank"><img src="https://www.gravatar.com/avatar/b2fc901c27ca6c4aa10b69b90755cc29?s=128&d=identicon&r=PG&f=1" alt="" width="32" height="32"></a>
-        </span>
-        <a href="https://stackoverflow.com/users/16325624/laxmi-agarwal" target="_blank">Laxmi Agarwal</a>
-        asked Jul 17 '21 at 00:14
-      </div>
-      <div class="body">
-        <details>
-          <summary>Click to expand question</summary>
-          <p>I have been trying to create a database and installed &quot;DBI&quot; package but still facing this error.I reinstalled DBI and RSQLite package but they dont seem to work.</p>
-<pre><code>con &lt;- dbConnect
-(RSQLite::SQLite(), dbname = &quot;:memory:&quot;)
-dbListTables(con)```
-
-Error :Error in connection_connect(dbname, loadable.extensions, flags, vfs, extended_types) : function 'Rcpp_precious_remove' not provided by package 'Rcpp'
-</code></pre>
-
-        </details>
-      </div>
-    </div>
-
-  </div>
-
-  <div class="answer">
-
-    <div class="stats">
-      <div class="votes answer-accepted-FALSE">
-        <span class="score">32</span>
-        <div class="viewcount">votes</div>
-      </div>
-    </div>
-
-    <div class="content">
-      <div class="author">
-        <span class="gravatar">
-          <a href="https://stackoverflow.com/users/16474343/daniela" target="_blank"><img src="https://lh3.googleusercontent.com/a/AATXAJx-bCrWkAhJO6SMiFsagpguHgnl25UKu7qjUKl6=k-s128" alt="" width="32" height="32"></a>
-        </span>
-        <a href="https://stackoverflow.com/users/16474343/daniela" target="_blank">Daniela</a>
-        replied Jul 18 '21 at 12:46
-      </div>
-      <div class="body">
-        <details>
-          <summary>Click to expand answer</summary>
-          <p>I have been trying to create a database and installed &quot;DBI&quot; package but still facing this error.I reinstalled DBI and RSQLite package but they dont seem to work.</p>
-<pre><code>con &lt;- dbConnect
-(RSQLite::SQLite(), dbname = &quot;:memory:&quot;)
-dbListTables(con)```
-
-Error :Error in connection_connect(dbname, loadable.extensions, flags, vfs, extended_types) : function 'Rcpp_precious_remove' not provided by package 'Rcpp'
-</code></pre>
-
-        </details>
-      </div>
-    </div>
-
-  </div>
-
 </article> <article class="qa" id="qa-11275187">
 
   <div class="question">
@@ -427,7 +433,7 @@ Error :Error in connection_connect(dbname, loadable.extensions, flags, vfs, exte
         <div class="viewcount">votes</div>
       </div>
       <div class="views">
-        <span class="score">73.3k</span>
+        <span class="score">73.5k</span>
         <div class="viewcount">views</div>
       </div>
     </div>
@@ -473,7 +479,7 @@ for (i in nrow(pred_precipitation))
 
     <div class="stats">
       <div class="votes answer-accepted-TRUE">
-        <span class="score">64</span>
+        <span class="score">65</span>
         <div class="viewcount">votes</div>
       </div>
     </div>
@@ -520,7 +526,7 @@ for (i in nrow(pred_precipitation))
         <div class="viewcount">votes</div>
       </div>
       <div class="views">
-        <span class="score">3.5k</span>
+        <span class="score">3.6k</span>
         <div class="viewcount">views</div>
       </div>
     </div>
@@ -649,7 +655,7 @@ clusterCall(cl, funCPP1, A, 0.5)
         <div class="viewcount">votes</div>
       </div>
       <div class="views">
-        <span class="score">26.3k</span>
+        <span class="score">26.4k</span>
         <div class="viewcount">views</div>
       </div>
     </div>
@@ -967,7 +973,7 @@ Using Armadillo classes as suggested in the answer below make things very slight
         <div class="viewcount">votes</div>
       </div>
       <div class="views">
-        <span class="score">75.4k</span>
+        <span class="score">75.5k</span>
         <div class="viewcount">views</div>
       </div>
     </div>
@@ -1082,7 +1088,7 @@ myMatr=matr;
 
     <div class="stats">
       <div class="votes answer-accepted-FALSE">
-        <span class="score">29</span>
+        <span class="score">30</span>
         <div class="viewcount">votes</div>
       </div>
     </div>
@@ -2040,7 +2046,7 @@ vec randdraw(int d, int n){
         <div class="viewcount">votes</div>
       </div>
       <div class="views">
-        <span class="score">681</span>
+        <span class="score">683</span>
         <div class="viewcount">views</div>
       </div>
     </div>
@@ -2535,7 +2541,7 @@ My solution so far is to export both functions in the Namespace file which cause
         <div class="viewcount">votes</div>
       </div>
       <div class="views">
-        <span class="score">832</span>
+        <span class="score">835</span>
         <div class="viewcount">views</div>
       </div>
     </div>
@@ -3010,7 +3016,7 @@ Rcpp::List callOptimFun(SEXP x) {
         <div class="viewcount">votes</div>
       </div>
       <div class="views">
-        <span class="score">18.5k</span>
+        <span class="score">18.6k</span>
         <div class="viewcount">views</div>
       </div>
     </div>
@@ -3959,7 +3965,7 @@ data.table(GRP %&gt;% mutate_each(funs(blah=na.locf(., na.rm=FALSE))))
         <div class="viewcount">votes</div>
       </div>
       <div class="views">
-        <span class="score">534</span>
+        <span class="score">536</span>
         <div class="viewcount">views</div>
       </div>
     </div>
