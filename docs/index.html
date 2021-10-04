@@ -53,8 +53,8 @@
 <li><a href='#qa-38016851'>Call R functions in Rcpp</a></li>
 <li><a href='#qa-22828361'>Rcpp function to select (and to return) a sub-dataframe</a></li>
 <li><a href='#qa-21225662'>calling a user-defined R function from C++ using Rcpp</a></li>
-<li><a href='#qa-43221681'>Changing R&#39;s Seed from Rcpp to Guarantee Reproducibility</a></li>
 <li><a href='#qa-51110244'>In Rcpp, how to get a user-defined structure from C into R</a></li>
+<li><a href='#qa-43221681'>Changing R&#39;s Seed from Rcpp to Guarantee Reproducibility</a></li>
 <li><a href='#qa-18570526'>How to build a R package which use Rcpp with external c++ libraries?</a></li>
 <li><a href='#qa-9949202'>1-dimensional Matrix is changed to a vector in R</a></li>
 <li><a href='#qa-45549992'>Group vector on conditional sum</a></li>
@@ -65,8 +65,8 @@
 <li><a href='#qa-3088650'>How do I create a list of vectors in Rcpp?</a></li>
 <li><a href='#qa-41602024'>Should I prefer Rcpp::NumericVector over std::vector?</a></li>
 <li><a href='#qa-48363076'>Declare a variable as a reference in Rcpp</a></li>
-<li><a href='#qa-30628333'>Building a tiny R package with CUDA and Rcpp</a></li>
 <li><a href='#qa-37060211'>efficiently locf by groups in a single R data.table</a></li>
+<li><a href='#qa-30628333'>Building a tiny R package with CUDA and Rcpp</a></li>
 <li><a href='#qa-19686892'>passing unevaluated expressions to C/C++</a></li></ul></nav>
   <section><article class="qa" id="qa-2908822">
 
@@ -78,7 +78,7 @@
         <div class="viewcount">votes</div>
       </div>
       <div class="views">
-        <span class="score">96.6k</span>
+        <span class="score">96.8k</span>
         <div class="viewcount">views</div>
       </div>
     </div>
@@ -185,7 +185,7 @@
         <div class="viewcount">votes</div>
       </div>
       <div class="views">
-        <span class="score">35.3k</span>
+        <span class="score">38k</span>
         <div class="viewcount">views</div>
       </div>
     </div>
@@ -227,7 +227,7 @@ dbListTables(con)
 
     <div class="stats">
       <div class="votes answer-accepted-FALSE">
-        <span class="score">40</span>
+        <span class="score">41</span>
         <div class="viewcount">votes</div>
       </div>
     </div>
@@ -433,7 +433,7 @@ cpp_if &lt;- cxxfunction(signature(a=&quot;numeric&quot;), cpp_if_src, plugin=&q
         <div class="viewcount">votes</div>
       </div>
       <div class="views">
-        <span class="score">74k</span>
+        <span class="score">74.2k</span>
         <div class="viewcount">views</div>
       </div>
     </div>
@@ -655,7 +655,7 @@ clusterCall(cl, funCPP1, A, 0.5)
         <div class="viewcount">votes</div>
       </div>
       <div class="views">
-        <span class="score">26.5k</span>
+        <span class="score">26.6k</span>
         <div class="viewcount">views</div>
       </div>
     </div>
@@ -973,7 +973,7 @@ Using Armadillo classes as suggested in the answer below make things very slight
         <div class="viewcount">votes</div>
       </div>
       <div class="views">
-        <span class="score">75.8k</span>
+        <span class="score">75.9k</span>
         <div class="viewcount">views</div>
       </div>
     </div>
@@ -1927,115 +1927,6 @@ int mySuminC(){
 
   </div>
 
-</article> <article class="qa" id="qa-43221681">
-
-  <div class="question">
-
-    <div class="stats">
-      <div class="votes">
-        <span class="score">4</span>
-        <div class="viewcount">votes</div>
-      </div>
-      <div class="views">
-        <span class="score">1.4k</span>
-        <div class="viewcount">views</div>
-      </div>
-    </div>
-
-    <div class="content">
-      <div class="title">
-        <h3>Changing R&#39;s Seed from Rcpp to Guarantee Reproducibility</h3>
-        <a href="https://stackoverflow.com/questions/43221681/changing-rs-seed-from-rcpp-to-guarantee-reproducibility" target="_blank">[see original]</a>
-      </div>
-      <div class="tags"><span>c++</span><span>r</span><span>rcpp</span></div>
-      <div class="author">
-        <span class="gravatar">
-          <a href="https://stackoverflow.com/users/6378990/yuge-hao" target="_blank"><img src="https://graph.facebook.com/136244556727935/picture?type=large" alt="" width="32" height="32"></a>
-        </span>
-        <a href="https://stackoverflow.com/users/6378990/yuge-hao" target="_blank">Yuge Hao</a>
-        asked Apr 05 '17 at 04:13
-      </div>
-      <div class="body">
-        <details>
-          <summary>Click to expand question</summary>
-          <p>I am trying to write a function r(d, n) in rcpp. The function returns n random draws from normal distribution N(0, d). This function should be well defined, therefore the function should return the same draws whenever the d and n do not change their value. </p>
-
-<p>This won't be a problem if d is restricted to be integer, in which case I can set seed and do the job</p>
-
-<pre><code>// set seed
-// [[Rcpp::export]]
-void set_seed(unsigned int seed) {
-  Rcpp::Environment base_env("package:base");
-  Rcpp::Function set_seed_r = base_env["set.seed"];
-  set_seed_r(seed);  
-}
-
-// function r(d, n)
-// [[Rcpp::export]]
-vec randdraw(int d, int n){
-  set_seed(d);
-  vec out = randn(n);
-  return out;
-}
-</code></pre>
-
-<p>But clearly I don't want to restrict d to be integer. Ideally d should be double. Any thoughts? Thank you!</p>
-
-        </details>
-      </div>
-    </div>
-
-  </div>
-
-  <div class="answer">
-
-    <div class="stats">
-      <div class="votes answer-accepted-FALSE">
-        <span class="score">6</span>
-        <div class="viewcount">votes</div>
-      </div>
-    </div>
-
-    <div class="content">
-      <div class="author">
-        <span class="gravatar">
-          <a href="https://stackoverflow.com/users/1345455/coatless" target="_blank"><img src="https://i.stack.imgur.com/DrBTs.jpg?s=128&g=1" alt="" width="32" height="32"></a>
-        </span>
-        <a href="https://stackoverflow.com/users/1345455/coatless" target="_blank">coatless</a>
-        replied Apr 05 '17 at 05:58
-      </div>
-      <div class="body">
-        <details>
-          <summary>Click to expand answer</summary>
-          <p>I am trying to write a function r(d, n) in rcpp. The function returns n random draws from normal distribution N(0, d). This function should be well defined, therefore the function should return the same draws whenever the d and n do not change their value. </p>
-
-<p>This won't be a problem if d is restricted to be integer, in which case I can set seed and do the job</p>
-
-<pre><code>// set seed
-// [[Rcpp::export]]
-void set_seed(unsigned int seed) {
-  Rcpp::Environment base_env("package:base");
-  Rcpp::Function set_seed_r = base_env["set.seed"];
-  set_seed_r(seed);  
-}
-
-// function r(d, n)
-// [[Rcpp::export]]
-vec randdraw(int d, int n){
-  set_seed(d);
-  vec out = randn(n);
-  return out;
-}
-</code></pre>
-
-<p>But clearly I don't want to restrict d to be integer. Ideally d should be double. Any thoughts? Thank you!</p>
-
-        </details>
-      </div>
-    </div>
-
-  </div>
-
 </article> <article class="qa" id="qa-51110244">
 
   <div class="question">
@@ -2046,7 +1937,7 @@ vec randdraw(int d, int n){
         <div class="viewcount">votes</div>
       </div>
       <div class="views">
-        <span class="score">694</span>
+        <span class="score">699</span>
         <div class="viewcount">views</div>
       </div>
     </div>
@@ -2157,6 +2048,115 @@ vec randdraw(int d, int n){
 
   </div>
 
+</article> <article class="qa" id="qa-43221681">
+
+  <div class="question">
+
+    <div class="stats">
+      <div class="votes">
+        <span class="score">4</span>
+        <div class="viewcount">votes</div>
+      </div>
+      <div class="views">
+        <span class="score">1.4k</span>
+        <div class="viewcount">views</div>
+      </div>
+    </div>
+
+    <div class="content">
+      <div class="title">
+        <h3>Changing R&#39;s Seed from Rcpp to Guarantee Reproducibility</h3>
+        <a href="https://stackoverflow.com/questions/43221681/changing-rs-seed-from-rcpp-to-guarantee-reproducibility" target="_blank">[see original]</a>
+      </div>
+      <div class="tags"><span>c++</span><span>r</span><span>rcpp</span></div>
+      <div class="author">
+        <span class="gravatar">
+          <a href="https://stackoverflow.com/users/6378990/yuge-hao" target="_blank"><img src="https://graph.facebook.com/136244556727935/picture?type=large" alt="" width="32" height="32"></a>
+        </span>
+        <a href="https://stackoverflow.com/users/6378990/yuge-hao" target="_blank">Yuge Hao</a>
+        asked Apr 05 '17 at 04:13
+      </div>
+      <div class="body">
+        <details>
+          <summary>Click to expand question</summary>
+          <p>I am trying to write a function r(d, n) in rcpp. The function returns n random draws from normal distribution N(0, d). This function should be well defined, therefore the function should return the same draws whenever the d and n do not change their value. </p>
+
+<p>This won't be a problem if d is restricted to be integer, in which case I can set seed and do the job</p>
+
+<pre><code>// set seed
+// [[Rcpp::export]]
+void set_seed(unsigned int seed) {
+  Rcpp::Environment base_env("package:base");
+  Rcpp::Function set_seed_r = base_env["set.seed"];
+  set_seed_r(seed);  
+}
+
+// function r(d, n)
+// [[Rcpp::export]]
+vec randdraw(int d, int n){
+  set_seed(d);
+  vec out = randn(n);
+  return out;
+}
+</code></pre>
+
+<p>But clearly I don't want to restrict d to be integer. Ideally d should be double. Any thoughts? Thank you!</p>
+
+        </details>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="answer">
+
+    <div class="stats">
+      <div class="votes answer-accepted-FALSE">
+        <span class="score">6</span>
+        <div class="viewcount">votes</div>
+      </div>
+    </div>
+
+    <div class="content">
+      <div class="author">
+        <span class="gravatar">
+          <a href="https://stackoverflow.com/users/1345455/coatless" target="_blank"><img src="https://i.stack.imgur.com/DrBTs.jpg?s=128&g=1" alt="" width="32" height="32"></a>
+        </span>
+        <a href="https://stackoverflow.com/users/1345455/coatless" target="_blank">coatless</a>
+        replied Apr 05 '17 at 05:58
+      </div>
+      <div class="body">
+        <details>
+          <summary>Click to expand answer</summary>
+          <p>I am trying to write a function r(d, n) in rcpp. The function returns n random draws from normal distribution N(0, d). This function should be well defined, therefore the function should return the same draws whenever the d and n do not change their value. </p>
+
+<p>This won't be a problem if d is restricted to be integer, in which case I can set seed and do the job</p>
+
+<pre><code>// set seed
+// [[Rcpp::export]]
+void set_seed(unsigned int seed) {
+  Rcpp::Environment base_env("package:base");
+  Rcpp::Function set_seed_r = base_env["set.seed"];
+  set_seed_r(seed);  
+}
+
+// function r(d, n)
+// [[Rcpp::export]]
+vec randdraw(int d, int n){
+  set_seed(d);
+  vec out = randn(n);
+  return out;
+}
+</code></pre>
+
+<p>But clearly I don't want to restrict d to be integer. Ideally d should be double. Any thoughts? Thank you!</p>
+
+        </details>
+      </div>
+    </div>
+
+  </div>
+
 </article> <article class="qa" id="qa-18570526">
 
   <div class="question">
@@ -2205,7 +2205,7 @@ vec randdraw(int d, int n){
 
     <div class="stats">
       <div class="votes answer-accepted-FALSE">
-        <span class="score">15</span>
+        <span class="score">14</span>
         <div class="viewcount">votes</div>
       </div>
     </div>
@@ -2341,7 +2341,7 @@ I would like to keep 1-D matrix as a matrix. Actually, I need to throw many kind
         <div class="viewcount">votes</div>
       </div>
       <div class="views">
-        <span class="score">346</span>
+        <span class="score">350</span>
         <div class="viewcount">views</div>
       </div>
     </div>
@@ -2541,7 +2541,7 @@ My solution so far is to export both functions in the Namespace file which cause
         <div class="viewcount">votes</div>
       </div>
       <div class="views">
-        <span class="score">839</span>
+        <span class="score">840</span>
         <div class="viewcount">views</div>
       </div>
     </div>
@@ -2760,7 +2760,7 @@ Rcpp::List callOptimFun(SEXP x) {
         <div class="viewcount">votes</div>
       </div>
       <div class="views">
-        <span class="score">480</span>
+        <span class="score">482</span>
         <div class="viewcount">views</div>
       </div>
     </div>
@@ -3012,7 +3012,7 @@ Rcpp::List callOptimFun(SEXP x) {
 
     <div class="stats">
       <div class="votes">
-        <span class="score">33</span>
+        <span class="score">34</span>
         <div class="viewcount">votes</div>
       </div>
       <div class="views">
@@ -3063,7 +3063,7 @@ Rcpp::List callOptimFun(SEXP x) {
 
     <div class="stats">
       <div class="votes answer-accepted-TRUE">
-        <span class="score">48</span>
+        <span class="score">49</span>
         <div class="viewcount">votes</div>
       </div>
     </div>
@@ -3318,6 +3318,195 @@ x_i = value;
 <pre><code>error: non-const lvalue reference to type 'IntegerVector'
       (aka 'Vector&lt;13&gt;') cannot bind to a temporary of type 'Proxy' (aka 'generic_proxy&lt;19&gt;')
 </code></pre>
+
+        </details>
+      </div>
+    </div>
+
+  </div>
+
+</article> <article class="qa" id="qa-37060211">
+
+  <div class="question">
+
+    <div class="stats">
+      <div class="votes">
+        <span class="score">12</span>
+        <div class="viewcount">votes</div>
+      </div>
+      <div class="views">
+        <span class="score">2.8k</span>
+        <div class="viewcount">views</div>
+      </div>
+    </div>
+
+    <div class="content">
+      <div class="title">
+        <h3>efficiently locf by groups in a single R data.table</h3>
+        <a href="https://stackoverflow.com/questions/37060211/efficiently-locf-by-groups-in-a-single-r-data-table" target="_blank">[see original]</a>
+      </div>
+      <div class="tags"><span>r</span><span>dataframe</span><span>data.table</span><span>dplyr</span><span>rcpp</span></div>
+      <div class="author">
+        <span class="gravatar">
+          <a href="https://stackoverflow.com/users/280708/carl-anderson" target="_blank"><img src="https://i.stack.imgur.com/NS0O4.png?s=128&g=1" alt="" width="32" height="32"></a>
+        </span>
+        <a href="https://stackoverflow.com/users/280708/carl-anderson" target="_blank">carl.anderson</a>
+        asked May 05 '16 at 20:59
+      </div>
+      <div class="body">
+        <details>
+          <summary>Click to expand question</summary>
+          <p>I have a large, wide <code>data.table</code> (20m rows) keyed by a person ID but with lots of columns (~150) that have lots of null values.  Each column is a recorded state / attribute that I wish to carry forward for each person.  Each person may have anywhere from 10 to 10,000 observations and there are about 500,000 people in the set.  Values from one person can not 'bleed' into the following person, so my solution must respect the person ID column and group appropriately.</p>
+
+<p>For demonstration purposes - here's a very small sample input:</p>
+
+<pre><code>DT = data.table(
+  id=c(1, 1, 1, 1, 2, 2, 2, 2, 3, 3, 3, 3),
+  aa=c("A", NA, "B", "C", NA, NA, "D", "E", "F", NA, NA, NA),
+  bb=c(NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA),
+  cc=c(1, NA, NA, NA, NA, 4, NA, 5, 6, NA, 7, NA)
+)
+</code></pre>
+
+<p>It looks like this:</p>
+
+<pre><code>    id aa bb cc
+ 1:  1  A NA  1
+ 2:  1 NA NA NA
+ 3:  1  B NA NA
+ 4:  1  C NA NA
+ 5:  2 NA NA NA
+ 6:  2 NA NA  4
+ 7:  2  D NA NA
+ 8:  2  E NA  5
+ 9:  3  F NA  6
+10:  3 NA NA NA
+11:  3 NA NA  7
+12:  3 NA NA NA
+</code></pre>
+
+<p>My expected output looks like this:</p>
+
+<pre><code>    id aa bb cc
+ 1:  1  A NA  1
+ 2:  1  A NA  1
+ 3:  1  B NA  1
+ 4:  1  C NA  1
+ 5:  2 NA NA NA
+ 6:  2 NA NA  4
+ 7:  2  D NA  4
+ 8:  2  E NA  5
+ 9:  3  F NA  6
+10:  3  F NA  6
+11:  3  F NA  7
+12:  3  F NA  7
+</code></pre>
+
+<p>I've found a <code>data.table</code> solution that works, but it's terribly slow on my large data sets:</p>
+
+<pre><code>DT[, na.locf(.SD, na.rm=FALSE), by=id]
+</code></pre>
+
+<p>I've found equivalent solutions using dplyr that are equally slow.</p>
+
+<pre><code>GRP = DT %&gt;% group_by(id)
+data.table(GRP %&gt;% mutate_each(funs(blah=na.locf(., na.rm=FALSE))))
+</code></pre>
+
+<p>I was hopeful that I could come up with a rolling 'self' join using the <code>data.table</code> functionality, but I just can't seem to get it right (I suspect I would need to use <code>.N</code> but I just haven't figured it out).</p>
+
+<p>At this point I'm thinking I'll have to write something in Rcpp to efficiently apply the grouped locf.  </p>
+
+<p>I'm new to R, but I'm not new to C++ - so I'm confident I can do it.  I just feel like there should be an efficient way to do this in R using <code>data.table</code>.</p>
+
+        </details>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="answer">
+
+    <div class="stats">
+      <div class="votes answer-accepted-TRUE">
+        <span class="score">24</span>
+        <div class="viewcount">votes</div>
+      </div>
+    </div>
+
+    <div class="content">
+      <div class="author">
+        <span class="gravatar">
+          <a href="https://stackoverflow.com/users/2414948/alexis-laz" target="_blank"><img src="https://www.gravatar.com/avatar/f4a4db8db8724f88b7de4340a42778a5?s=128&d=identicon&r=PG" alt="" width="32" height="32"></a>
+        </span>
+        <a href="https://stackoverflow.com/users/2414948/alexis-laz" target="_blank">alexis_laz</a>
+        replied May 06 '16 at 09:16
+      </div>
+      <div class="body">
+        <details>
+          <summary>Click to expand answer</summary>
+          <p>I have a large, wide <code>data.table</code> (20m rows) keyed by a person ID but with lots of columns (~150) that have lots of null values.  Each column is a recorded state / attribute that I wish to carry forward for each person.  Each person may have anywhere from 10 to 10,000 observations and there are about 500,000 people in the set.  Values from one person can not 'bleed' into the following person, so my solution must respect the person ID column and group appropriately.</p>
+
+<p>For demonstration purposes - here's a very small sample input:</p>
+
+<pre><code>DT = data.table(
+  id=c(1, 1, 1, 1, 2, 2, 2, 2, 3, 3, 3, 3),
+  aa=c("A", NA, "B", "C", NA, NA, "D", "E", "F", NA, NA, NA),
+  bb=c(NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA),
+  cc=c(1, NA, NA, NA, NA, 4, NA, 5, 6, NA, 7, NA)
+)
+</code></pre>
+
+<p>It looks like this:</p>
+
+<pre><code>    id aa bb cc
+ 1:  1  A NA  1
+ 2:  1 NA NA NA
+ 3:  1  B NA NA
+ 4:  1  C NA NA
+ 5:  2 NA NA NA
+ 6:  2 NA NA  4
+ 7:  2  D NA NA
+ 8:  2  E NA  5
+ 9:  3  F NA  6
+10:  3 NA NA NA
+11:  3 NA NA  7
+12:  3 NA NA NA
+</code></pre>
+
+<p>My expected output looks like this:</p>
+
+<pre><code>    id aa bb cc
+ 1:  1  A NA  1
+ 2:  1  A NA  1
+ 3:  1  B NA  1
+ 4:  1  C NA  1
+ 5:  2 NA NA NA
+ 6:  2 NA NA  4
+ 7:  2  D NA  4
+ 8:  2  E NA  5
+ 9:  3  F NA  6
+10:  3  F NA  6
+11:  3  F NA  7
+12:  3  F NA  7
+</code></pre>
+
+<p>I've found a <code>data.table</code> solution that works, but it's terribly slow on my large data sets:</p>
+
+<pre><code>DT[, na.locf(.SD, na.rm=FALSE), by=id]
+</code></pre>
+
+<p>I've found equivalent solutions using dplyr that are equally slow.</p>
+
+<pre><code>GRP = DT %&gt;% group_by(id)
+data.table(GRP %&gt;% mutate_each(funs(blah=na.locf(., na.rm=FALSE))))
+</code></pre>
+
+<p>I was hopeful that I could come up with a rolling 'self' join using the <code>data.table</code> functionality, but I just can't seem to get it right (I suspect I would need to use <code>.N</code> but I just haven't figured it out).</p>
+
+<p>At this point I'm thinking I'll have to write something in Rcpp to efficiently apply the grouped locf.  </p>
+
+<p>I'm new to R, but I'm not new to C++ - so I'm confident I can do it.  I just feel like there should be an efficient way to do this in R using <code>data.table</code>.</p>
 
         </details>
       </div>
@@ -3766,195 +3955,6 @@ Slot "y":
 
   </div>
 
-</article> <article class="qa" id="qa-37060211">
-
-  <div class="question">
-
-    <div class="stats">
-      <div class="votes">
-        <span class="score">12</span>
-        <div class="viewcount">votes</div>
-      </div>
-      <div class="views">
-        <span class="score">2.8k</span>
-        <div class="viewcount">views</div>
-      </div>
-    </div>
-
-    <div class="content">
-      <div class="title">
-        <h3>efficiently locf by groups in a single R data.table</h3>
-        <a href="https://stackoverflow.com/questions/37060211/efficiently-locf-by-groups-in-a-single-r-data-table" target="_blank">[see original]</a>
-      </div>
-      <div class="tags"><span>r</span><span>dataframe</span><span>data.table</span><span>dplyr</span><span>rcpp</span></div>
-      <div class="author">
-        <span class="gravatar">
-          <a href="https://stackoverflow.com/users/280708/carl-anderson" target="_blank"><img src="https://i.stack.imgur.com/NS0O4.png?s=128&g=1" alt="" width="32" height="32"></a>
-        </span>
-        <a href="https://stackoverflow.com/users/280708/carl-anderson" target="_blank">carl.anderson</a>
-        asked May 05 '16 at 20:59
-      </div>
-      <div class="body">
-        <details>
-          <summary>Click to expand question</summary>
-          <p>I have a large, wide <code>data.table</code> (20m rows) keyed by a person ID but with lots of columns (~150) that have lots of null values.  Each column is a recorded state / attribute that I wish to carry forward for each person.  Each person may have anywhere from 10 to 10,000 observations and there are about 500,000 people in the set.  Values from one person can not 'bleed' into the following person, so my solution must respect the person ID column and group appropriately.</p>
-
-<p>For demonstration purposes - here's a very small sample input:</p>
-
-<pre><code>DT = data.table(
-  id=c(1, 1, 1, 1, 2, 2, 2, 2, 3, 3, 3, 3),
-  aa=c("A", NA, "B", "C", NA, NA, "D", "E", "F", NA, NA, NA),
-  bb=c(NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA),
-  cc=c(1, NA, NA, NA, NA, 4, NA, 5, 6, NA, 7, NA)
-)
-</code></pre>
-
-<p>It looks like this:</p>
-
-<pre><code>    id aa bb cc
- 1:  1  A NA  1
- 2:  1 NA NA NA
- 3:  1  B NA NA
- 4:  1  C NA NA
- 5:  2 NA NA NA
- 6:  2 NA NA  4
- 7:  2  D NA NA
- 8:  2  E NA  5
- 9:  3  F NA  6
-10:  3 NA NA NA
-11:  3 NA NA  7
-12:  3 NA NA NA
-</code></pre>
-
-<p>My expected output looks like this:</p>
-
-<pre><code>    id aa bb cc
- 1:  1  A NA  1
- 2:  1  A NA  1
- 3:  1  B NA  1
- 4:  1  C NA  1
- 5:  2 NA NA NA
- 6:  2 NA NA  4
- 7:  2  D NA  4
- 8:  2  E NA  5
- 9:  3  F NA  6
-10:  3  F NA  6
-11:  3  F NA  7
-12:  3  F NA  7
-</code></pre>
-
-<p>I've found a <code>data.table</code> solution that works, but it's terribly slow on my large data sets:</p>
-
-<pre><code>DT[, na.locf(.SD, na.rm=FALSE), by=id]
-</code></pre>
-
-<p>I've found equivalent solutions using dplyr that are equally slow.</p>
-
-<pre><code>GRP = DT %&gt;% group_by(id)
-data.table(GRP %&gt;% mutate_each(funs(blah=na.locf(., na.rm=FALSE))))
-</code></pre>
-
-<p>I was hopeful that I could come up with a rolling 'self' join using the <code>data.table</code> functionality, but I just can't seem to get it right (I suspect I would need to use <code>.N</code> but I just haven't figured it out).</p>
-
-<p>At this point I'm thinking I'll have to write something in Rcpp to efficiently apply the grouped locf.  </p>
-
-<p>I'm new to R, but I'm not new to C++ - so I'm confident I can do it.  I just feel like there should be an efficient way to do this in R using <code>data.table</code>.</p>
-
-        </details>
-      </div>
-    </div>
-
-  </div>
-
-  <div class="answer">
-
-    <div class="stats">
-      <div class="votes answer-accepted-TRUE">
-        <span class="score">24</span>
-        <div class="viewcount">votes</div>
-      </div>
-    </div>
-
-    <div class="content">
-      <div class="author">
-        <span class="gravatar">
-          <a href="https://stackoverflow.com/users/2414948/alexis-laz" target="_blank"><img src="https://www.gravatar.com/avatar/f4a4db8db8724f88b7de4340a42778a5?s=128&d=identicon&r=PG" alt="" width="32" height="32"></a>
-        </span>
-        <a href="https://stackoverflow.com/users/2414948/alexis-laz" target="_blank">alexis_laz</a>
-        replied May 06 '16 at 09:16
-      </div>
-      <div class="body">
-        <details>
-          <summary>Click to expand answer</summary>
-          <p>I have a large, wide <code>data.table</code> (20m rows) keyed by a person ID but with lots of columns (~150) that have lots of null values.  Each column is a recorded state / attribute that I wish to carry forward for each person.  Each person may have anywhere from 10 to 10,000 observations and there are about 500,000 people in the set.  Values from one person can not 'bleed' into the following person, so my solution must respect the person ID column and group appropriately.</p>
-
-<p>For demonstration purposes - here's a very small sample input:</p>
-
-<pre><code>DT = data.table(
-  id=c(1, 1, 1, 1, 2, 2, 2, 2, 3, 3, 3, 3),
-  aa=c("A", NA, "B", "C", NA, NA, "D", "E", "F", NA, NA, NA),
-  bb=c(NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA),
-  cc=c(1, NA, NA, NA, NA, 4, NA, 5, 6, NA, 7, NA)
-)
-</code></pre>
-
-<p>It looks like this:</p>
-
-<pre><code>    id aa bb cc
- 1:  1  A NA  1
- 2:  1 NA NA NA
- 3:  1  B NA NA
- 4:  1  C NA NA
- 5:  2 NA NA NA
- 6:  2 NA NA  4
- 7:  2  D NA NA
- 8:  2  E NA  5
- 9:  3  F NA  6
-10:  3 NA NA NA
-11:  3 NA NA  7
-12:  3 NA NA NA
-</code></pre>
-
-<p>My expected output looks like this:</p>
-
-<pre><code>    id aa bb cc
- 1:  1  A NA  1
- 2:  1  A NA  1
- 3:  1  B NA  1
- 4:  1  C NA  1
- 5:  2 NA NA NA
- 6:  2 NA NA  4
- 7:  2  D NA  4
- 8:  2  E NA  5
- 9:  3  F NA  6
-10:  3  F NA  6
-11:  3  F NA  7
-12:  3  F NA  7
-</code></pre>
-
-<p>I've found a <code>data.table</code> solution that works, but it's terribly slow on my large data sets:</p>
-
-<pre><code>DT[, na.locf(.SD, na.rm=FALSE), by=id]
-</code></pre>
-
-<p>I've found equivalent solutions using dplyr that are equally slow.</p>
-
-<pre><code>GRP = DT %&gt;% group_by(id)
-data.table(GRP %&gt;% mutate_each(funs(blah=na.locf(., na.rm=FALSE))))
-</code></pre>
-
-<p>I was hopeful that I could come up with a rolling 'self' join using the <code>data.table</code> functionality, but I just can't seem to get it right (I suspect I would need to use <code>.N</code> but I just haven't figured it out).</p>
-
-<p>At this point I'm thinking I'll have to write something in Rcpp to efficiently apply the grouped locf.  </p>
-
-<p>I'm new to R, but I'm not new to C++ - so I'm confident I can do it.  I just feel like there should be an efficient way to do this in R using <code>data.table</code>.</p>
-
-        </details>
-      </div>
-    </div>
-
-  </div>
-
 </article> <article class="qa" id="qa-19686892">
 
   <div class="question">
@@ -3965,7 +3965,7 @@ data.table(GRP %&gt;% mutate_each(funs(blah=na.locf(., na.rm=FALSE))))
         <div class="viewcount">votes</div>
       </div>
       <div class="views">
-        <span class="score">539</span>
+        <span class="score">540</span>
         <div class="viewcount">views</div>
       </div>
     </div>
