@@ -9,6 +9,7 @@
     <h1>Rcpp Top StackOverflow Q&A</h1>
     <h2>Top users by number of answers</h2>
     <ul class="cloud"><li><a data-weight='1' href='https://stackoverflow.com/users/16474343/daniela'>Daniela</a></li>
+<li><a data-weight='1' href='https://stackoverflow.com/users/8203448/henine'>henine</a></li>
 <li><a data-weight='1' href='https://stackoverflow.com/users/168747/marek'>Marek</a></li>
 <li><a data-weight='1' href='https://stackoverflow.com/users/980833/josh-obrien'>Josh O&#39;Brien</a></li>
 <li><a data-weight='1' href='https://stackoverflow.com/users/1922182/politicaleconomist'>politicalEconomist</a></li>
@@ -33,7 +34,6 @@
 <li><a data-weight='1' href='https://stackoverflow.com/users/65863/remy-lebeau'>Remy Lebeau</a></li>
 <li><a data-weight='1' href='https://stackoverflow.com/users/324364/joran'>joran</a></li>
 <li><a data-weight='1' href='https://stackoverflow.com/users/559784/arun'>Arun</a></li>
-<li><a data-weight='1' href='https://stackoverflow.com/users/4770166/rhertel'>RHertel</a></li>
 <li><a data-weight='1' href='https://stackoverflow.com/users/1315472/florian'>Florian</a></li>
 <li><a data-weight='1' href='https://stackoverflow.com/users/1968/konrad-rudolph'>Konrad Rudolph</a></li>
 <li><a data-weight='1' href='https://stackoverflow.com/users/173985/thell'>Thell</a></li>
@@ -57,6 +57,7 @@
 <li><a href='#qa-51110244'>In Rcpp, how to get a user-defined structure from C into R</a></li>
 <li><a href='#qa-43221681'>Changing R&#39;s Seed from Rcpp to Guarantee Reproducibility</a></li>
 <li><a href='#qa-18570526'>How to build a R package which use Rcpp with external c++ libraries?</a></li>
+<li><a href='#qa-25062383'>Can&#39;t run Rcpp function in foreach - &quot;NULL value passed as symbol address&quot;</a></li>
 <li><a href='#qa-46039132'>Renaming and Hiding an Exported Rcpp function in an R Package</a></li>
 <li><a href='#qa-9949202'>1-dimensional Matrix is changed to a vector in R</a></li>
 <li><a href='#qa-45549992'>Group vector on conditional sum</a></li>
@@ -67,19 +68,18 @@
 <li><a href='#qa-41602024'>Should I prefer Rcpp::NumericVector over std::vector?</a></li>
 <li><a href='#qa-48363076'>Declare a variable as a reference in Rcpp</a></li>
 <li><a href='#qa-37060211'>efficiently locf by groups in a single R data.table</a></li>
-<li><a href='#qa-30628333'>Building a tiny R package with CUDA and Rcpp</a></li>
-<li><a href='#qa-19686892'>passing unevaluated expressions to C/C++</a></li></ul></nav>
+<li><a href='#qa-30628333'>Building a tiny R package with CUDA and Rcpp</a></li></ul></nav>
   <section><article class="qa" id="qa-2908822">
 
   <div class="question">
 
     <div class="stats">
       <div class="votes">
-        <span class="score">200</span>
+        <span class="score">201</span>
         <div class="viewcount">votes</div>
       </div>
       <div class="views">
-        <span class="score">98k</span>
+        <span class="score">98.2k</span>
         <div class="viewcount">views</div>
       </div>
     </div>
@@ -132,7 +132,7 @@
 
     <div class="stats">
       <div class="votes answer-accepted-FALSE">
-        <span class="score">447</span>
+        <span class="score">448</span>
         <div class="viewcount">votes</div>
       </div>
     </div>
@@ -186,7 +186,7 @@
         <div class="viewcount">votes</div>
       </div>
       <div class="views">
-        <span class="score">51.8k</span>
+        <span class="score">53.7k</span>
         <div class="viewcount">views</div>
       </div>
     </div>
@@ -228,7 +228,7 @@ dbListTables(con)
 
     <div class="stats">
       <div class="votes answer-accepted-FALSE">
-        <span class="score">50</span>
+        <span class="score">51</span>
         <div class="viewcount">votes</div>
       </div>
     </div>
@@ -271,7 +271,7 @@ dbListTables(con)
         <div class="viewcount">votes</div>
       </div>
       <div class="views">
-        <span class="score">5.2k</span>
+        <span class="score">5.3k</span>
         <div class="viewcount">views</div>
       </div>
     </div>
@@ -434,7 +434,7 @@ cpp_if &lt;- cxxfunction(signature(a=&quot;numeric&quot;), cpp_if_src, plugin=&q
         <div class="viewcount">votes</div>
       </div>
       <div class="views">
-        <span class="score">75.9k</span>
+        <span class="score">76.2k</span>
         <div class="viewcount">views</div>
       </div>
     </div>
@@ -656,7 +656,7 @@ clusterCall(cl, funCPP1, A, 0.5)
         <div class="viewcount">votes</div>
       </div>
       <div class="views">
-        <span class="score">27.2k</span>
+        <span class="score">27.3k</span>
         <div class="viewcount">views</div>
       </div>
     </div>
@@ -974,7 +974,7 @@ Using Armadillo classes as suggested in the answer below make things very slight
         <div class="viewcount">votes</div>
       </div>
       <div class="views">
-        <span class="score">76.6k</span>
+        <span class="score">76.7k</span>
         <div class="viewcount">views</div>
       </div>
     </div>
@@ -1009,7 +1009,7 @@ Using Armadillo classes as suggested in the answer below make things very slight
 
     <div class="stats">
       <div class="votes answer-accepted-TRUE">
-        <span class="score">52</span>
+        <span class="score">53</span>
         <div class="viewcount">votes</div>
       </div>
     </div>
@@ -1483,7 +1483,7 @@ double std(NumericVector x)
 
     <div class="stats">
       <div class="votes answer-accepted-FALSE">
-        <span class="score">14</span>
+        <span class="score">15</span>
         <div class="viewcount">votes</div>
       </div>
     </div>
@@ -1938,7 +1938,7 @@ int mySuminC(){
         <div class="viewcount">votes</div>
       </div>
       <div class="views">
-        <span class="score">727</span>
+        <span class="score">733</span>
         <div class="viewcount">views</div>
       </div>
     </div>
@@ -2228,6 +2228,193 @@ vec randdraw(int d, int n){
 2.External c++ source file 
 3.External c++ link library file path
 </code></pre>
+
+        </details>
+      </div>
+    </div>
+
+  </div>
+
+</article> <article class="qa" id="qa-25062383">
+
+  <div class="question">
+
+    <div class="stats">
+      <div class="votes">
+        <span class="score">27</span>
+        <div class="viewcount">votes</div>
+      </div>
+      <div class="views">
+        <span class="score">9k</span>
+        <div class="viewcount">views</div>
+      </div>
+    </div>
+
+    <div class="content">
+      <div class="title">
+        <h3>Can&#39;t run Rcpp function in foreach - &quot;NULL value passed as symbol address&quot;</h3>
+        <a href="https://stackoverflow.com/questions/25062383/cant-run-rcpp-function-in-foreach-null-value-passed-as-symbol-address" target="_blank">[see original]</a>
+      </div>
+      <div class="tags"><span>r</span><span>rcpp</span></div>
+      <div class="author">
+        <span class="gravatar">
+          <a href="https://stackoverflow.com/users/995854/patrick-mccarthy" target="_blank"><img src="https://www.gravatar.com/avatar/391bcee3df94f2d4dd8c33b7437e28aa?s=256&d=identicon&r=PG" alt="" width="32" height="32"></a>
+        </span>
+        <a href="https://stackoverflow.com/users/995854/patrick-mccarthy" target="_blank">Patrick McCarthy</a>
+        asked Jul 31 '14 at 15:02
+      </div>
+      <div class="body">
+        <details>
+          <summary>Click to expand question</summary>
+          <p>Let me say first that I've read Writing R Extensions, the Rcpp package vignette, and that I've built a package from <code>Rcpp.package.skeleton()</code>.</p>
+
+<p>Since building my package, I added a function, <code>multiGenerateCSVrow()</code>, and then ran <code>compileAttributes()</code> on the package directory before R CMD build/R CMD install. After I load my package, I can run my function either directly or via <code>foreach()</code> with the <code>%do%</code> method.</p>
+
+<p>When I try to run in parallel however, I get an error:</p>
+
+<pre><code>cl &lt;- makePSOCKcluster(8)                                                                                     
+registerDoParallel(cl)                                                                                        
+rows &lt;- foreach(i=1:8,.combine=rbind,.packages="myPackage") %dopar% multiGenerateCSVrow(scoreMatrix=NIsample,   
+                                                                   validMatrix = matrix(1,nrow=10,ncol=10),   
+                                                                   cutoffVector = rep(0,10),                  
+                                                                   factorVector = randomsCutPlus1[i,],        
+                                                                   actualVector = rep(1,10),                  
+                                                                   scaleSample = 1)                           
+stopCluster(cl)                                                                                               
+~                                                                                                             
+
+Error in multiGenerateCSVrow(scoreMatrix = NIsample, validMatrix = matrix(1,  : 
+  task 1 failed - "NULL value passed as symbol address"
+</code></pre>
+
+<p>Here's the package NAMESPACE:</p>
+
+<pre><code># Generated by roxygen2 (4.0.1): do not edit by hand 
+useDynLib(myPackage)                                   
+exportPattern("^[[:alpha:]]+")                       
+importFrom(Rcpp, evalCpp) 
+</code></pre>
+
+<p>Here's the relevant chunk of RcppExports.cpp:</p>
+
+<pre><code>// multiGenerateCSVrow
+SEXP multiGenerateCSVrow(SEXP scoreMatrix, SEXP validMatrix, SEXP cutoffVector, SEXP factorVector, SEXP actualVector, SEXP scaleSample);
+RcppExport SEXP myPackage_multiGenerateCSVrow(SEXP scoreMatrixSEXP, SEXP validMatrixSEXP, SEXP cutoffVectorSEXP, SEXP factorVectorSEXP, SEXP actualVectorSEXP, SEXP scaleSampleSEXP) {
+BEGIN_RCPP
+    SEXP __sexp_result;
+    {
+        Rcpp::RNGScope __rngScope;
+        Rcpp::traits::input_parameter&lt; SEXP &gt;::type scoreMatrix(scoreMatrixSEXP );
+        Rcpp::traits::input_parameter&lt; SEXP &gt;::type validMatrix(validMatrixSEXP );
+        Rcpp::traits::input_parameter&lt; SEXP &gt;::type cutoffVector(cutoffVectorSEXP );
+        Rcpp::traits::input_parameter&lt; SEXP &gt;::type factorVector(factorVectorSEXP );
+        Rcpp::traits::input_parameter&lt; SEXP &gt;::type actualVector(actualVectorSEXP );
+        Rcpp::traits::input_parameter&lt; SEXP &gt;::type scaleSample(scaleSampleSEXP );
+        SEXP __result = multiGenerateCSVrow(scoreMatrix, validMatrix, cutoffVector, factorVector, actualVector, scaleSample);
+        PROTECT(__sexp_result = Rcpp::wrap(__result));
+    }
+    UNPROTECT(1);
+    return __sexp_result;
+END_RCPP
+}
+</code></pre>
+
+<p>And RcppExports.R:</p>
+
+<pre><code>multiGenerateCSVrow &lt;- function(scoreMatrix, validMatrix, cutoffVector, factorVector, actualVector, scaleSample) {
+    .Call('myPackage_multiGenerateCSVrow', PACKAGE = 'myPackage', scoreMatrix, validMatrix, cutoffVector, factorVector, actualVector, scaleSample)
+}   
+</code></pre>
+
+<p>What could it be looking for?</p>
+
+        </details>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="answer">
+
+    <div class="stats">
+      <div class="votes answer-accepted-FALSE">
+        <span class="score">14</span>
+        <div class="viewcount">votes</div>
+      </div>
+    </div>
+
+    <div class="content">
+      <div class="author">
+        <span class="gravatar">
+          <a href="https://stackoverflow.com/users/8203448/henine" target="_blank"><img src="https://www.gravatar.com/avatar/f05c070c897724e63b7c5dfa19168bf7?s=256&d=identicon&r=PG" alt="" width="32" height="32"></a>
+        </span>
+        <a href="https://stackoverflow.com/users/8203448/henine" target="_blank">henine</a>
+        replied Jun 23 '17 at 06:02
+      </div>
+      <div class="body">
+        <details>
+          <summary>Click to expand answer</summary>
+          <p>Let me say first that I've read Writing R Extensions, the Rcpp package vignette, and that I've built a package from <code>Rcpp.package.skeleton()</code>.</p>
+
+<p>Since building my package, I added a function, <code>multiGenerateCSVrow()</code>, and then ran <code>compileAttributes()</code> on the package directory before R CMD build/R CMD install. After I load my package, I can run my function either directly or via <code>foreach()</code> with the <code>%do%</code> method.</p>
+
+<p>When I try to run in parallel however, I get an error:</p>
+
+<pre><code>cl &lt;- makePSOCKcluster(8)                                                                                     
+registerDoParallel(cl)                                                                                        
+rows &lt;- foreach(i=1:8,.combine=rbind,.packages="myPackage") %dopar% multiGenerateCSVrow(scoreMatrix=NIsample,   
+                                                                   validMatrix = matrix(1,nrow=10,ncol=10),   
+                                                                   cutoffVector = rep(0,10),                  
+                                                                   factorVector = randomsCutPlus1[i,],        
+                                                                   actualVector = rep(1,10),                  
+                                                                   scaleSample = 1)                           
+stopCluster(cl)                                                                                               
+~                                                                                                             
+
+Error in multiGenerateCSVrow(scoreMatrix = NIsample, validMatrix = matrix(1,  : 
+  task 1 failed - "NULL value passed as symbol address"
+</code></pre>
+
+<p>Here's the package NAMESPACE:</p>
+
+<pre><code># Generated by roxygen2 (4.0.1): do not edit by hand 
+useDynLib(myPackage)                                   
+exportPattern("^[[:alpha:]]+")                       
+importFrom(Rcpp, evalCpp) 
+</code></pre>
+
+<p>Here's the relevant chunk of RcppExports.cpp:</p>
+
+<pre><code>// multiGenerateCSVrow
+SEXP multiGenerateCSVrow(SEXP scoreMatrix, SEXP validMatrix, SEXP cutoffVector, SEXP factorVector, SEXP actualVector, SEXP scaleSample);
+RcppExport SEXP myPackage_multiGenerateCSVrow(SEXP scoreMatrixSEXP, SEXP validMatrixSEXP, SEXP cutoffVectorSEXP, SEXP factorVectorSEXP, SEXP actualVectorSEXP, SEXP scaleSampleSEXP) {
+BEGIN_RCPP
+    SEXP __sexp_result;
+    {
+        Rcpp::RNGScope __rngScope;
+        Rcpp::traits::input_parameter&lt; SEXP &gt;::type scoreMatrix(scoreMatrixSEXP );
+        Rcpp::traits::input_parameter&lt; SEXP &gt;::type validMatrix(validMatrixSEXP );
+        Rcpp::traits::input_parameter&lt; SEXP &gt;::type cutoffVector(cutoffVectorSEXP );
+        Rcpp::traits::input_parameter&lt; SEXP &gt;::type factorVector(factorVectorSEXP );
+        Rcpp::traits::input_parameter&lt; SEXP &gt;::type actualVector(actualVectorSEXP );
+        Rcpp::traits::input_parameter&lt; SEXP &gt;::type scaleSample(scaleSampleSEXP );
+        SEXP __result = multiGenerateCSVrow(scoreMatrix, validMatrix, cutoffVector, factorVector, actualVector, scaleSample);
+        PROTECT(__sexp_result = Rcpp::wrap(__result));
+    }
+    UNPROTECT(1);
+    return __sexp_result;
+END_RCPP
+}
+</code></pre>
+
+<p>And RcppExports.R:</p>
+
+<pre><code>multiGenerateCSVrow &lt;- function(scoreMatrix, validMatrix, cutoffVector, factorVector, actualVector, scaleSample) {
+    .Call('myPackage_multiGenerateCSVrow', PACKAGE = 'myPackage', scoreMatrix, validMatrix, cutoffVector, factorVector, actualVector, scaleSample)
+}   
+</code></pre>
+
+<p>What could it be looking for?</p>
 
         </details>
       </div>
@@ -2542,7 +2729,7 @@ n = 15
         <div class="viewcount">votes</div>
       </div>
       <div class="views">
-        <span class="score">849</span>
+        <span class="score">851</span>
         <div class="viewcount">views</div>
       </div>
     </div>
@@ -3949,129 +4136,6 @@ Slot "y":
 </ul>
 
 <p>Also, it would still be convenient be able to use CUDA and Rcpp in the same <code>*.cu</code> file. I would really like to know how to fix the "fixed namespace" commit on the master branch.</p>
-
-        </details>
-      </div>
-    </div>
-
-  </div>
-
-</article> <article class="qa" id="qa-19686892">
-
-  <div class="question">
-
-    <div class="stats">
-      <div class="votes">
-        <span class="score">14</span>
-        <div class="viewcount">votes</div>
-      </div>
-      <div class="views">
-        <span class="score">556</span>
-        <div class="viewcount">views</div>
-      </div>
-    </div>
-
-    <div class="content">
-      <div class="title">
-        <h3>passing unevaluated expressions to C/C++</h3>
-        <a href="https://stackoverflow.com/questions/19686892/passing-unevaluated-expressions-to-c-c" target="_blank">[see original]</a>
-      </div>
-      <div class="tags"><span>c</span><span>r</span><span>rcpp</span></div>
-      <div class="author">
-        <span class="gravatar">
-          <a href="https://stackoverflow.com/users/817778/eddi" target="_blank"><img src="https://www.gravatar.com/avatar/20cc8f574b01913048718f0abd4bf861?s=256&d=identicon&r=PG" alt="" width="32" height="32"></a>
-        </span>
-        <a href="https://stackoverflow.com/users/817778/eddi" target="_blank">eddi</a>
-        asked Oct 30 '13 at 15:24
-      </div>
-      <div class="body">
-        <details>
-          <summary>Click to expand question</summary>
-          <p>I'd like to pass a variable number of arguments from a function to C/C++, but would like to leave the arguments unevaluated and at the same time don't want to do any computations in R (aside from calling the C/C++ function), i.e. I don't want to call <code>substitute</code> in my R function. One option for this that I thought I could use is <code>.External</code> and doing smth like this:</p>
-
-<pre><code>R_fn = function(...) .External("cpp_fn", ...)
-
-...
-# and in C code:
-SEXP cpp_fn (SEXP arglist) {
-}
-</code></pre>
-
-<p>However <code>.External</code> is evaluating arguments in <code>...</code>, so if I try something like</p>
-
-<pre><code>rm(x, y) # just making sure these don't exist
-
-R_fn(x*y)
-</code></pre>
-
-<p>I get an error because R is trying to evaluate <code>x*y</code> <em>before</em> sending it to the function.</p>
-
-<p>To contrast, the following works in R:</p>
-
-<pre><code>f = function(...) g(...)
-g = function(x, ...) print(substitute(x))
-
-f(x*y*z)
-# x * y * z
-</code></pre>
-
-<p>What other options do I have? Clearly it's possible to do as R itself does it for a number of functions, e.g. <code>substitute</code> itself, but I don't understand how to do it. I added the <code>rcpp</code> tag because my eventual usage of this is going to be in <code>Rcpp</code>.</p>
-
-        </details>
-      </div>
-    </div>
-
-  </div>
-
-  <div class="answer">
-
-    <div class="stats">
-      <div class="votes answer-accepted-TRUE">
-        <span class="score">5</span>
-        <div class="viewcount">votes</div>
-      </div>
-    </div>
-
-    <div class="content">
-      <div class="author">
-        <span class="gravatar">
-          <a href="https://stackoverflow.com/users/817778/eddi" target="_blank"><img src="https://www.gravatar.com/avatar/20cc8f574b01913048718f0abd4bf861?s=256&d=identicon&r=PG" alt="" width="32" height="32"></a>
-        </span>
-        <a href="https://stackoverflow.com/users/817778/eddi" target="_blank">eddi</a>
-        replied Oct 31 '13 at 16:16
-      </div>
-      <div class="body">
-        <details>
-          <summary>Click to expand answer</summary>
-          <p>I'd like to pass a variable number of arguments from a function to C/C++, but would like to leave the arguments unevaluated and at the same time don't want to do any computations in R (aside from calling the C/C++ function), i.e. I don't want to call <code>substitute</code> in my R function. One option for this that I thought I could use is <code>.External</code> and doing smth like this:</p>
-
-<pre><code>R_fn = function(...) .External("cpp_fn", ...)
-
-...
-# and in C code:
-SEXP cpp_fn (SEXP arglist) {
-}
-</code></pre>
-
-<p>However <code>.External</code> is evaluating arguments in <code>...</code>, so if I try something like</p>
-
-<pre><code>rm(x, y) # just making sure these don't exist
-
-R_fn(x*y)
-</code></pre>
-
-<p>I get an error because R is trying to evaluate <code>x*y</code> <em>before</em> sending it to the function.</p>
-
-<p>To contrast, the following works in R:</p>
-
-<pre><code>f = function(...) g(...)
-g = function(x, ...) print(substitute(x))
-
-f(x*y*z)
-# x * y * z
-</code></pre>
-
-<p>What other options do I have? Clearly it's possible to do as R itself does it for a number of functions, e.g. <code>substitute</code> itself, but I don't understand how to do it. I added the <code>rcpp</code> tag because my eventual usage of this is going to be in <code>Rcpp</code>.</p>
 
         </details>
       </div>
