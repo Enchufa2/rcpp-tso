@@ -48,9 +48,9 @@
 <li><a href='#qa-48069990'>Multithreaded &amp; SIMD vectorized Mandelbrot in R using Rcpp &amp; OpenMP</a></li>
 <li><a href='#qa-5233769'>Practical limits of R data frame</a></li>
 <li><a href='#qa-26241085'>Rcpp function check if missing value</a></li>
+<li><a href='#qa-38016851'>Call R functions in Rcpp</a></li>
 <li><a href='#qa-20474303'>using C function from other package in Rcpp</a></li>
 <li><a href='#qa-36594628'>Call a function from c++ via environment Rcpp</a></li>
-<li><a href='#qa-38016851'>Call R functions in Rcpp</a></li>
 <li><a href='#qa-19823915'>how can I handle vectors without knowing the type in Rcpp</a></li>
 <li><a href='#qa-22828361'>Rcpp function to select (and to return) a sub-dataframe</a></li>
 <li><a href='#qa-21225662'>calling a user-defined R function from C++ using Rcpp</a></li>
@@ -67,8 +67,8 @@
 <li><a href='#qa-3088650'>How do I create a list of vectors in Rcpp?</a></li>
 <li><a href='#qa-41602024'>Should I prefer Rcpp::NumericVector over std::vector?</a></li>
 <li><a href='#qa-48363076'>Declare a variable as a reference in Rcpp</a></li>
-<li><a href='#qa-37060211'>efficiently locf by groups in a single R data.table</a></li>
-<li><a href='#qa-30628333'>Building a tiny R package with CUDA and Rcpp</a></li></ul></nav>
+<li><a href='#qa-30628333'>Building a tiny R package with CUDA and Rcpp</a></li>
+<li><a href='#qa-37060211'>efficiently locf by groups in a single R data.table</a></li></ul></nav>
   <section><article class="qa" id="qa-2908822">
 
   <div class="question">
@@ -79,7 +79,7 @@
         <div class="viewcount">votes</div>
       </div>
       <div class="views">
-        <span class="score">98.8k</span>
+        <span class="score">99k</span>
         <div class="viewcount">views</div>
       </div>
     </div>
@@ -186,7 +186,7 @@
         <div class="viewcount">votes</div>
       </div>
       <div class="views">
-        <span class="score">58.5k</span>
+        <span class="score">59.7k</span>
         <div class="viewcount">views</div>
       </div>
     </div>
@@ -434,7 +434,7 @@ cpp_if &lt;- cxxfunction(signature(a=&quot;numeric&quot;), cpp_if_src, plugin=&q
         <div class="viewcount">votes</div>
       </div>
       <div class="views">
-        <span class="score">77k</span>
+        <span class="score">77.2k</span>
         <div class="viewcount">views</div>
       </div>
     </div>
@@ -727,7 +727,7 @@ CXX_STD = CXX11
 
     <div class="stats">
       <div class="votes answer-accepted-TRUE">
-        <span class="score">112</span>
+        <span class="score">113</span>
         <div class="viewcount">votes</div>
       </div>
     </div>
@@ -974,7 +974,7 @@ Using Armadillo classes as suggested in the answer below make things very slight
         <div class="viewcount">votes</div>
       </div>
       <div class="views">
-        <span class="score">77.1k</span>
+        <span class="score">77.2k</span>
         <div class="viewcount">views</div>
       </div>
     </div>
@@ -1117,6 +1117,113 @@ myMatr=matr;
 </code></pre>
 
 <p>I want to handle call to the function where threshold4Clean is missing but I'm not finding how to do... Any help will be greatly appreciated.</p>
+
+        </details>
+      </div>
+    </div>
+
+  </div>
+
+</article> <article class="qa" id="qa-38016851">
+
+  <div class="question">
+
+    <div class="stats">
+      <div class="votes">
+        <span class="score">8</span>
+        <div class="viewcount">votes</div>
+      </div>
+      <div class="views">
+        <span class="score">7.5k</span>
+        <div class="viewcount">views</div>
+      </div>
+    </div>
+
+    <div class="content">
+      <div class="title">
+        <h3>Call R functions in Rcpp</h3>
+        <a href="https://stackoverflow.com/questions/38016851/call-r-functions-in-rcpp" target="_blank">[see original]</a>
+      </div>
+      <div class="tags"><span>r</span><span>rcpp</span></div>
+      <div class="author">
+        <span class="gravatar">
+          <a href="https://stackoverflow.com/users/6378990/yuge-hao" target="_blank"><img src="https://graph.facebook.com/136244556727935/picture?type=large" alt="" width="32" height="32"></a>
+        </span>
+        <a href="https://stackoverflow.com/users/6378990/yuge-hao" target="_blank">Yuge Hao</a>
+        asked Jun 24 '16 at 15:20
+      </div>
+      <div class="body">
+        <details>
+          <summary>Click to expand question</summary>
+          <p>I was trying to call the sd(x), which is a R function, in Rcpp. I've seen an example of calling the R function dbate(x) in Rcpp and it works perfectly.</p>
+
+<pre><code>// dens calls the pdf of beta distribution in R
+//[[Rcpp::export]]
+double dens(double x, double a, double b)
+{
+    return R::dbeta(x,a,b,false);
+}
+</code></pre>
+
+<p>But when I tired to apply this method to sd(x) as following, it went wrong.</p>
+
+<pre><code>// std calls the sd function in R
+//[[Rcpp::export]]
+double std(NumericVector x)
+{
+  return R::sd(x);
+}
+</code></pre>
+
+<p>Does anyone know why this doesn't work?</p>
+
+        </details>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="answer">
+
+    <div class="stats">
+      <div class="votes answer-accepted-FALSE">
+        <span class="score">16</span>
+        <div class="viewcount">votes</div>
+      </div>
+    </div>
+
+    <div class="content">
+      <div class="author">
+        <span class="gravatar">
+          <a href="https://stackoverflow.com/users/1345455/coatless" target="_blank"><img src="https://i.stack.imgur.com/DrBTs.jpg?s=256&g=1" alt="" width="32" height="32"></a>
+        </span>
+        <a href="https://stackoverflow.com/users/1345455/coatless" target="_blank">coatless</a>
+        replied Jun 24 '16 at 16:03
+      </div>
+      <div class="body">
+        <details>
+          <summary>Click to expand answer</summary>
+          <p>I was trying to call the sd(x), which is a R function, in Rcpp. I've seen an example of calling the R function dbate(x) in Rcpp and it works perfectly.</p>
+
+<pre><code>// dens calls the pdf of beta distribution in R
+//[[Rcpp::export]]
+double dens(double x, double a, double b)
+{
+    return R::dbeta(x,a,b,false);
+}
+</code></pre>
+
+<p>But when I tired to apply this method to sd(x) as following, it went wrong.</p>
+
+<pre><code>// std calls the sd function in R
+//[[Rcpp::export]]
+double std(NumericVector x)
+{
+  return R::sd(x);
+}
+</code></pre>
+
+<p>Does anyone know why this doesn't work?</p>
 
         </details>
       </div>
@@ -1413,113 +1520,6 @@ NumericVector callFunction(NumericVector x, Function f) {
 </code></pre>
 
 <p>But still wondering why first method failed.</p>
-
-        </details>
-      </div>
-    </div>
-
-  </div>
-
-</article> <article class="qa" id="qa-38016851">
-
-  <div class="question">
-
-    <div class="stats">
-      <div class="votes">
-        <span class="score">8</span>
-        <div class="viewcount">votes</div>
-      </div>
-      <div class="views">
-        <span class="score">7.5k</span>
-        <div class="viewcount">views</div>
-      </div>
-    </div>
-
-    <div class="content">
-      <div class="title">
-        <h3>Call R functions in Rcpp</h3>
-        <a href="https://stackoverflow.com/questions/38016851/call-r-functions-in-rcpp" target="_blank">[see original]</a>
-      </div>
-      <div class="tags"><span>r</span><span>rcpp</span></div>
-      <div class="author">
-        <span class="gravatar">
-          <a href="https://stackoverflow.com/users/6378990/yuge-hao" target="_blank"><img src="https://graph.facebook.com/136244556727935/picture?type=large" alt="" width="32" height="32"></a>
-        </span>
-        <a href="https://stackoverflow.com/users/6378990/yuge-hao" target="_blank">Yuge Hao</a>
-        asked Jun 24 '16 at 15:20
-      </div>
-      <div class="body">
-        <details>
-          <summary>Click to expand question</summary>
-          <p>I was trying to call the sd(x), which is a R function, in Rcpp. I've seen an example of calling the R function dbate(x) in Rcpp and it works perfectly.</p>
-
-<pre><code>// dens calls the pdf of beta distribution in R
-//[[Rcpp::export]]
-double dens(double x, double a, double b)
-{
-    return R::dbeta(x,a,b,false);
-}
-</code></pre>
-
-<p>But when I tired to apply this method to sd(x) as following, it went wrong.</p>
-
-<pre><code>// std calls the sd function in R
-//[[Rcpp::export]]
-double std(NumericVector x)
-{
-  return R::sd(x);
-}
-</code></pre>
-
-<p>Does anyone know why this doesn't work?</p>
-
-        </details>
-      </div>
-    </div>
-
-  </div>
-
-  <div class="answer">
-
-    <div class="stats">
-      <div class="votes answer-accepted-FALSE">
-        <span class="score">16</span>
-        <div class="viewcount">votes</div>
-      </div>
-    </div>
-
-    <div class="content">
-      <div class="author">
-        <span class="gravatar">
-          <a href="https://stackoverflow.com/users/1345455/coatless" target="_blank"><img src="https://i.stack.imgur.com/DrBTs.jpg?s=256&g=1" alt="" width="32" height="32"></a>
-        </span>
-        <a href="https://stackoverflow.com/users/1345455/coatless" target="_blank">coatless</a>
-        replied Jun 24 '16 at 16:03
-      </div>
-      <div class="body">
-        <details>
-          <summary>Click to expand answer</summary>
-          <p>I was trying to call the sd(x), which is a R function, in Rcpp. I've seen an example of calling the R function dbate(x) in Rcpp and it works perfectly.</p>
-
-<pre><code>// dens calls the pdf of beta distribution in R
-//[[Rcpp::export]]
-double dens(double x, double a, double b)
-{
-    return R::dbeta(x,a,b,false);
-}
-</code></pre>
-
-<p>But when I tired to apply this method to sd(x) as following, it went wrong.</p>
-
-<pre><code>// std calls the sd function in R
-//[[Rcpp::export]]
-double std(NumericVector x)
-{
-  return R::sd(x);
-}
-</code></pre>
-
-<p>Does anyone know why this doesn't work?</p>
 
         </details>
       </div>
@@ -1934,11 +1934,11 @@ int mySuminC(){
 
     <div class="stats">
       <div class="votes">
-        <span class="score">5</span>
+        <span class="score">6</span>
         <div class="viewcount">votes</div>
       </div>
       <div class="views">
-        <span class="score">749</span>
+        <span class="score">756</span>
         <div class="viewcount">views</div>
       </div>
     </div>
@@ -1998,7 +1998,7 @@ int mySuminC(){
 
     <div class="stats">
       <div class="votes answer-accepted-TRUE">
-        <span class="score">9</span>
+        <span class="score">10</span>
         <div class="viewcount">votes</div>
       </div>
     </div>
@@ -2606,7 +2606,7 @@ I would like to keep 1-D matrix as a matrix. Actually, I need to throw many kind
         <div class="viewcount">votes</div>
       </div>
       <div class="views">
-        <span class="score">356</span>
+        <span class="score">357</span>
         <div class="viewcount">views</div>
       </div>
     </div>
@@ -2948,7 +2948,7 @@ Rcpp::List callOptimFun(SEXP x) {
         <div class="viewcount">votes</div>
       </div>
       <div class="views">
-        <span class="score">488</span>
+        <span class="score">491</span>
         <div class="viewcount">views</div>
       </div>
     </div>
@@ -3513,195 +3513,6 @@ x_i = value;
 
   </div>
 
-</article> <article class="qa" id="qa-37060211">
-
-  <div class="question">
-
-    <div class="stats">
-      <div class="votes">
-        <span class="score">12</span>
-        <div class="viewcount">votes</div>
-      </div>
-      <div class="views">
-        <span class="score">2.9k</span>
-        <div class="viewcount">views</div>
-      </div>
-    </div>
-
-    <div class="content">
-      <div class="title">
-        <h3>efficiently locf by groups in a single R data.table</h3>
-        <a href="https://stackoverflow.com/questions/37060211/efficiently-locf-by-groups-in-a-single-r-data-table" target="_blank">[see original]</a>
-      </div>
-      <div class="tags"><span>r</span><span>dataframe</span><span>data.table</span><span>dplyr</span><span>rcpp</span></div>
-      <div class="author">
-        <span class="gravatar">
-          <a href="https://stackoverflow.com/users/280708/carl-anderson" target="_blank"><img src="https://i.stack.imgur.com/NS0O4.png?s=256&g=1" alt="" width="32" height="32"></a>
-        </span>
-        <a href="https://stackoverflow.com/users/280708/carl-anderson" target="_blank">carl.anderson</a>
-        asked May 05 '16 at 20:59
-      </div>
-      <div class="body">
-        <details>
-          <summary>Click to expand question</summary>
-          <p>I have a large, wide <code>data.table</code> (20m rows) keyed by a person ID but with lots of columns (~150) that have lots of null values.  Each column is a recorded state / attribute that I wish to carry forward for each person.  Each person may have anywhere from 10 to 10,000 observations and there are about 500,000 people in the set.  Values from one person can not 'bleed' into the following person, so my solution must respect the person ID column and group appropriately.</p>
-
-<p>For demonstration purposes - here's a very small sample input:</p>
-
-<pre><code>DT = data.table(
-  id=c(1, 1, 1, 1, 2, 2, 2, 2, 3, 3, 3, 3),
-  aa=c("A", NA, "B", "C", NA, NA, "D", "E", "F", NA, NA, NA),
-  bb=c(NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA),
-  cc=c(1, NA, NA, NA, NA, 4, NA, 5, 6, NA, 7, NA)
-)
-</code></pre>
-
-<p>It looks like this:</p>
-
-<pre><code>    id aa bb cc
- 1:  1  A NA  1
- 2:  1 NA NA NA
- 3:  1  B NA NA
- 4:  1  C NA NA
- 5:  2 NA NA NA
- 6:  2 NA NA  4
- 7:  2  D NA NA
- 8:  2  E NA  5
- 9:  3  F NA  6
-10:  3 NA NA NA
-11:  3 NA NA  7
-12:  3 NA NA NA
-</code></pre>
-
-<p>My expected output looks like this:</p>
-
-<pre><code>    id aa bb cc
- 1:  1  A NA  1
- 2:  1  A NA  1
- 3:  1  B NA  1
- 4:  1  C NA  1
- 5:  2 NA NA NA
- 6:  2 NA NA  4
- 7:  2  D NA  4
- 8:  2  E NA  5
- 9:  3  F NA  6
-10:  3  F NA  6
-11:  3  F NA  7
-12:  3  F NA  7
-</code></pre>
-
-<p>I've found a <code>data.table</code> solution that works, but it's terribly slow on my large data sets:</p>
-
-<pre><code>DT[, na.locf(.SD, na.rm=FALSE), by=id]
-</code></pre>
-
-<p>I've found equivalent solutions using dplyr that are equally slow.</p>
-
-<pre><code>GRP = DT %&gt;% group_by(id)
-data.table(GRP %&gt;% mutate_each(funs(blah=na.locf(., na.rm=FALSE))))
-</code></pre>
-
-<p>I was hopeful that I could come up with a rolling 'self' join using the <code>data.table</code> functionality, but I just can't seem to get it right (I suspect I would need to use <code>.N</code> but I just haven't figured it out).</p>
-
-<p>At this point I'm thinking I'll have to write something in Rcpp to efficiently apply the grouped locf.  </p>
-
-<p>I'm new to R, but I'm not new to C++ - so I'm confident I can do it.  I just feel like there should be an efficient way to do this in R using <code>data.table</code>.</p>
-
-        </details>
-      </div>
-    </div>
-
-  </div>
-
-  <div class="answer">
-
-    <div class="stats">
-      <div class="votes answer-accepted-TRUE">
-        <span class="score">24</span>
-        <div class="viewcount">votes</div>
-      </div>
-    </div>
-
-    <div class="content">
-      <div class="author">
-        <span class="gravatar">
-          <a href="https://stackoverflow.com/users/2414948/alexis-laz" target="_blank"><img src="https://www.gravatar.com/avatar/f4a4db8db8724f88b7de4340a42778a5?s=256&d=identicon&r=PG" alt="" width="32" height="32"></a>
-        </span>
-        <a href="https://stackoverflow.com/users/2414948/alexis-laz" target="_blank">alexis_laz</a>
-        replied May 06 '16 at 09:16
-      </div>
-      <div class="body">
-        <details>
-          <summary>Click to expand answer</summary>
-          <p>I have a large, wide <code>data.table</code> (20m rows) keyed by a person ID but with lots of columns (~150) that have lots of null values.  Each column is a recorded state / attribute that I wish to carry forward for each person.  Each person may have anywhere from 10 to 10,000 observations and there are about 500,000 people in the set.  Values from one person can not 'bleed' into the following person, so my solution must respect the person ID column and group appropriately.</p>
-
-<p>For demonstration purposes - here's a very small sample input:</p>
-
-<pre><code>DT = data.table(
-  id=c(1, 1, 1, 1, 2, 2, 2, 2, 3, 3, 3, 3),
-  aa=c("A", NA, "B", "C", NA, NA, "D", "E", "F", NA, NA, NA),
-  bb=c(NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA),
-  cc=c(1, NA, NA, NA, NA, 4, NA, 5, 6, NA, 7, NA)
-)
-</code></pre>
-
-<p>It looks like this:</p>
-
-<pre><code>    id aa bb cc
- 1:  1  A NA  1
- 2:  1 NA NA NA
- 3:  1  B NA NA
- 4:  1  C NA NA
- 5:  2 NA NA NA
- 6:  2 NA NA  4
- 7:  2  D NA NA
- 8:  2  E NA  5
- 9:  3  F NA  6
-10:  3 NA NA NA
-11:  3 NA NA  7
-12:  3 NA NA NA
-</code></pre>
-
-<p>My expected output looks like this:</p>
-
-<pre><code>    id aa bb cc
- 1:  1  A NA  1
- 2:  1  A NA  1
- 3:  1  B NA  1
- 4:  1  C NA  1
- 5:  2 NA NA NA
- 6:  2 NA NA  4
- 7:  2  D NA  4
- 8:  2  E NA  5
- 9:  3  F NA  6
-10:  3  F NA  6
-11:  3  F NA  7
-12:  3  F NA  7
-</code></pre>
-
-<p>I've found a <code>data.table</code> solution that works, but it's terribly slow on my large data sets:</p>
-
-<pre><code>DT[, na.locf(.SD, na.rm=FALSE), by=id]
-</code></pre>
-
-<p>I've found equivalent solutions using dplyr that are equally slow.</p>
-
-<pre><code>GRP = DT %&gt;% group_by(id)
-data.table(GRP %&gt;% mutate_each(funs(blah=na.locf(., na.rm=FALSE))))
-</code></pre>
-
-<p>I was hopeful that I could come up with a rolling 'self' join using the <code>data.table</code> functionality, but I just can't seem to get it right (I suspect I would need to use <code>.N</code> but I just haven't figured it out).</p>
-
-<p>At this point I'm thinking I'll have to write something in Rcpp to efficiently apply the grouped locf.  </p>
-
-<p>I'm new to R, but I'm not new to C++ - so I'm confident I can do it.  I just feel like there should be an efficient way to do this in R using <code>data.table</code>.</p>
-
-        </details>
-      </div>
-    </div>
-
-  </div>
-
 </article> <article class="qa" id="qa-30628333">
 
   <div class="question">
@@ -4136,6 +3947,195 @@ Slot "y":
 </ul>
 
 <p>Also, it would still be convenient be able to use CUDA and Rcpp in the same <code>*.cu</code> file. I would really like to know how to fix the "fixed namespace" commit on the master branch.</p>
+
+        </details>
+      </div>
+    </div>
+
+  </div>
+
+</article> <article class="qa" id="qa-37060211">
+
+  <div class="question">
+
+    <div class="stats">
+      <div class="votes">
+        <span class="score">12</span>
+        <div class="viewcount">votes</div>
+      </div>
+      <div class="views">
+        <span class="score">2.9k</span>
+        <div class="viewcount">views</div>
+      </div>
+    </div>
+
+    <div class="content">
+      <div class="title">
+        <h3>efficiently locf by groups in a single R data.table</h3>
+        <a href="https://stackoverflow.com/questions/37060211/efficiently-locf-by-groups-in-a-single-r-data-table" target="_blank">[see original]</a>
+      </div>
+      <div class="tags"><span>r</span><span>dataframe</span><span>data.table</span><span>dplyr</span><span>rcpp</span></div>
+      <div class="author">
+        <span class="gravatar">
+          <a href="https://stackoverflow.com/users/280708/carl-anderson" target="_blank"><img src="https://i.stack.imgur.com/NS0O4.png?s=256&g=1" alt="" width="32" height="32"></a>
+        </span>
+        <a href="https://stackoverflow.com/users/280708/carl-anderson" target="_blank">carl.anderson</a>
+        asked May 05 '16 at 20:59
+      </div>
+      <div class="body">
+        <details>
+          <summary>Click to expand question</summary>
+          <p>I have a large, wide <code>data.table</code> (20m rows) keyed by a person ID but with lots of columns (~150) that have lots of null values.  Each column is a recorded state / attribute that I wish to carry forward for each person.  Each person may have anywhere from 10 to 10,000 observations and there are about 500,000 people in the set.  Values from one person can not 'bleed' into the following person, so my solution must respect the person ID column and group appropriately.</p>
+
+<p>For demonstration purposes - here's a very small sample input:</p>
+
+<pre><code>DT = data.table(
+  id=c(1, 1, 1, 1, 2, 2, 2, 2, 3, 3, 3, 3),
+  aa=c("A", NA, "B", "C", NA, NA, "D", "E", "F", NA, NA, NA),
+  bb=c(NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA),
+  cc=c(1, NA, NA, NA, NA, 4, NA, 5, 6, NA, 7, NA)
+)
+</code></pre>
+
+<p>It looks like this:</p>
+
+<pre><code>    id aa bb cc
+ 1:  1  A NA  1
+ 2:  1 NA NA NA
+ 3:  1  B NA NA
+ 4:  1  C NA NA
+ 5:  2 NA NA NA
+ 6:  2 NA NA  4
+ 7:  2  D NA NA
+ 8:  2  E NA  5
+ 9:  3  F NA  6
+10:  3 NA NA NA
+11:  3 NA NA  7
+12:  3 NA NA NA
+</code></pre>
+
+<p>My expected output looks like this:</p>
+
+<pre><code>    id aa bb cc
+ 1:  1  A NA  1
+ 2:  1  A NA  1
+ 3:  1  B NA  1
+ 4:  1  C NA  1
+ 5:  2 NA NA NA
+ 6:  2 NA NA  4
+ 7:  2  D NA  4
+ 8:  2  E NA  5
+ 9:  3  F NA  6
+10:  3  F NA  6
+11:  3  F NA  7
+12:  3  F NA  7
+</code></pre>
+
+<p>I've found a <code>data.table</code> solution that works, but it's terribly slow on my large data sets:</p>
+
+<pre><code>DT[, na.locf(.SD, na.rm=FALSE), by=id]
+</code></pre>
+
+<p>I've found equivalent solutions using dplyr that are equally slow.</p>
+
+<pre><code>GRP = DT %&gt;% group_by(id)
+data.table(GRP %&gt;% mutate_each(funs(blah=na.locf(., na.rm=FALSE))))
+</code></pre>
+
+<p>I was hopeful that I could come up with a rolling 'self' join using the <code>data.table</code> functionality, but I just can't seem to get it right (I suspect I would need to use <code>.N</code> but I just haven't figured it out).</p>
+
+<p>At this point I'm thinking I'll have to write something in Rcpp to efficiently apply the grouped locf.  </p>
+
+<p>I'm new to R, but I'm not new to C++ - so I'm confident I can do it.  I just feel like there should be an efficient way to do this in R using <code>data.table</code>.</p>
+
+        </details>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="answer">
+
+    <div class="stats">
+      <div class="votes answer-accepted-TRUE">
+        <span class="score">24</span>
+        <div class="viewcount">votes</div>
+      </div>
+    </div>
+
+    <div class="content">
+      <div class="author">
+        <span class="gravatar">
+          <a href="https://stackoverflow.com/users/2414948/alexis-laz" target="_blank"><img src="https://www.gravatar.com/avatar/f4a4db8db8724f88b7de4340a42778a5?s=256&d=identicon&r=PG" alt="" width="32" height="32"></a>
+        </span>
+        <a href="https://stackoverflow.com/users/2414948/alexis-laz" target="_blank">alexis_laz</a>
+        replied May 06 '16 at 09:16
+      </div>
+      <div class="body">
+        <details>
+          <summary>Click to expand answer</summary>
+          <p>I have a large, wide <code>data.table</code> (20m rows) keyed by a person ID but with lots of columns (~150) that have lots of null values.  Each column is a recorded state / attribute that I wish to carry forward for each person.  Each person may have anywhere from 10 to 10,000 observations and there are about 500,000 people in the set.  Values from one person can not 'bleed' into the following person, so my solution must respect the person ID column and group appropriately.</p>
+
+<p>For demonstration purposes - here's a very small sample input:</p>
+
+<pre><code>DT = data.table(
+  id=c(1, 1, 1, 1, 2, 2, 2, 2, 3, 3, 3, 3),
+  aa=c("A", NA, "B", "C", NA, NA, "D", "E", "F", NA, NA, NA),
+  bb=c(NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA),
+  cc=c(1, NA, NA, NA, NA, 4, NA, 5, 6, NA, 7, NA)
+)
+</code></pre>
+
+<p>It looks like this:</p>
+
+<pre><code>    id aa bb cc
+ 1:  1  A NA  1
+ 2:  1 NA NA NA
+ 3:  1  B NA NA
+ 4:  1  C NA NA
+ 5:  2 NA NA NA
+ 6:  2 NA NA  4
+ 7:  2  D NA NA
+ 8:  2  E NA  5
+ 9:  3  F NA  6
+10:  3 NA NA NA
+11:  3 NA NA  7
+12:  3 NA NA NA
+</code></pre>
+
+<p>My expected output looks like this:</p>
+
+<pre><code>    id aa bb cc
+ 1:  1  A NA  1
+ 2:  1  A NA  1
+ 3:  1  B NA  1
+ 4:  1  C NA  1
+ 5:  2 NA NA NA
+ 6:  2 NA NA  4
+ 7:  2  D NA  4
+ 8:  2  E NA  5
+ 9:  3  F NA  6
+10:  3  F NA  6
+11:  3  F NA  7
+12:  3  F NA  7
+</code></pre>
+
+<p>I've found a <code>data.table</code> solution that works, but it's terribly slow on my large data sets:</p>
+
+<pre><code>DT[, na.locf(.SD, na.rm=FALSE), by=id]
+</code></pre>
+
+<p>I've found equivalent solutions using dplyr that are equally slow.</p>
+
+<pre><code>GRP = DT %&gt;% group_by(id)
+data.table(GRP %&gt;% mutate_each(funs(blah=na.locf(., na.rm=FALSE))))
+</code></pre>
+
+<p>I was hopeful that I could come up with a rolling 'self' join using the <code>data.table</code> functionality, but I just can't seem to get it right (I suspect I would need to use <code>.N</code> but I just haven't figured it out).</p>
+
+<p>At this point I'm thinking I'll have to write something in Rcpp to efficiently apply the grouped locf.  </p>
+
+<p>I'm new to R, but I'm not new to C++ - so I'm confident I can do it.  I just feel like there should be an efficient way to do this in R using <code>data.table</code>.</p>
 
         </details>
       </div>
