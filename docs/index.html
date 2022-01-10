@@ -48,9 +48,9 @@
 <li><a href='#qa-48069990'>Multithreaded &amp; SIMD vectorized Mandelbrot in R using Rcpp &amp; OpenMP</a></li>
 <li><a href='#qa-5233769'>Practical limits of R data frame</a></li>
 <li><a href='#qa-26241085'>Rcpp function check if missing value</a></li>
+<li><a href='#qa-38016851'>Call R functions in Rcpp</a></li>
 <li><a href='#qa-20474303'>using C function from other package in Rcpp</a></li>
 <li><a href='#qa-36594628'>Call a function from c++ via environment Rcpp</a></li>
-<li><a href='#qa-38016851'>Call R functions in Rcpp</a></li>
 <li><a href='#qa-19823915'>how can I handle vectors without knowing the type in Rcpp</a></li>
 <li><a href='#qa-22828361'>Rcpp function to select (and to return) a sub-dataframe</a></li>
 <li><a href='#qa-21225662'>calling a user-defined R function from C++ using Rcpp</a></li>
@@ -79,7 +79,7 @@
         <div class="viewcount">votes</div>
       </div>
       <div class="views">
-        <span class="score">99.2k</span>
+        <span class="score">99.3k</span>
         <div class="viewcount">views</div>
       </div>
     </div>
@@ -182,11 +182,11 @@
 
     <div class="stats">
       <div class="votes">
-        <span class="score">47</span>
+        <span class="score">48</span>
         <div class="viewcount">votes</div>
       </div>
       <div class="views">
-        <span class="score">61k</span>
+        <span class="score">61.9k</span>
         <div class="viewcount">views</div>
       </div>
     </div>
@@ -228,7 +228,7 @@ dbListTables(con)
 
     <div class="stats">
       <div class="votes answer-accepted-FALSE">
-        <span class="score">55</span>
+        <span class="score">56</span>
         <div class="viewcount">votes</div>
       </div>
     </div>
@@ -434,7 +434,7 @@ cpp_if &lt;- cxxfunction(signature(a=&quot;numeric&quot;), cpp_if_src, plugin=&q
         <div class="viewcount">votes</div>
       </div>
       <div class="views">
-        <span class="score">77.5k</span>
+        <span class="score">77.7k</span>
         <div class="viewcount">views</div>
       </div>
     </div>
@@ -656,7 +656,7 @@ clusterCall(cl, funCPP1, A, 0.5)
         <div class="viewcount">votes</div>
       </div>
       <div class="views">
-        <span class="score">27.7k</span>
+        <span class="score">27.8k</span>
         <div class="viewcount">views</div>
       </div>
     </div>
@@ -1124,6 +1124,113 @@ myMatr=matr;
 
   </div>
 
+</article> <article class="qa" id="qa-38016851">
+
+  <div class="question">
+
+    <div class="stats">
+      <div class="votes">
+        <span class="score">8</span>
+        <div class="viewcount">votes</div>
+      </div>
+      <div class="views">
+        <span class="score">7.6k</span>
+        <div class="viewcount">views</div>
+      </div>
+    </div>
+
+    <div class="content">
+      <div class="title">
+        <h3>Call R functions in Rcpp</h3>
+        <a href="https://stackoverflow.com/questions/38016851/call-r-functions-in-rcpp" target="_blank">[see original]</a>
+      </div>
+      <div class="tags"><span>r</span><span>rcpp</span></div>
+      <div class="author">
+        <span class="gravatar">
+          <a href="https://stackoverflow.com/users/6378990/yuge-hao" target="_blank"><img src="https://graph.facebook.com/136244556727935/picture?type=large" alt="" width="32" height="32"></a>
+        </span>
+        <a href="https://stackoverflow.com/users/6378990/yuge-hao" target="_blank">Yuge Hao</a>
+        asked Jun 24 '16 at 15:20
+      </div>
+      <div class="body">
+        <details>
+          <summary>Click to expand question</summary>
+          <p>I was trying to call the sd(x), which is a R function, in Rcpp. I've seen an example of calling the R function dbate(x) in Rcpp and it works perfectly.</p>
+
+<pre><code>// dens calls the pdf of beta distribution in R
+//[[Rcpp::export]]
+double dens(double x, double a, double b)
+{
+    return R::dbeta(x,a,b,false);
+}
+</code></pre>
+
+<p>But when I tired to apply this method to sd(x) as following, it went wrong.</p>
+
+<pre><code>// std calls the sd function in R
+//[[Rcpp::export]]
+double std(NumericVector x)
+{
+  return R::sd(x);
+}
+</code></pre>
+
+<p>Does anyone know why this doesn't work?</p>
+
+        </details>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="answer">
+
+    <div class="stats">
+      <div class="votes answer-accepted-FALSE">
+        <span class="score">16</span>
+        <div class="viewcount">votes</div>
+      </div>
+    </div>
+
+    <div class="content">
+      <div class="author">
+        <span class="gravatar">
+          <a href="https://stackoverflow.com/users/1345455/coatless" target="_blank"><img src="https://i.stack.imgur.com/DrBTs.jpg?s=256&g=1" alt="" width="32" height="32"></a>
+        </span>
+        <a href="https://stackoverflow.com/users/1345455/coatless" target="_blank">coatless</a>
+        replied Jun 24 '16 at 16:03
+      </div>
+      <div class="body">
+        <details>
+          <summary>Click to expand answer</summary>
+          <p>I was trying to call the sd(x), which is a R function, in Rcpp. I've seen an example of calling the R function dbate(x) in Rcpp and it works perfectly.</p>
+
+<pre><code>// dens calls the pdf of beta distribution in R
+//[[Rcpp::export]]
+double dens(double x, double a, double b)
+{
+    return R::dbeta(x,a,b,false);
+}
+</code></pre>
+
+<p>But when I tired to apply this method to sd(x) as following, it went wrong.</p>
+
+<pre><code>// std calls the sd function in R
+//[[Rcpp::export]]
+double std(NumericVector x)
+{
+  return R::sd(x);
+}
+</code></pre>
+
+<p>Does anyone know why this doesn't work?</p>
+
+        </details>
+      </div>
+    </div>
+
+  </div>
+
 </article> <article class="qa" id="qa-20474303">
 
   <div class="question">
@@ -1413,113 +1520,6 @@ NumericVector callFunction(NumericVector x, Function f) {
 </code></pre>
 
 <p>But still wondering why first method failed.</p>
-
-        </details>
-      </div>
-    </div>
-
-  </div>
-
-</article> <article class="qa" id="qa-38016851">
-
-  <div class="question">
-
-    <div class="stats">
-      <div class="votes">
-        <span class="score">8</span>
-        <div class="viewcount">votes</div>
-      </div>
-      <div class="views">
-        <span class="score">7.6k</span>
-        <div class="viewcount">views</div>
-      </div>
-    </div>
-
-    <div class="content">
-      <div class="title">
-        <h3>Call R functions in Rcpp</h3>
-        <a href="https://stackoverflow.com/questions/38016851/call-r-functions-in-rcpp" target="_blank">[see original]</a>
-      </div>
-      <div class="tags"><span>r</span><span>rcpp</span></div>
-      <div class="author">
-        <span class="gravatar">
-          <a href="https://stackoverflow.com/users/6378990/yuge-hao" target="_blank"><img src="https://graph.facebook.com/136244556727935/picture?type=large" alt="" width="32" height="32"></a>
-        </span>
-        <a href="https://stackoverflow.com/users/6378990/yuge-hao" target="_blank">Yuge Hao</a>
-        asked Jun 24 '16 at 15:20
-      </div>
-      <div class="body">
-        <details>
-          <summary>Click to expand question</summary>
-          <p>I was trying to call the sd(x), which is a R function, in Rcpp. I've seen an example of calling the R function dbate(x) in Rcpp and it works perfectly.</p>
-
-<pre><code>// dens calls the pdf of beta distribution in R
-//[[Rcpp::export]]
-double dens(double x, double a, double b)
-{
-    return R::dbeta(x,a,b,false);
-}
-</code></pre>
-
-<p>But when I tired to apply this method to sd(x) as following, it went wrong.</p>
-
-<pre><code>// std calls the sd function in R
-//[[Rcpp::export]]
-double std(NumericVector x)
-{
-  return R::sd(x);
-}
-</code></pre>
-
-<p>Does anyone know why this doesn't work?</p>
-
-        </details>
-      </div>
-    </div>
-
-  </div>
-
-  <div class="answer">
-
-    <div class="stats">
-      <div class="votes answer-accepted-FALSE">
-        <span class="score">16</span>
-        <div class="viewcount">votes</div>
-      </div>
-    </div>
-
-    <div class="content">
-      <div class="author">
-        <span class="gravatar">
-          <a href="https://stackoverflow.com/users/1345455/coatless" target="_blank"><img src="https://i.stack.imgur.com/DrBTs.jpg?s=256&g=1" alt="" width="32" height="32"></a>
-        </span>
-        <a href="https://stackoverflow.com/users/1345455/coatless" target="_blank">coatless</a>
-        replied Jun 24 '16 at 16:03
-      </div>
-      <div class="body">
-        <details>
-          <summary>Click to expand answer</summary>
-          <p>I was trying to call the sd(x), which is a R function, in Rcpp. I've seen an example of calling the R function dbate(x) in Rcpp and it works perfectly.</p>
-
-<pre><code>// dens calls the pdf of beta distribution in R
-//[[Rcpp::export]]
-double dens(double x, double a, double b)
-{
-    return R::dbeta(x,a,b,false);
-}
-</code></pre>
-
-<p>But when I tired to apply this method to sd(x) as following, it went wrong.</p>
-
-<pre><code>// std calls the sd function in R
-//[[Rcpp::export]]
-double std(NumericVector x)
-{
-  return R::sd(x);
-}
-</code></pre>
-
-<p>Does anyone know why this doesn't work?</p>
 
         </details>
       </div>
@@ -1938,7 +1938,7 @@ int mySuminC(){
         <div class="viewcount">votes</div>
       </div>
       <div class="views">
-        <span class="score">766</span>
+        <span class="score">771</span>
         <div class="viewcount">views</div>
       </div>
     </div>
@@ -2948,7 +2948,7 @@ Rcpp::List callOptimFun(SEXP x) {
         <div class="viewcount">votes</div>
       </div>
       <div class="views">
-        <span class="score">491</span>
+        <span class="score">494</span>
         <div class="viewcount">views</div>
       </div>
     </div>
