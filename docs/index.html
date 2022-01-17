@@ -52,12 +52,12 @@
 <li><a href='#qa-20474303'>using C function from other package in Rcpp</a></li>
 <li><a href='#qa-36594628'>Call a function from c++ via environment Rcpp</a></li>
 <li><a href='#qa-19823915'>how can I handle vectors without knowing the type in Rcpp</a></li>
+<li><a href='#qa-25062383'>Can&#39;t run Rcpp function in foreach - &quot;NULL value passed as symbol address&quot;</a></li>
 <li><a href='#qa-22828361'>Rcpp function to select (and to return) a sub-dataframe</a></li>
 <li><a href='#qa-21225662'>calling a user-defined R function from C++ using Rcpp</a></li>
 <li><a href='#qa-51110244'>In Rcpp, how to get a user-defined structure from C into R</a></li>
 <li><a href='#qa-43221681'>Changing R&#39;s Seed from Rcpp to Guarantee Reproducibility</a></li>
 <li><a href='#qa-18570526'>How to build a R package which use Rcpp with external c++ libraries?</a></li>
-<li><a href='#qa-25062383'>Can&#39;t run Rcpp function in foreach - &quot;NULL value passed as symbol address&quot;</a></li>
 <li><a href='#qa-46039132'>Renaming and Hiding an Exported Rcpp function in an R Package</a></li>
 <li><a href='#qa-9949202'>1-dimensional Matrix is changed to a vector in R</a></li>
 <li><a href='#qa-45549992'>Group vector on conditional sum</a></li>
@@ -79,7 +79,7 @@
         <div class="viewcount">votes</div>
       </div>
       <div class="views">
-        <span class="score">99.3k</span>
+        <span class="score">99.5k</span>
         <div class="viewcount">views</div>
       </div>
     </div>
@@ -132,7 +132,7 @@
 
     <div class="stats">
       <div class="votes answer-accepted-FALSE">
-        <span class="score">449</span>
+        <span class="score">450</span>
         <div class="viewcount">votes</div>
       </div>
     </div>
@@ -182,11 +182,11 @@
 
     <div class="stats">
       <div class="votes">
-        <span class="score">48</span>
+        <span class="score">49</span>
         <div class="viewcount">votes</div>
       </div>
       <div class="views">
-        <span class="score">61.9k</span>
+        <span class="score">63.1k</span>
         <div class="viewcount">views</div>
       </div>
     </div>
@@ -228,7 +228,7 @@ dbListTables(con)
 
     <div class="stats">
       <div class="votes answer-accepted-FALSE">
-        <span class="score">56</span>
+        <span class="score">57</span>
         <div class="viewcount">votes</div>
       </div>
     </div>
@@ -434,7 +434,7 @@ cpp_if &lt;- cxxfunction(signature(a=&quot;numeric&quot;), cpp_if_src, plugin=&q
         <div class="viewcount">votes</div>
       </div>
       <div class="views">
-        <span class="score">77.7k</span>
+        <span class="score">77.9k</span>
         <div class="viewcount">views</div>
       </div>
     </div>
@@ -656,7 +656,7 @@ clusterCall(cl, funCPP1, A, 0.5)
         <div class="viewcount">votes</div>
       </div>
       <div class="views">
-        <span class="score">27.8k</span>
+        <span class="score">27.9k</span>
         <div class="viewcount">views</div>
       </div>
     </div>
@@ -974,7 +974,7 @@ Using Armadillo classes as suggested in the answer below make things very slight
         <div class="viewcount">votes</div>
       </div>
       <div class="views">
-        <span class="score">77.4k</span>
+        <span class="score">77.5k</span>
         <div class="viewcount">views</div>
       </div>
     </div>
@@ -1646,6 +1646,193 @@ fint = cxxfunction(signature(x = "SEXP"), '
 
   </div>
 
+</article> <article class="qa" id="qa-25062383">
+
+  <div class="question">
+
+    <div class="stats">
+      <div class="votes">
+        <span class="score">27</span>
+        <div class="viewcount">votes</div>
+      </div>
+      <div class="views">
+        <span class="score">9.2k</span>
+        <div class="viewcount">views</div>
+      </div>
+    </div>
+
+    <div class="content">
+      <div class="title">
+        <h3>Can&#39;t run Rcpp function in foreach - &quot;NULL value passed as symbol address&quot;</h3>
+        <a href="https://stackoverflow.com/questions/25062383/cant-run-rcpp-function-in-foreach-null-value-passed-as-symbol-address" target="_blank">[see original]</a>
+      </div>
+      <div class="tags"><span>r</span><span>rcpp</span></div>
+      <div class="author">
+        <span class="gravatar">
+          <a href="https://stackoverflow.com/users/995854/patrick-mccarthy" target="_blank"><img src="https://www.gravatar.com/avatar/391bcee3df94f2d4dd8c33b7437e28aa?s=256&d=identicon&r=PG" alt="" width="32" height="32"></a>
+        </span>
+        <a href="https://stackoverflow.com/users/995854/patrick-mccarthy" target="_blank">Patrick McCarthy</a>
+        asked Jul 31 '14 at 15:02
+      </div>
+      <div class="body">
+        <details>
+          <summary>Click to expand question</summary>
+          <p>Let me say first that I've read Writing R Extensions, the Rcpp package vignette, and that I've built a package from <code>Rcpp.package.skeleton()</code>.</p>
+
+<p>Since building my package, I added a function, <code>multiGenerateCSVrow()</code>, and then ran <code>compileAttributes()</code> on the package directory before R CMD build/R CMD install. After I load my package, I can run my function either directly or via <code>foreach()</code> with the <code>%do%</code> method.</p>
+
+<p>When I try to run in parallel however, I get an error:</p>
+
+<pre><code>cl &lt;- makePSOCKcluster(8)                                                                                     
+registerDoParallel(cl)                                                                                        
+rows &lt;- foreach(i=1:8,.combine=rbind,.packages="myPackage") %dopar% multiGenerateCSVrow(scoreMatrix=NIsample,   
+                                                                   validMatrix = matrix(1,nrow=10,ncol=10),   
+                                                                   cutoffVector = rep(0,10),                  
+                                                                   factorVector = randomsCutPlus1[i,],        
+                                                                   actualVector = rep(1,10),                  
+                                                                   scaleSample = 1)                           
+stopCluster(cl)                                                                                               
+~                                                                                                             
+
+Error in multiGenerateCSVrow(scoreMatrix = NIsample, validMatrix = matrix(1,  : 
+  task 1 failed - "NULL value passed as symbol address"
+</code></pre>
+
+<p>Here's the package NAMESPACE:</p>
+
+<pre><code># Generated by roxygen2 (4.0.1): do not edit by hand 
+useDynLib(myPackage)                                   
+exportPattern("^[[:alpha:]]+")                       
+importFrom(Rcpp, evalCpp) 
+</code></pre>
+
+<p>Here's the relevant chunk of RcppExports.cpp:</p>
+
+<pre><code>// multiGenerateCSVrow
+SEXP multiGenerateCSVrow(SEXP scoreMatrix, SEXP validMatrix, SEXP cutoffVector, SEXP factorVector, SEXP actualVector, SEXP scaleSample);
+RcppExport SEXP myPackage_multiGenerateCSVrow(SEXP scoreMatrixSEXP, SEXP validMatrixSEXP, SEXP cutoffVectorSEXP, SEXP factorVectorSEXP, SEXP actualVectorSEXP, SEXP scaleSampleSEXP) {
+BEGIN_RCPP
+    SEXP __sexp_result;
+    {
+        Rcpp::RNGScope __rngScope;
+        Rcpp::traits::input_parameter&lt; SEXP &gt;::type scoreMatrix(scoreMatrixSEXP );
+        Rcpp::traits::input_parameter&lt; SEXP &gt;::type validMatrix(validMatrixSEXP );
+        Rcpp::traits::input_parameter&lt; SEXP &gt;::type cutoffVector(cutoffVectorSEXP );
+        Rcpp::traits::input_parameter&lt; SEXP &gt;::type factorVector(factorVectorSEXP );
+        Rcpp::traits::input_parameter&lt; SEXP &gt;::type actualVector(actualVectorSEXP );
+        Rcpp::traits::input_parameter&lt; SEXP &gt;::type scaleSample(scaleSampleSEXP );
+        SEXP __result = multiGenerateCSVrow(scoreMatrix, validMatrix, cutoffVector, factorVector, actualVector, scaleSample);
+        PROTECT(__sexp_result = Rcpp::wrap(__result));
+    }
+    UNPROTECT(1);
+    return __sexp_result;
+END_RCPP
+}
+</code></pre>
+
+<p>And RcppExports.R:</p>
+
+<pre><code>multiGenerateCSVrow &lt;- function(scoreMatrix, validMatrix, cutoffVector, factorVector, actualVector, scaleSample) {
+    .Call('myPackage_multiGenerateCSVrow', PACKAGE = 'myPackage', scoreMatrix, validMatrix, cutoffVector, factorVector, actualVector, scaleSample)
+}   
+</code></pre>
+
+<p>What could it be looking for?</p>
+
+        </details>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="answer">
+
+    <div class="stats">
+      <div class="votes answer-accepted-FALSE">
+        <span class="score">14</span>
+        <div class="viewcount">votes</div>
+      </div>
+    </div>
+
+    <div class="content">
+      <div class="author">
+        <span class="gravatar">
+          <a href="https://stackoverflow.com/users/8203448/henine" target="_blank"><img src="https://www.gravatar.com/avatar/f05c070c897724e63b7c5dfa19168bf7?s=256&d=identicon&r=PG" alt="" width="32" height="32"></a>
+        </span>
+        <a href="https://stackoverflow.com/users/8203448/henine" target="_blank">henine</a>
+        replied Jun 23 '17 at 06:02
+      </div>
+      <div class="body">
+        <details>
+          <summary>Click to expand answer</summary>
+          <p>Let me say first that I've read Writing R Extensions, the Rcpp package vignette, and that I've built a package from <code>Rcpp.package.skeleton()</code>.</p>
+
+<p>Since building my package, I added a function, <code>multiGenerateCSVrow()</code>, and then ran <code>compileAttributes()</code> on the package directory before R CMD build/R CMD install. After I load my package, I can run my function either directly or via <code>foreach()</code> with the <code>%do%</code> method.</p>
+
+<p>When I try to run in parallel however, I get an error:</p>
+
+<pre><code>cl &lt;- makePSOCKcluster(8)                                                                                     
+registerDoParallel(cl)                                                                                        
+rows &lt;- foreach(i=1:8,.combine=rbind,.packages="myPackage") %dopar% multiGenerateCSVrow(scoreMatrix=NIsample,   
+                                                                   validMatrix = matrix(1,nrow=10,ncol=10),   
+                                                                   cutoffVector = rep(0,10),                  
+                                                                   factorVector = randomsCutPlus1[i,],        
+                                                                   actualVector = rep(1,10),                  
+                                                                   scaleSample = 1)                           
+stopCluster(cl)                                                                                               
+~                                                                                                             
+
+Error in multiGenerateCSVrow(scoreMatrix = NIsample, validMatrix = matrix(1,  : 
+  task 1 failed - "NULL value passed as symbol address"
+</code></pre>
+
+<p>Here's the package NAMESPACE:</p>
+
+<pre><code># Generated by roxygen2 (4.0.1): do not edit by hand 
+useDynLib(myPackage)                                   
+exportPattern("^[[:alpha:]]+")                       
+importFrom(Rcpp, evalCpp) 
+</code></pre>
+
+<p>Here's the relevant chunk of RcppExports.cpp:</p>
+
+<pre><code>// multiGenerateCSVrow
+SEXP multiGenerateCSVrow(SEXP scoreMatrix, SEXP validMatrix, SEXP cutoffVector, SEXP factorVector, SEXP actualVector, SEXP scaleSample);
+RcppExport SEXP myPackage_multiGenerateCSVrow(SEXP scoreMatrixSEXP, SEXP validMatrixSEXP, SEXP cutoffVectorSEXP, SEXP factorVectorSEXP, SEXP actualVectorSEXP, SEXP scaleSampleSEXP) {
+BEGIN_RCPP
+    SEXP __sexp_result;
+    {
+        Rcpp::RNGScope __rngScope;
+        Rcpp::traits::input_parameter&lt; SEXP &gt;::type scoreMatrix(scoreMatrixSEXP );
+        Rcpp::traits::input_parameter&lt; SEXP &gt;::type validMatrix(validMatrixSEXP );
+        Rcpp::traits::input_parameter&lt; SEXP &gt;::type cutoffVector(cutoffVectorSEXP );
+        Rcpp::traits::input_parameter&lt; SEXP &gt;::type factorVector(factorVectorSEXP );
+        Rcpp::traits::input_parameter&lt; SEXP &gt;::type actualVector(actualVectorSEXP );
+        Rcpp::traits::input_parameter&lt; SEXP &gt;::type scaleSample(scaleSampleSEXP );
+        SEXP __result = multiGenerateCSVrow(scoreMatrix, validMatrix, cutoffVector, factorVector, actualVector, scaleSample);
+        PROTECT(__sexp_result = Rcpp::wrap(__result));
+    }
+    UNPROTECT(1);
+    return __sexp_result;
+END_RCPP
+}
+</code></pre>
+
+<p>And RcppExports.R:</p>
+
+<pre><code>multiGenerateCSVrow &lt;- function(scoreMatrix, validMatrix, cutoffVector, factorVector, actualVector, scaleSample) {
+    .Call('myPackage_multiGenerateCSVrow', PACKAGE = 'myPackage', scoreMatrix, validMatrix, cutoffVector, factorVector, actualVector, scaleSample)
+}   
+</code></pre>
+
+<p>What could it be looking for?</p>
+
+        </details>
+      </div>
+    </div>
+
+  </div>
+
 </article> <article class="qa" id="qa-22828361">
 
   <div class="question">
@@ -1938,7 +2125,7 @@ int mySuminC(){
         <div class="viewcount">votes</div>
       </div>
       <div class="views">
-        <span class="score">771</span>
+        <span class="score">772</span>
         <div class="viewcount">views</div>
       </div>
     </div>
@@ -2235,193 +2422,6 @@ vec randdraw(int d, int n){
 
   </div>
 
-</article> <article class="qa" id="qa-25062383">
-
-  <div class="question">
-
-    <div class="stats">
-      <div class="votes">
-        <span class="score">27</span>
-        <div class="viewcount">votes</div>
-      </div>
-      <div class="views">
-        <span class="score">9.2k</span>
-        <div class="viewcount">views</div>
-      </div>
-    </div>
-
-    <div class="content">
-      <div class="title">
-        <h3>Can&#39;t run Rcpp function in foreach - &quot;NULL value passed as symbol address&quot;</h3>
-        <a href="https://stackoverflow.com/questions/25062383/cant-run-rcpp-function-in-foreach-null-value-passed-as-symbol-address" target="_blank">[see original]</a>
-      </div>
-      <div class="tags"><span>r</span><span>rcpp</span></div>
-      <div class="author">
-        <span class="gravatar">
-          <a href="https://stackoverflow.com/users/995854/patrick-mccarthy" target="_blank"><img src="https://www.gravatar.com/avatar/391bcee3df94f2d4dd8c33b7437e28aa?s=256&d=identicon&r=PG" alt="" width="32" height="32"></a>
-        </span>
-        <a href="https://stackoverflow.com/users/995854/patrick-mccarthy" target="_blank">Patrick McCarthy</a>
-        asked Jul 31 '14 at 15:02
-      </div>
-      <div class="body">
-        <details>
-          <summary>Click to expand question</summary>
-          <p>Let me say first that I've read Writing R Extensions, the Rcpp package vignette, and that I've built a package from <code>Rcpp.package.skeleton()</code>.</p>
-
-<p>Since building my package, I added a function, <code>multiGenerateCSVrow()</code>, and then ran <code>compileAttributes()</code> on the package directory before R CMD build/R CMD install. After I load my package, I can run my function either directly or via <code>foreach()</code> with the <code>%do%</code> method.</p>
-
-<p>When I try to run in parallel however, I get an error:</p>
-
-<pre><code>cl &lt;- makePSOCKcluster(8)                                                                                     
-registerDoParallel(cl)                                                                                        
-rows &lt;- foreach(i=1:8,.combine=rbind,.packages="myPackage") %dopar% multiGenerateCSVrow(scoreMatrix=NIsample,   
-                                                                   validMatrix = matrix(1,nrow=10,ncol=10),   
-                                                                   cutoffVector = rep(0,10),                  
-                                                                   factorVector = randomsCutPlus1[i,],        
-                                                                   actualVector = rep(1,10),                  
-                                                                   scaleSample = 1)                           
-stopCluster(cl)                                                                                               
-~                                                                                                             
-
-Error in multiGenerateCSVrow(scoreMatrix = NIsample, validMatrix = matrix(1,  : 
-  task 1 failed - "NULL value passed as symbol address"
-</code></pre>
-
-<p>Here's the package NAMESPACE:</p>
-
-<pre><code># Generated by roxygen2 (4.0.1): do not edit by hand 
-useDynLib(myPackage)                                   
-exportPattern("^[[:alpha:]]+")                       
-importFrom(Rcpp, evalCpp) 
-</code></pre>
-
-<p>Here's the relevant chunk of RcppExports.cpp:</p>
-
-<pre><code>// multiGenerateCSVrow
-SEXP multiGenerateCSVrow(SEXP scoreMatrix, SEXP validMatrix, SEXP cutoffVector, SEXP factorVector, SEXP actualVector, SEXP scaleSample);
-RcppExport SEXP myPackage_multiGenerateCSVrow(SEXP scoreMatrixSEXP, SEXP validMatrixSEXP, SEXP cutoffVectorSEXP, SEXP factorVectorSEXP, SEXP actualVectorSEXP, SEXP scaleSampleSEXP) {
-BEGIN_RCPP
-    SEXP __sexp_result;
-    {
-        Rcpp::RNGScope __rngScope;
-        Rcpp::traits::input_parameter&lt; SEXP &gt;::type scoreMatrix(scoreMatrixSEXP );
-        Rcpp::traits::input_parameter&lt; SEXP &gt;::type validMatrix(validMatrixSEXP );
-        Rcpp::traits::input_parameter&lt; SEXP &gt;::type cutoffVector(cutoffVectorSEXP );
-        Rcpp::traits::input_parameter&lt; SEXP &gt;::type factorVector(factorVectorSEXP );
-        Rcpp::traits::input_parameter&lt; SEXP &gt;::type actualVector(actualVectorSEXP );
-        Rcpp::traits::input_parameter&lt; SEXP &gt;::type scaleSample(scaleSampleSEXP );
-        SEXP __result = multiGenerateCSVrow(scoreMatrix, validMatrix, cutoffVector, factorVector, actualVector, scaleSample);
-        PROTECT(__sexp_result = Rcpp::wrap(__result));
-    }
-    UNPROTECT(1);
-    return __sexp_result;
-END_RCPP
-}
-</code></pre>
-
-<p>And RcppExports.R:</p>
-
-<pre><code>multiGenerateCSVrow &lt;- function(scoreMatrix, validMatrix, cutoffVector, factorVector, actualVector, scaleSample) {
-    .Call('myPackage_multiGenerateCSVrow', PACKAGE = 'myPackage', scoreMatrix, validMatrix, cutoffVector, factorVector, actualVector, scaleSample)
-}   
-</code></pre>
-
-<p>What could it be looking for?</p>
-
-        </details>
-      </div>
-    </div>
-
-  </div>
-
-  <div class="answer">
-
-    <div class="stats">
-      <div class="votes answer-accepted-FALSE">
-        <span class="score">14</span>
-        <div class="viewcount">votes</div>
-      </div>
-    </div>
-
-    <div class="content">
-      <div class="author">
-        <span class="gravatar">
-          <a href="https://stackoverflow.com/users/8203448/henine" target="_blank"><img src="https://www.gravatar.com/avatar/f05c070c897724e63b7c5dfa19168bf7?s=256&d=identicon&r=PG" alt="" width="32" height="32"></a>
-        </span>
-        <a href="https://stackoverflow.com/users/8203448/henine" target="_blank">henine</a>
-        replied Jun 23 '17 at 06:02
-      </div>
-      <div class="body">
-        <details>
-          <summary>Click to expand answer</summary>
-          <p>Let me say first that I've read Writing R Extensions, the Rcpp package vignette, and that I've built a package from <code>Rcpp.package.skeleton()</code>.</p>
-
-<p>Since building my package, I added a function, <code>multiGenerateCSVrow()</code>, and then ran <code>compileAttributes()</code> on the package directory before R CMD build/R CMD install. After I load my package, I can run my function either directly or via <code>foreach()</code> with the <code>%do%</code> method.</p>
-
-<p>When I try to run in parallel however, I get an error:</p>
-
-<pre><code>cl &lt;- makePSOCKcluster(8)                                                                                     
-registerDoParallel(cl)                                                                                        
-rows &lt;- foreach(i=1:8,.combine=rbind,.packages="myPackage") %dopar% multiGenerateCSVrow(scoreMatrix=NIsample,   
-                                                                   validMatrix = matrix(1,nrow=10,ncol=10),   
-                                                                   cutoffVector = rep(0,10),                  
-                                                                   factorVector = randomsCutPlus1[i,],        
-                                                                   actualVector = rep(1,10),                  
-                                                                   scaleSample = 1)                           
-stopCluster(cl)                                                                                               
-~                                                                                                             
-
-Error in multiGenerateCSVrow(scoreMatrix = NIsample, validMatrix = matrix(1,  : 
-  task 1 failed - "NULL value passed as symbol address"
-</code></pre>
-
-<p>Here's the package NAMESPACE:</p>
-
-<pre><code># Generated by roxygen2 (4.0.1): do not edit by hand 
-useDynLib(myPackage)                                   
-exportPattern("^[[:alpha:]]+")                       
-importFrom(Rcpp, evalCpp) 
-</code></pre>
-
-<p>Here's the relevant chunk of RcppExports.cpp:</p>
-
-<pre><code>// multiGenerateCSVrow
-SEXP multiGenerateCSVrow(SEXP scoreMatrix, SEXP validMatrix, SEXP cutoffVector, SEXP factorVector, SEXP actualVector, SEXP scaleSample);
-RcppExport SEXP myPackage_multiGenerateCSVrow(SEXP scoreMatrixSEXP, SEXP validMatrixSEXP, SEXP cutoffVectorSEXP, SEXP factorVectorSEXP, SEXP actualVectorSEXP, SEXP scaleSampleSEXP) {
-BEGIN_RCPP
-    SEXP __sexp_result;
-    {
-        Rcpp::RNGScope __rngScope;
-        Rcpp::traits::input_parameter&lt; SEXP &gt;::type scoreMatrix(scoreMatrixSEXP );
-        Rcpp::traits::input_parameter&lt; SEXP &gt;::type validMatrix(validMatrixSEXP );
-        Rcpp::traits::input_parameter&lt; SEXP &gt;::type cutoffVector(cutoffVectorSEXP );
-        Rcpp::traits::input_parameter&lt; SEXP &gt;::type factorVector(factorVectorSEXP );
-        Rcpp::traits::input_parameter&lt; SEXP &gt;::type actualVector(actualVectorSEXP );
-        Rcpp::traits::input_parameter&lt; SEXP &gt;::type scaleSample(scaleSampleSEXP );
-        SEXP __result = multiGenerateCSVrow(scoreMatrix, validMatrix, cutoffVector, factorVector, actualVector, scaleSample);
-        PROTECT(__sexp_result = Rcpp::wrap(__result));
-    }
-    UNPROTECT(1);
-    return __sexp_result;
-END_RCPP
-}
-</code></pre>
-
-<p>And RcppExports.R:</p>
-
-<pre><code>multiGenerateCSVrow &lt;- function(scoreMatrix, validMatrix, cutoffVector, factorVector, actualVector, scaleSample) {
-    .Call('myPackage_multiGenerateCSVrow', PACKAGE = 'myPackage', scoreMatrix, validMatrix, cutoffVector, factorVector, actualVector, scaleSample)
-}   
-</code></pre>
-
-<p>What could it be looking for?</p>
-
-        </details>
-      </div>
-    </div>
-
-  </div>
-
 </article> <article class="qa" id="qa-46039132">
 
   <div class="question">
@@ -2606,7 +2606,7 @@ I would like to keep 1-D matrix as a matrix. Actually, I need to throw many kind
         <div class="viewcount">votes</div>
       </div>
       <div class="views">
-        <span class="score">357</span>
+        <span class="score">358</span>
         <div class="viewcount">views</div>
       </div>
     </div>
@@ -2729,7 +2729,7 @@ n = 15
         <div class="viewcount">votes</div>
       </div>
       <div class="views">
-        <span class="score">860</span>
+        <span class="score">861</span>
         <div class="viewcount">views</div>
       </div>
     </div>
