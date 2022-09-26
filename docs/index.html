@@ -8,12 +8,12 @@
   <header>
     <h1>Rcpp Top StackOverflow Q&A</h1>
     <h2>Top users by number of answers</h2>
-    <ul class="cloud"><li><a data-weight='1' href='https://stackoverflow.com/users/16474343/daniela'>Daniela</a></li>
+    <ul class="cloud"><li><a data-weight='1' href='https://stackoverflow.com/users/636656/ari-b-friedman'>Ari B. Friedman</a></li>
+<li><a data-weight='1' href='https://stackoverflow.com/users/16474343/daniela'>Daniela</a></li>
 <li><a data-weight='1' href='https://stackoverflow.com/users/168747/marek'>Marek</a></li>
 <li><a data-weight='1' href='https://stackoverflow.com/users/980833/josh-obrien'>Josh O&#39;Brien</a></li>
 <li><a data-weight='1' href='https://stackoverflow.com/users/1922182/politicaleconomist'>politicalEconomist</a></li>
-<li><a data-weight='16' href='https://stackoverflow.com/users/143305/dirk-eddelbuettel'>Dirk Eddelbuettel</a></li>
-<li><a data-weight='1' href='https://stackoverflow.com/users/636656/ari-b-friedman'>Ari B. Friedman</a></li>
+<li><a data-weight='15' href='https://stackoverflow.com/users/143305/dirk-eddelbuettel'>Dirk Eddelbuettel</a></li>
 <li><a data-weight='6' href='https://stackoverflow.com/users/1342082/kevin-ushey'>Kevin Ushey</a></li>
 <li><a data-weight='1' href='https://stackoverflow.com/users/8203448/henine'>henine</a></li>
 <li><a data-weight='10' href='https://stackoverflow.com/users/1345455/coatless'>coatless</a></li>
@@ -33,6 +33,7 @@
 <li><a data-weight='1' href='https://stackoverflow.com/users/65863/remy-lebeau'>Remy Lebeau</a></li>
 <li><a data-weight='1' href='https://stackoverflow.com/users/324364/joran'>joran</a></li>
 <li><a data-weight='1' href='https://stackoverflow.com/users/559784/arun'>Arun</a></li>
+<li><a data-weight='1' href='https://stackoverflow.com/users/5793905/alexis'>Alexis</a></li>
 <li><a data-weight='1' href='https://stackoverflow.com/users/1315472/nairolf'>Nairolf</a></li>
 <li><a data-weight='1' href='https://stackoverflow.com/users/1968/konrad-rudolph'>Konrad Rudolph</a></li>
 <li><a data-weight='1' href='https://stackoverflow.com/users/173985/thell'>Thell</a></li>
@@ -56,16 +57,16 @@
 <li><a href='#qa-21225662'>calling a user-defined R function from C++ using Rcpp</a></li>
 <li><a href='#qa-51110244'>In Rcpp, how to get a user-defined structure from C into R</a></li>
 <li><a href='#qa-43221681'>Changing R&#39;s Seed from Rcpp to Guarantee Reproducibility</a></li>
+<li><a href='#qa-38518387'>Using Rcpp functions inside of R&#39;s par*apply functions from the parallel package</a></li>
+<li><a href='#qa-41602024'>Should I prefer Rcpp::NumericVector over std::vector?</a></li>
 <li><a href='#qa-18570526'>How to build a R package which use Rcpp with external c++ libraries?</a></li>
 <li><a href='#qa-46039132'>Renaming and Hiding an Exported Rcpp function in an R Package</a></li>
 <li><a href='#qa-9949202'>1-dimensional Matrix is changed to a vector in R</a></li>
 <li><a href='#qa-45549992'>Group vector on conditional sum</a></li>
 <li><a href='#qa-46473895'>Calling R&#39;s optim function from within C++ using Rcpp</a></li>
 <li><a href='#qa-27371543'>how many vectors can be added in DataFrame::create( vec1, vec2 ... )?</a></li>
-<li><a href='#qa-38518387'>Using Rcpp functions inside of R&#39;s par*apply functions from the parallel package</a></li>
 <li><a href='#qa-13995266'>Using 3rd party header files with Rcpp</a></li>
 <li><a href='#qa-3088650'>How do I create a list of vectors in Rcpp?</a></li>
-<li><a href='#qa-41602024'>Should I prefer Rcpp::NumericVector over std::vector?</a></li>
 <li><a href='#qa-48363076'>Declare a variable as a reference in Rcpp</a></li>
 <li><a href='#qa-37060211'>efficiently locf by groups in a single R data.table</a></li></ul></nav>
   <section><article class="qa" id="qa-2908822">
@@ -78,7 +79,7 @@
         <div class="viewcount">votes</div>
       </div>
       <div class="views">
-        <span class="score">104.8k</span>
+        <span class="score">104.9k</span>
         <div class="viewcount">views</div>
       </div>
     </div>
@@ -131,7 +132,7 @@
 
     <div class="stats">
       <div class="votes answer-accepted-FALSE">
-        <span class="score">456</span>
+        <span class="score">457</span>
         <div class="viewcount">votes</div>
       </div>
     </div>
@@ -185,7 +186,7 @@
         <div class="viewcount">votes</div>
       </div>
       <div class="views">
-        <span class="score">87k</span>
+        <span class="score">87.4k</span>
         <div class="viewcount">views</div>
       </div>
     </div>
@@ -433,7 +434,7 @@ cpp_if &lt;- cxxfunction(signature(a=&quot;numeric&quot;), cpp_if_src, plugin=&q
         <div class="viewcount">votes</div>
       </div>
       <div class="views">
-        <span class="score">85.5k</span>
+        <span class="score">85.7k</span>
         <div class="viewcount">views</div>
       </div>
     </div>
@@ -734,7 +735,7 @@ CXX_STD = CXX11
     <div class="content">
       <div class="author">
         <span class="gravatar">
-          <a href="https://stackoverflow.com/users/1345455/coatless" target="_blank"><img src="https://i.stack.imgur.com/DrBTs.jpg?s=256&g=1" alt="" width="32" height="32"></a>
+          <a href="https://stackoverflow.com/users/1345455/coatless" target="_blank"><img src="https://i.stack.imgur.com/Q6Q2u.jpg?s=256&g=1" alt="" width="32" height="32"></a>
         </span>
         <a href="https://stackoverflow.com/users/1345455/coatless" target="_blank">coatless</a>
         replied Apr 24 '17 at 23:30
@@ -893,7 +894,7 @@ Using Armadillo classes as suggested in the answer below make things very slight
     <div class="content">
       <div class="author">
         <span class="gravatar">
-          <a href="https://stackoverflow.com/users/1345455/coatless" target="_blank"><img src="https://i.stack.imgur.com/DrBTs.jpg?s=256&g=1" alt="" width="32" height="32"></a>
+          <a href="https://stackoverflow.com/users/1345455/coatless" target="_blank"><img src="https://i.stack.imgur.com/Q6Q2u.jpg?s=256&g=1" alt="" width="32" height="32"></a>
         </span>
         <a href="https://stackoverflow.com/users/1345455/coatless" target="_blank">coatless</a>
         replied Jan 03 '18 at 02:04
@@ -973,7 +974,7 @@ Using Armadillo classes as suggested in the answer below make things very slight
         <div class="viewcount">votes</div>
       </div>
       <div class="views">
-        <span class="score">81.6k</span>
+        <span class="score">81.8k</span>
         <div class="viewcount">views</div>
       </div>
     </div>
@@ -1490,7 +1491,7 @@ double std(NumericVector x)
     <div class="content">
       <div class="author">
         <span class="gravatar">
-          <a href="https://stackoverflow.com/users/1345455/coatless" target="_blank"><img src="https://i.stack.imgur.com/DrBTs.jpg?s=256&g=1" alt="" width="32" height="32"></a>
+          <a href="https://stackoverflow.com/users/1345455/coatless" target="_blank"><img src="https://i.stack.imgur.com/Q6Q2u.jpg?s=256&g=1" alt="" width="32" height="32"></a>
         </span>
         <a href="https://stackoverflow.com/users/1345455/coatless" target="_blank">coatless</a>
         replied Jun 24 '16 at 16:03
@@ -2124,7 +2125,7 @@ int mySuminC(){
         <div class="viewcount">votes</div>
       </div>
       <div class="views">
-        <span class="score">932</span>
+        <span class="score">936</span>
         <div class="viewcount">views</div>
       </div>
     </div>
@@ -2307,7 +2308,7 @@ vec randdraw(int d, int n){
     <div class="content">
       <div class="author">
         <span class="gravatar">
-          <a href="https://stackoverflow.com/users/1345455/coatless" target="_blank"><img src="https://i.stack.imgur.com/DrBTs.jpg?s=256&g=1" alt="" width="32" height="32"></a>
+          <a href="https://stackoverflow.com/users/1345455/coatless" target="_blank"><img src="https://i.stack.imgur.com/Q6Q2u.jpg?s=256&g=1" alt="" width="32" height="32"></a>
         </span>
         <a href="https://stackoverflow.com/users/1345455/coatless" target="_blank">coatless</a>
         replied Apr 05 '17 at 05:58
@@ -2337,6 +2338,208 @@ vec randdraw(int d, int n){
 </code></pre>
 
 <p>But clearly I don't want to restrict d to be integer. Ideally d should be double. Any thoughts? Thank you!</p>
+
+        </details>
+      </div>
+    </div>
+
+  </div>
+
+</article> <article class="qa" id="qa-38518387">
+
+  <div class="question">
+
+    <div class="stats">
+      <div class="votes">
+        <span class="score">1</span>
+        <div class="viewcount">votes</div>
+      </div>
+      <div class="views">
+        <span class="score">1.5k</span>
+        <div class="viewcount">views</div>
+      </div>
+    </div>
+
+    <div class="content">
+      <div class="title">
+        <h3>Using Rcpp functions inside of R&#39;s par*apply functions from the parallel package</h3>
+        <a href="https://stackoverflow.com/questions/38518387/using-rcpp-functions-inside-of-rs-parapply-functions-from-the-parallel-package" target="_blank">[see original]</a>
+      </div>
+      <div class="tags"><span>r</span><span>parallel-processing</span><span>rcpp</span></div>
+      <div class="author">
+        <span class="gravatar">
+          <a href="https://stackoverflow.com/users/6610205/scott-white" target="_blank"><img src="https://www.gravatar.com/avatar/b2374ecc343f7e9e98bf0180db487083?s=256&d=identicon&r=PG&f=1" alt="" width="32" height="32"></a>
+        </span>
+        <a href="https://stackoverflow.com/users/6610205/scott-white" target="_blank">Scott White</a>
+        asked Jul 22 '16 at 04:50
+      </div>
+      <div class="body">
+        <details>
+          <summary>Click to expand question</summary>
+          <p>I'm trying to understand what is happening behind the <code>Rcpp::sourceCpp()</code> call on a parallelized environment. Recently, this was partially addressed in the question: <a href="https://stackoverflow.com/questions/25606733/using-rcpp-function-in-parlapply-on-windows/25606950">Using Rcpp function in parLapply on Windows</a>.</p>
+
+<p>Within this post, Dirk said,</p>
+
+<blockquote>
+  <p>"You need to run the sourceCpp() call in each spawned process, or else get them your code."</p>
+</blockquote>
+
+<p>This was in response to questioner's use of distributing the <em>Rcpp</em> function to the worker processes. The questioner was sending the <em>Rcpp</em> function via:</p>
+
+<pre><code>clusterExport(cl = cl, varlist = "payoff")
+</code></pre>
+
+<p>I'm confused as to why this doesn't work. My thoughts are that this was what the objective of the <code>clusterExport()</code> is for.</p>
+
+        </details>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="answer">
+
+    <div class="stats">
+      <div class="votes answer-accepted-TRUE">
+        <span class="score">5</span>
+        <div class="viewcount">votes</div>
+      </div>
+    </div>
+
+    <div class="content">
+      <div class="author">
+        <span class="gravatar">
+          <a href="https://stackoverflow.com/users/1345455/coatless" target="_blank"><img src="https://i.stack.imgur.com/Q6Q2u.jpg?s=256&g=1" alt="" width="32" height="32"></a>
+        </span>
+        <a href="https://stackoverflow.com/users/1345455/coatless" target="_blank">coatless</a>
+        replied Jul 22 '16 at 05:11
+      </div>
+      <div class="body">
+        <details>
+          <summary>Click to expand answer</summary>
+          <p>I'm trying to understand what is happening behind the <code>Rcpp::sourceCpp()</code> call on a parallelized environment. Recently, this was partially addressed in the question: <a href="https://stackoverflow.com/questions/25606733/using-rcpp-function-in-parlapply-on-windows/25606950">Using Rcpp function in parLapply on Windows</a>.</p>
+
+<p>Within this post, Dirk said,</p>
+
+<blockquote>
+  <p>"You need to run the sourceCpp() call in each spawned process, or else get them your code."</p>
+</blockquote>
+
+<p>This was in response to questioner's use of distributing the <em>Rcpp</em> function to the worker processes. The questioner was sending the <em>Rcpp</em> function via:</p>
+
+<pre><code>clusterExport(cl = cl, varlist = "payoff")
+</code></pre>
+
+<p>I'm confused as to why this doesn't work. My thoughts are that this was what the objective of the <code>clusterExport()</code> is for.</p>
+
+        </details>
+      </div>
+    </div>
+
+  </div>
+
+</article> <article class="qa" id="qa-41602024">
+
+  <div class="question">
+
+    <div class="stats">
+      <div class="votes">
+        <span class="score">21</span>
+        <div class="viewcount">votes</div>
+      </div>
+      <div class="views">
+        <span class="score">8.7k</span>
+        <div class="viewcount">views</div>
+      </div>
+    </div>
+
+    <div class="content">
+      <div class="title">
+        <h3>Should I prefer Rcpp::NumericVector over std::vector?</h3>
+        <a href="https://stackoverflow.com/questions/41602024/should-i-prefer-rcppnumericvector-over-stdvector" target="_blank">[see original]</a>
+      </div>
+      <div class="tags"><span>c++</span><span>rcpp</span></div>
+      <div class="author">
+        <span class="gravatar">
+          <a href="https://stackoverflow.com/users/3986320/tim" target="_blank"><img src="https://i.stack.imgur.com/YB28g.jpg?s=256&g=1" alt="" width="32" height="32"></a>
+        </span>
+        <a href="https://stackoverflow.com/users/3986320/tim" target="_blank">Tim</a>
+        asked Jan 11 '17 at 22:38
+      </div>
+      <div class="body">
+        <details>
+          <summary>Click to expand question</summary>
+          <p>Is there any reason why I should prefer <code>Rcpp::NumericVector</code> over <code>std::vector&lt;double&gt;</code>?</p>
+
+<p>For example, the two functions below</p>
+
+<pre><code>// [[Rcpp::export]]
+Rcpp::NumericVector foo(const Rcpp::NumericVector&amp; x) {
+  Rcpp::NumericVector tmp(x.length());
+  for (int i = 0; i &lt; x.length(); i++)
+    tmp[i] = x[i] + 1.0;
+  return tmp;
+}
+
+// [[Rcpp::export]]
+std::vector&lt;double&gt; bar(const std::vector&lt;double&gt;&amp; x) {
+  std::vector&lt;double&gt; tmp(x.size());
+  for (int i = 0; i &lt; x.size(); i++)
+    tmp[i] = x[i] + 1.0;
+  return tmp;
+}
+</code></pre>
+
+<p>Are equivalent when considering their working and benchmarked performance. I understand that Rcpp offers sugar and vectorized operations, but if it is only about taking R's vector as input and returning vector as output, then would there be any difference which one of those I use? Can using <code>std::vector&lt;double&gt;</code> lead to any possible problems when interacting with R?</p>
+
+        </details>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="answer">
+
+    <div class="stats">
+      <div class="votes answer-accepted-TRUE">
+        <span class="score">28</span>
+        <div class="viewcount">votes</div>
+      </div>
+    </div>
+
+    <div class="content">
+      <div class="author">
+        <span class="gravatar">
+          <a href="https://stackoverflow.com/users/1345455/coatless" target="_blank"><img src="https://i.stack.imgur.com/Q6Q2u.jpg?s=256&g=1" alt="" width="32" height="32"></a>
+        </span>
+        <a href="https://stackoverflow.com/users/1345455/coatless" target="_blank">coatless</a>
+        replied Jan 11 '17 at 22:59
+      </div>
+      <div class="body">
+        <details>
+          <summary>Click to expand answer</summary>
+          <p>Is there any reason why I should prefer <code>Rcpp::NumericVector</code> over <code>std::vector&lt;double&gt;</code>?</p>
+
+<p>For example, the two functions below</p>
+
+<pre><code>// [[Rcpp::export]]
+Rcpp::NumericVector foo(const Rcpp::NumericVector&amp; x) {
+  Rcpp::NumericVector tmp(x.length());
+  for (int i = 0; i &lt; x.length(); i++)
+    tmp[i] = x[i] + 1.0;
+  return tmp;
+}
+
+// [[Rcpp::export]]
+std::vector&lt;double&gt; bar(const std::vector&lt;double&gt;&amp; x) {
+  std::vector&lt;double&gt; tmp(x.size());
+  for (int i = 0; i &lt; x.size(); i++)
+    tmp[i] = x[i] + 1.0;
+  return tmp;
+}
+</code></pre>
+
+<p>Are equivalent when considering their working and benchmarked performance. I understand that Rcpp offers sugar and vectorized operations, but if it is only about taking R's vector as input and returning vector as output, then would there be any difference which one of those I use? Can using <code>std::vector&lt;double&gt;</code> lead to any possible problems when interacting with R?</p>
 
         </details>
       </div>
@@ -2477,7 +2680,7 @@ My solution so far is to export both functions in the Namespace file which cause
     <div class="content">
       <div class="author">
         <span class="gravatar">
-          <a href="https://stackoverflow.com/users/1345455/coatless" target="_blank"><img src="https://i.stack.imgur.com/DrBTs.jpg?s=256&g=1" alt="" width="32" height="32"></a>
+          <a href="https://stackoverflow.com/users/1345455/coatless" target="_blank"><img src="https://i.stack.imgur.com/Q6Q2u.jpg?s=256&g=1" alt="" width="32" height="32"></a>
         </span>
         <a href="https://stackoverflow.com/users/1345455/coatless" target="_blank">coatless</a>
         replied Sep 04 '17 at 15:16
@@ -2605,7 +2808,7 @@ I would like to keep 1-D matrix as a matrix. Actually, I need to throw many kind
         <div class="viewcount">votes</div>
       </div>
       <div class="views">
-        <span class="score">406</span>
+        <span class="score">408</span>
         <div class="viewcount">views</div>
       </div>
     </div>
@@ -2728,7 +2931,7 @@ n = 15
         <div class="viewcount">votes</div>
       </div>
       <div class="views">
-        <span class="score">926</span>
+        <span class="score">928</span>
         <div class="viewcount">views</div>
       </div>
     </div>
@@ -2845,7 +3048,7 @@ Rcpp::List callOptimFun(SEXP x) {
     <div class="content">
       <div class="author">
         <span class="gravatar">
-          <a href="https://stackoverflow.com/users/1345455/coatless" target="_blank"><img src="https://i.stack.imgur.com/DrBTs.jpg?s=256&g=1" alt="" width="32" height="32"></a>
+          <a href="https://stackoverflow.com/users/1345455/coatless" target="_blank"><img src="https://i.stack.imgur.com/Q6Q2u.jpg?s=256&g=1" alt="" width="32" height="32"></a>
         </span>
         <a href="https://stackoverflow.com/users/1345455/coatless" target="_blank">coatless</a>
         replied Sep 28 '17 at 17:35
@@ -3093,99 +3296,6 @@ Rcpp::List callOptimFun(SEXP x) {
 <li>Have I hit a hard limit?</li>
 <li>Is there a workaround to allow me to add more than 20 vectors to a data frame?</li>
 </ol>
-
-        </details>
-      </div>
-    </div>
-
-  </div>
-
-</article> <article class="qa" id="qa-38518387">
-
-  <div class="question">
-
-    <div class="stats">
-      <div class="votes">
-        <span class="score">1</span>
-        <div class="viewcount">votes</div>
-      </div>
-      <div class="views">
-        <span class="score">1.5k</span>
-        <div class="viewcount">views</div>
-      </div>
-    </div>
-
-    <div class="content">
-      <div class="title">
-        <h3>Using Rcpp functions inside of R&#39;s par*apply functions from the parallel package</h3>
-        <a href="https://stackoverflow.com/questions/38518387/using-rcpp-functions-inside-of-rs-parapply-functions-from-the-parallel-package" target="_blank">[see original]</a>
-      </div>
-      <div class="tags"><span>r</span><span>parallel-processing</span><span>rcpp</span></div>
-      <div class="author">
-        <span class="gravatar">
-          <a href="https://stackoverflow.com/users/6610205/scott-white" target="_blank"><img src="https://www.gravatar.com/avatar/b2374ecc343f7e9e98bf0180db487083?s=256&d=identicon&r=PG&f=1" alt="" width="32" height="32"></a>
-        </span>
-        <a href="https://stackoverflow.com/users/6610205/scott-white" target="_blank">Scott White</a>
-        asked Jul 22 '16 at 04:50
-      </div>
-      <div class="body">
-        <details>
-          <summary>Click to expand question</summary>
-          <p>I'm trying to understand what is happening behind the <code>Rcpp::sourceCpp()</code> call on a parallelized environment. Recently, this was partially addressed in the question: <a href="https://stackoverflow.com/questions/25606733/using-rcpp-function-in-parlapply-on-windows/25606950">Using Rcpp function in parLapply on Windows</a>.</p>
-
-<p>Within this post, Dirk said,</p>
-
-<blockquote>
-  <p>"You need to run the sourceCpp() call in each spawned process, or else get them your code."</p>
-</blockquote>
-
-<p>This was in response to questioner's use of distributing the <em>Rcpp</em> function to the worker processes. The questioner was sending the <em>Rcpp</em> function via:</p>
-
-<pre><code>clusterExport(cl = cl, varlist = "payoff")
-</code></pre>
-
-<p>I'm confused as to why this doesn't work. My thoughts are that this was what the objective of the <code>clusterExport()</code> is for.</p>
-
-        </details>
-      </div>
-    </div>
-
-  </div>
-
-  <div class="answer">
-
-    <div class="stats">
-      <div class="votes answer-accepted-TRUE">
-        <span class="score">5</span>
-        <div class="viewcount">votes</div>
-      </div>
-    </div>
-
-    <div class="content">
-      <div class="author">
-        <span class="gravatar">
-          <a href="https://stackoverflow.com/users/1345455/coatless" target="_blank"><img src="https://i.stack.imgur.com/DrBTs.jpg?s=256&g=1" alt="" width="32" height="32"></a>
-        </span>
-        <a href="https://stackoverflow.com/users/1345455/coatless" target="_blank">coatless</a>
-        replied Jul 22 '16 at 05:11
-      </div>
-      <div class="body">
-        <details>
-          <summary>Click to expand answer</summary>
-          <p>I'm trying to understand what is happening behind the <code>Rcpp::sourceCpp()</code> call on a parallelized environment. Recently, this was partially addressed in the question: <a href="https://stackoverflow.com/questions/25606733/using-rcpp-function-in-parlapply-on-windows/25606950">Using Rcpp function in parLapply on Windows</a>.</p>
-
-<p>Within this post, Dirk said,</p>
-
-<blockquote>
-  <p>"You need to run the sourceCpp() call in each spawned process, or else get them your code."</p>
-</blockquote>
-
-<p>This was in response to questioner's use of distributing the <em>Rcpp</em> function to the worker processes. The questioner was sending the <em>Rcpp</em> function via:</p>
-
-<pre><code>clusterExport(cl = cl, varlist = "payoff")
-</code></pre>
-
-<p>I'm confused as to why this doesn't work. My thoughts are that this was what the objective of the <code>clusterExport()</code> is for.</p>
 
         </details>
       </div>
@@ -3567,115 +3677,6 @@ return someOutput;
 
   </div>
 
-</article> <article class="qa" id="qa-41602024">
-
-  <div class="question">
-
-    <div class="stats">
-      <div class="votes">
-        <span class="score">21</span>
-        <div class="viewcount">votes</div>
-      </div>
-      <div class="views">
-        <span class="score">8.7k</span>
-        <div class="viewcount">views</div>
-      </div>
-    </div>
-
-    <div class="content">
-      <div class="title">
-        <h3>Should I prefer Rcpp::NumericVector over std::vector?</h3>
-        <a href="https://stackoverflow.com/questions/41602024/should-i-prefer-rcppnumericvector-over-stdvector" target="_blank">[see original]</a>
-      </div>
-      <div class="tags"><span>c++</span><span>rcpp</span></div>
-      <div class="author">
-        <span class="gravatar">
-          <a href="https://stackoverflow.com/users/3986320/tim" target="_blank"><img src="https://i.stack.imgur.com/YB28g.jpg?s=256&g=1" alt="" width="32" height="32"></a>
-        </span>
-        <a href="https://stackoverflow.com/users/3986320/tim" target="_blank">Tim</a>
-        asked Jan 11 '17 at 22:38
-      </div>
-      <div class="body">
-        <details>
-          <summary>Click to expand question</summary>
-          <p>Is there any reason why I should prefer <code>Rcpp::NumericVector</code> over <code>std::vector&lt;double&gt;</code>?</p>
-
-<p>For example, the two functions below</p>
-
-<pre><code>// [[Rcpp::export]]
-Rcpp::NumericVector foo(const Rcpp::NumericVector&amp; x) {
-  Rcpp::NumericVector tmp(x.length());
-  for (int i = 0; i &lt; x.length(); i++)
-    tmp[i] = x[i] + 1.0;
-  return tmp;
-}
-
-// [[Rcpp::export]]
-std::vector&lt;double&gt; bar(const std::vector&lt;double&gt;&amp; x) {
-  std::vector&lt;double&gt; tmp(x.size());
-  for (int i = 0; i &lt; x.size(); i++)
-    tmp[i] = x[i] + 1.0;
-  return tmp;
-}
-</code></pre>
-
-<p>Are equivalent when considering their working and benchmarked performance. I understand that Rcpp offers sugar and vectorized operations, but if it is only about taking R's vector as input and returning vector as output, then would there be any difference which one of those I use? Can using <code>std::vector&lt;double&gt;</code> lead to any possible problems when interacting with R?</p>
-
-        </details>
-      </div>
-    </div>
-
-  </div>
-
-  <div class="answer">
-
-    <div class="stats">
-      <div class="votes answer-accepted-TRUE">
-        <span class="score">28</span>
-        <div class="viewcount">votes</div>
-      </div>
-    </div>
-
-    <div class="content">
-      <div class="author">
-        <span class="gravatar">
-          <a href="https://stackoverflow.com/users/1345455/coatless" target="_blank"><img src="https://i.stack.imgur.com/DrBTs.jpg?s=256&g=1" alt="" width="32" height="32"></a>
-        </span>
-        <a href="https://stackoverflow.com/users/1345455/coatless" target="_blank">coatless</a>
-        replied Jan 11 '17 at 22:59
-      </div>
-      <div class="body">
-        <details>
-          <summary>Click to expand answer</summary>
-          <p>Is there any reason why I should prefer <code>Rcpp::NumericVector</code> over <code>std::vector&lt;double&gt;</code>?</p>
-
-<p>For example, the two functions below</p>
-
-<pre><code>// [[Rcpp::export]]
-Rcpp::NumericVector foo(const Rcpp::NumericVector&amp; x) {
-  Rcpp::NumericVector tmp(x.length());
-  for (int i = 0; i &lt; x.length(); i++)
-    tmp[i] = x[i] + 1.0;
-  return tmp;
-}
-
-// [[Rcpp::export]]
-std::vector&lt;double&gt; bar(const std::vector&lt;double&gt;&amp; x) {
-  std::vector&lt;double&gt; tmp(x.size());
-  for (int i = 0; i &lt; x.size(); i++)
-    tmp[i] = x[i] + 1.0;
-  return tmp;
-}
-</code></pre>
-
-<p>Are equivalent when considering their working and benchmarked performance. I understand that Rcpp offers sugar and vectorized operations, but if it is only about taking R's vector as input and returning vector as output, then would there be any difference which one of those I use? Can using <code>std::vector&lt;double&gt;</code> lead to any possible problems when interacting with R?</p>
-
-        </details>
-      </div>
-    </div>
-
-  </div>
-
 </article> <article class="qa" id="qa-48363076">
 
   <div class="question">
@@ -3751,7 +3752,7 @@ x_i = value;
     <div class="content">
       <div class="author">
         <span class="gravatar">
-          <a href="https://stackoverflow.com/users/1345455/coatless" target="_blank"><img src="https://i.stack.imgur.com/DrBTs.jpg?s=256&g=1" alt="" width="32" height="32"></a>
+          <a href="https://stackoverflow.com/users/1345455/coatless" target="_blank"><img src="https://i.stack.imgur.com/Q6Q2u.jpg?s=256&g=1" alt="" width="32" height="32"></a>
         </span>
         <a href="https://stackoverflow.com/users/1345455/coatless" target="_blank">coatless</a>
         replied Jan 21 '18 at 02:51
