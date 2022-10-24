@@ -13,7 +13,7 @@
 <li><a data-weight='1' href='https://stackoverflow.com/users/168747/marek'>Marek</a></li>
 <li><a data-weight='1' href='https://stackoverflow.com/users/980833/josh-obrien'>Josh O&#39;Brien</a></li>
 <li><a data-weight='1' href='https://stackoverflow.com/users/1922182/politicaleconomist'>politicalEconomist</a></li>
-<li><a data-weight='15' href='https://stackoverflow.com/users/143305/dirk-eddelbuettel'>Dirk Eddelbuettel</a></li>
+<li><a data-weight='16' href='https://stackoverflow.com/users/143305/dirk-eddelbuettel'>Dirk Eddelbuettel</a></li>
 <li><a data-weight='6' href='https://stackoverflow.com/users/1342082/kevin-ushey'>Kevin Ushey</a></li>
 <li><a data-weight='1' href='https://stackoverflow.com/users/8203448/henine'>henine</a></li>
 <li><a data-weight='10' href='https://stackoverflow.com/users/1345455/coatless'>coatless</a></li>
@@ -33,7 +33,6 @@
 <li><a data-weight='1' href='https://stackoverflow.com/users/65863/remy-lebeau'>Remy Lebeau</a></li>
 <li><a data-weight='1' href='https://stackoverflow.com/users/324364/joran'>joran</a></li>
 <li><a data-weight='1' href='https://stackoverflow.com/users/559784/arun'>Arun</a></li>
-<li><a data-weight='1' href='https://stackoverflow.com/users/5793905/alexis'>Alexis</a></li>
 <li><a data-weight='1' href='https://stackoverflow.com/users/1315472/nairolf'>Nairolf</a></li>
 <li><a data-weight='1' href='https://stackoverflow.com/users/1968/konrad-rudolph'>Konrad Rudolph</a></li>
 <li><a data-weight='1' href='https://stackoverflow.com/users/173985/thell'>Thell</a></li>
@@ -57,18 +56,18 @@
 <li><a href='#qa-21225662'>calling a user-defined R function from C++ using Rcpp</a></li>
 <li><a href='#qa-51110244'>In Rcpp, how to get a user-defined structure from C into R</a></li>
 <li><a href='#qa-43221681'>Changing R&#39;s Seed from Rcpp to Guarantee Reproducibility</a></li>
-<li><a href='#qa-38518387'>Using Rcpp functions inside of R&#39;s par*apply functions from the parallel package</a></li>
 <li><a href='#qa-41602024'>Should I prefer Rcpp::NumericVector over std::vector?</a></li>
 <li><a href='#qa-18570526'>How to build a R package which use Rcpp with external c++ libraries?</a></li>
+<li><a href='#qa-37060211'>efficiently locf by groups in a single R data.table</a></li>
 <li><a href='#qa-46039132'>Renaming and Hiding an Exported Rcpp function in an R Package</a></li>
 <li><a href='#qa-9949202'>1-dimensional Matrix is changed to a vector in R</a></li>
 <li><a href='#qa-45549992'>Group vector on conditional sum</a></li>
 <li><a href='#qa-46473895'>Calling R&#39;s optim function from within C++ using Rcpp</a></li>
 <li><a href='#qa-27371543'>how many vectors can be added in DataFrame::create( vec1, vec2 ... )?</a></li>
+<li><a href='#qa-38518387'>Using Rcpp functions inside of R&#39;s par*apply functions from the parallel package</a></li>
 <li><a href='#qa-13995266'>Using 3rd party header files with Rcpp</a></li>
 <li><a href='#qa-3088650'>How do I create a list of vectors in Rcpp?</a></li>
-<li><a href='#qa-48363076'>Declare a variable as a reference in Rcpp</a></li>
-<li><a href='#qa-37060211'>efficiently locf by groups in a single R data.table</a></li></ul></nav>
+<li><a href='#qa-51054227'>Why is this naive matrix multiplication faster than base R&#39;s?</a></li></ul></nav>
   <section><article class="qa" id="qa-2908822">
 
   <div class="question">
@@ -79,7 +78,7 @@
         <div class="viewcount">votes</div>
       </div>
       <div class="views">
-        <span class="score">105.4k</span>
+        <span class="score">105.6k</span>
         <div class="viewcount">views</div>
       </div>
     </div>
@@ -186,7 +185,7 @@
         <div class="viewcount">votes</div>
       </div>
       <div class="views">
-        <span class="score">88.4k</span>
+        <span class="score">88.9k</span>
         <div class="viewcount">views</div>
       </div>
     </div>
@@ -430,11 +429,11 @@ cpp_if &lt;- cxxfunction(signature(a=&quot;numeric&quot;), cpp_if_src, plugin=&q
 
     <div class="stats">
       <div class="votes">
-        <span class="score">30</span>
+        <span class="score">31</span>
         <div class="viewcount">votes</div>
       </div>
       <div class="views">
-        <span class="score">86.4k</span>
+        <span class="score">86.6k</span>
         <div class="viewcount">views</div>
       </div>
     </div>
@@ -656,7 +655,7 @@ clusterCall(cl, funCPP1, A, 0.5)
         <div class="viewcount">votes</div>
       </div>
       <div class="views">
-        <span class="score">30.7k</span>
+        <span class="score">30.8k</span>
         <div class="viewcount">views</div>
       </div>
     </div>
@@ -974,7 +973,7 @@ Using Armadillo classes as suggested in the answer below make things very slight
         <div class="viewcount">votes</div>
       </div>
       <div class="views">
-        <span class="score">82.1k</span>
+        <span class="score">82.2k</span>
         <div class="viewcount">views</div>
       </div>
     </div>
@@ -1009,7 +1008,7 @@ Using Armadillo classes as suggested in the answer below make things very slight
 
     <div class="stats">
       <div class="votes answer-accepted-TRUE">
-        <span class="score">56</span>
+        <span class="score">57</span>
         <div class="viewcount">votes</div>
       </div>
     </div>
@@ -2345,99 +2344,6 @@ vec randdraw(int d, int n){
 
   </div>
 
-</article> <article class="qa" id="qa-38518387">
-
-  <div class="question">
-
-    <div class="stats">
-      <div class="votes">
-        <span class="score">1</span>
-        <div class="viewcount">votes</div>
-      </div>
-      <div class="views">
-        <span class="score">1.5k</span>
-        <div class="viewcount">views</div>
-      </div>
-    </div>
-
-    <div class="content">
-      <div class="title">
-        <h3>Using Rcpp functions inside of R&#39;s par*apply functions from the parallel package</h3>
-        <a href="https://stackoverflow.com/questions/38518387/using-rcpp-functions-inside-of-rs-parapply-functions-from-the-parallel-package" target="_blank">[see original]</a>
-      </div>
-      <div class="tags"><span>r</span><span>parallel-processing</span><span>rcpp</span></div>
-      <div class="author">
-        <span class="gravatar">
-          <a href="https://stackoverflow.com/users/6610205/scott-white" target="_blank"><img src="https://www.gravatar.com/avatar/b2374ecc343f7e9e98bf0180db487083?s=256&d=identicon&r=PG&f=1" alt="" width="32" height="32"></a>
-        </span>
-        <a href="https://stackoverflow.com/users/6610205/scott-white" target="_blank">Scott White</a>
-        asked Jul 22 '16 at 04:50
-      </div>
-      <div class="body">
-        <details>
-          <summary>Click to expand question</summary>
-          <p>I'm trying to understand what is happening behind the <code>Rcpp::sourceCpp()</code> call on a parallelized environment. Recently, this was partially addressed in the question: <a href="https://stackoverflow.com/questions/25606733/using-rcpp-function-in-parlapply-on-windows/25606950">Using Rcpp function in parLapply on Windows</a>.</p>
-
-<p>Within this post, Dirk said,</p>
-
-<blockquote>
-  <p>"You need to run the sourceCpp() call in each spawned process, or else get them your code."</p>
-</blockquote>
-
-<p>This was in response to questioner's use of distributing the <em>Rcpp</em> function to the worker processes. The questioner was sending the <em>Rcpp</em> function via:</p>
-
-<pre><code>clusterExport(cl = cl, varlist = "payoff")
-</code></pre>
-
-<p>I'm confused as to why this doesn't work. My thoughts are that this was what the objective of the <code>clusterExport()</code> is for.</p>
-
-        </details>
-      </div>
-    </div>
-
-  </div>
-
-  <div class="answer">
-
-    <div class="stats">
-      <div class="votes answer-accepted-TRUE">
-        <span class="score">5</span>
-        <div class="viewcount">votes</div>
-      </div>
-    </div>
-
-    <div class="content">
-      <div class="author">
-        <span class="gravatar">
-          <a href="https://stackoverflow.com/users/1345455/coatless" target="_blank"><img src="https://i.stack.imgur.com/Q6Q2u.jpg?s=256&g=1" alt="" width="32" height="32"></a>
-        </span>
-        <a href="https://stackoverflow.com/users/1345455/coatless" target="_blank">coatless</a>
-        replied Jul 22 '16 at 05:11
-      </div>
-      <div class="body">
-        <details>
-          <summary>Click to expand answer</summary>
-          <p>I'm trying to understand what is happening behind the <code>Rcpp::sourceCpp()</code> call on a parallelized environment. Recently, this was partially addressed in the question: <a href="https://stackoverflow.com/questions/25606733/using-rcpp-function-in-parlapply-on-windows/25606950">Using Rcpp function in parLapply on Windows</a>.</p>
-
-<p>Within this post, Dirk said,</p>
-
-<blockquote>
-  <p>"You need to run the sourceCpp() call in each spawned process, or else get them your code."</p>
-</blockquote>
-
-<p>This was in response to questioner's use of distributing the <em>Rcpp</em> function to the worker processes. The questioner was sending the <em>Rcpp</em> function via:</p>
-
-<pre><code>clusterExport(cl = cl, varlist = "payoff")
-</code></pre>
-
-<p>I'm confused as to why this doesn't work. My thoughts are that this was what the objective of the <code>clusterExport()</code> is for.</p>
-
-        </details>
-      </div>
-    </div>
-
-  </div>
-
 </article> <article class="qa" id="qa-41602024">
 
   <div class="question">
@@ -2617,6 +2523,195 @@ std::vector&lt;double&gt; bar(const std::vector&lt;double&gt;&amp; x) {
 2.External c++ source file 
 3.External c++ link library file path
 </code></pre>
+
+        </details>
+      </div>
+    </div>
+
+  </div>
+
+</article> <article class="qa" id="qa-37060211">
+
+  <div class="question">
+
+    <div class="stats">
+      <div class="votes">
+        <span class="score">13</span>
+        <div class="viewcount">votes</div>
+      </div>
+      <div class="views">
+        <span class="score">3.1k</span>
+        <div class="viewcount">views</div>
+      </div>
+    </div>
+
+    <div class="content">
+      <div class="title">
+        <h3>efficiently locf by groups in a single R data.table</h3>
+        <a href="https://stackoverflow.com/questions/37060211/efficiently-locf-by-groups-in-a-single-r-data-table" target="_blank">[see original]</a>
+      </div>
+      <div class="tags"><span>r</span><span>dataframe</span><span>data.table</span><span>dplyr</span><span>rcpp</span></div>
+      <div class="author">
+        <span class="gravatar">
+          <a href="https://stackoverflow.com/users/280708/carl-anderson" target="_blank"><img src="https://i.stack.imgur.com/NS0O4.png?s=256&g=1" alt="" width="32" height="32"></a>
+        </span>
+        <a href="https://stackoverflow.com/users/280708/carl-anderson" target="_blank">carl.anderson</a>
+        asked May 05 '16 at 20:59
+      </div>
+      <div class="body">
+        <details>
+          <summary>Click to expand question</summary>
+          <p>I have a large, wide <code>data.table</code> (20m rows) keyed by a person ID but with lots of columns (~150) that have lots of null values.  Each column is a recorded state / attribute that I wish to carry forward for each person.  Each person may have anywhere from 10 to 10,000 observations and there are about 500,000 people in the set.  Values from one person can not 'bleed' into the following person, so my solution must respect the person ID column and group appropriately.</p>
+
+<p>For demonstration purposes - here's a very small sample input:</p>
+
+<pre><code>DT = data.table(
+  id=c(1, 1, 1, 1, 2, 2, 2, 2, 3, 3, 3, 3),
+  aa=c("A", NA, "B", "C", NA, NA, "D", "E", "F", NA, NA, NA),
+  bb=c(NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA),
+  cc=c(1, NA, NA, NA, NA, 4, NA, 5, 6, NA, 7, NA)
+)
+</code></pre>
+
+<p>It looks like this:</p>
+
+<pre><code>    id aa bb cc
+ 1:  1  A NA  1
+ 2:  1 NA NA NA
+ 3:  1  B NA NA
+ 4:  1  C NA NA
+ 5:  2 NA NA NA
+ 6:  2 NA NA  4
+ 7:  2  D NA NA
+ 8:  2  E NA  5
+ 9:  3  F NA  6
+10:  3 NA NA NA
+11:  3 NA NA  7
+12:  3 NA NA NA
+</code></pre>
+
+<p>My expected output looks like this:</p>
+
+<pre><code>    id aa bb cc
+ 1:  1  A NA  1
+ 2:  1  A NA  1
+ 3:  1  B NA  1
+ 4:  1  C NA  1
+ 5:  2 NA NA NA
+ 6:  2 NA NA  4
+ 7:  2  D NA  4
+ 8:  2  E NA  5
+ 9:  3  F NA  6
+10:  3  F NA  6
+11:  3  F NA  7
+12:  3  F NA  7
+</code></pre>
+
+<p>I've found a <code>data.table</code> solution that works, but it's terribly slow on my large data sets:</p>
+
+<pre><code>DT[, na.locf(.SD, na.rm=FALSE), by=id]
+</code></pre>
+
+<p>I've found equivalent solutions using dplyr that are equally slow.</p>
+
+<pre><code>GRP = DT %&gt;% group_by(id)
+data.table(GRP %&gt;% mutate_each(funs(blah=na.locf(., na.rm=FALSE))))
+</code></pre>
+
+<p>I was hopeful that I could come up with a rolling 'self' join using the <code>data.table</code> functionality, but I just can't seem to get it right (I suspect I would need to use <code>.N</code> but I just haven't figured it out).</p>
+
+<p>At this point I'm thinking I'll have to write something in Rcpp to efficiently apply the grouped locf.  </p>
+
+<p>I'm new to R, but I'm not new to C++ - so I'm confident I can do it.  I just feel like there should be an efficient way to do this in R using <code>data.table</code>.</p>
+
+        </details>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="answer">
+
+    <div class="stats">
+      <div class="votes answer-accepted-TRUE">
+        <span class="score">27</span>
+        <div class="viewcount">votes</div>
+      </div>
+    </div>
+
+    <div class="content">
+      <div class="author">
+        <span class="gravatar">
+          <a href="https://stackoverflow.com/users/2414948/alexis-laz" target="_blank"><img src="https://www.gravatar.com/avatar/f4a4db8db8724f88b7de4340a42778a5?s=256&d=identicon&r=PG" alt="" width="32" height="32"></a>
+        </span>
+        <a href="https://stackoverflow.com/users/2414948/alexis-laz" target="_blank">alexis_laz</a>
+        replied May 06 '16 at 09:16
+      </div>
+      <div class="body">
+        <details>
+          <summary>Click to expand answer</summary>
+          <p>I have a large, wide <code>data.table</code> (20m rows) keyed by a person ID but with lots of columns (~150) that have lots of null values.  Each column is a recorded state / attribute that I wish to carry forward for each person.  Each person may have anywhere from 10 to 10,000 observations and there are about 500,000 people in the set.  Values from one person can not 'bleed' into the following person, so my solution must respect the person ID column and group appropriately.</p>
+
+<p>For demonstration purposes - here's a very small sample input:</p>
+
+<pre><code>DT = data.table(
+  id=c(1, 1, 1, 1, 2, 2, 2, 2, 3, 3, 3, 3),
+  aa=c("A", NA, "B", "C", NA, NA, "D", "E", "F", NA, NA, NA),
+  bb=c(NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA),
+  cc=c(1, NA, NA, NA, NA, 4, NA, 5, 6, NA, 7, NA)
+)
+</code></pre>
+
+<p>It looks like this:</p>
+
+<pre><code>    id aa bb cc
+ 1:  1  A NA  1
+ 2:  1 NA NA NA
+ 3:  1  B NA NA
+ 4:  1  C NA NA
+ 5:  2 NA NA NA
+ 6:  2 NA NA  4
+ 7:  2  D NA NA
+ 8:  2  E NA  5
+ 9:  3  F NA  6
+10:  3 NA NA NA
+11:  3 NA NA  7
+12:  3 NA NA NA
+</code></pre>
+
+<p>My expected output looks like this:</p>
+
+<pre><code>    id aa bb cc
+ 1:  1  A NA  1
+ 2:  1  A NA  1
+ 3:  1  B NA  1
+ 4:  1  C NA  1
+ 5:  2 NA NA NA
+ 6:  2 NA NA  4
+ 7:  2  D NA  4
+ 8:  2  E NA  5
+ 9:  3  F NA  6
+10:  3  F NA  6
+11:  3  F NA  7
+12:  3  F NA  7
+</code></pre>
+
+<p>I've found a <code>data.table</code> solution that works, but it's terribly slow on my large data sets:</p>
+
+<pre><code>DT[, na.locf(.SD, na.rm=FALSE), by=id]
+</code></pre>
+
+<p>I've found equivalent solutions using dplyr that are equally slow.</p>
+
+<pre><code>GRP = DT %&gt;% group_by(id)
+data.table(GRP %&gt;% mutate_each(funs(blah=na.locf(., na.rm=FALSE))))
+</code></pre>
+
+<p>I was hopeful that I could come up with a rolling 'self' join using the <code>data.table</code> functionality, but I just can't seem to get it right (I suspect I would need to use <code>.N</code> but I just haven't figured it out).</p>
+
+<p>At this point I'm thinking I'll have to write something in Rcpp to efficiently apply the grouped locf.  </p>
+
+<p>I'm new to R, but I'm not new to C++ - so I'm confident I can do it.  I just feel like there should be an efficient way to do this in R using <code>data.table</code>.</p>
 
         </details>
       </div>
@@ -3303,6 +3398,99 @@ Rcpp::List callOptimFun(SEXP x) {
 
   </div>
 
+</article> <article class="qa" id="qa-38518387">
+
+  <div class="question">
+
+    <div class="stats">
+      <div class="votes">
+        <span class="score">1</span>
+        <div class="viewcount">votes</div>
+      </div>
+      <div class="views">
+        <span class="score">1.5k</span>
+        <div class="viewcount">views</div>
+      </div>
+    </div>
+
+    <div class="content">
+      <div class="title">
+        <h3>Using Rcpp functions inside of R&#39;s par*apply functions from the parallel package</h3>
+        <a href="https://stackoverflow.com/questions/38518387/using-rcpp-functions-inside-of-rs-parapply-functions-from-the-parallel-package" target="_blank">[see original]</a>
+      </div>
+      <div class="tags"><span>r</span><span>parallel-processing</span><span>rcpp</span></div>
+      <div class="author">
+        <span class="gravatar">
+          <a href="https://stackoverflow.com/users/6610205/scott-white" target="_blank"><img src="https://www.gravatar.com/avatar/b2374ecc343f7e9e98bf0180db487083?s=256&d=identicon&r=PG&f=1" alt="" width="32" height="32"></a>
+        </span>
+        <a href="https://stackoverflow.com/users/6610205/scott-white" target="_blank">Scott White</a>
+        asked Jul 22 '16 at 04:50
+      </div>
+      <div class="body">
+        <details>
+          <summary>Click to expand question</summary>
+          <p>I'm trying to understand what is happening behind the <code>Rcpp::sourceCpp()</code> call on a parallelized environment. Recently, this was partially addressed in the question: <a href="https://stackoverflow.com/questions/25606733/using-rcpp-function-in-parlapply-on-windows/25606950">Using Rcpp function in parLapply on Windows</a>.</p>
+
+<p>Within this post, Dirk said,</p>
+
+<blockquote>
+  <p>"You need to run the sourceCpp() call in each spawned process, or else get them your code."</p>
+</blockquote>
+
+<p>This was in response to questioner's use of distributing the <em>Rcpp</em> function to the worker processes. The questioner was sending the <em>Rcpp</em> function via:</p>
+
+<pre><code>clusterExport(cl = cl, varlist = "payoff")
+</code></pre>
+
+<p>I'm confused as to why this doesn't work. My thoughts are that this was what the objective of the <code>clusterExport()</code> is for.</p>
+
+        </details>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="answer">
+
+    <div class="stats">
+      <div class="votes answer-accepted-TRUE">
+        <span class="score">5</span>
+        <div class="viewcount">votes</div>
+      </div>
+    </div>
+
+    <div class="content">
+      <div class="author">
+        <span class="gravatar">
+          <a href="https://stackoverflow.com/users/1345455/coatless" target="_blank"><img src="https://i.stack.imgur.com/Q6Q2u.jpg?s=256&g=1" alt="" width="32" height="32"></a>
+        </span>
+        <a href="https://stackoverflow.com/users/1345455/coatless" target="_blank">coatless</a>
+        replied Jul 22 '16 at 05:11
+      </div>
+      <div class="body">
+        <details>
+          <summary>Click to expand answer</summary>
+          <p>I'm trying to understand what is happening behind the <code>Rcpp::sourceCpp()</code> call on a parallelized environment. Recently, this was partially addressed in the question: <a href="https://stackoverflow.com/questions/25606733/using-rcpp-function-in-parlapply-on-windows/25606950">Using Rcpp function in parLapply on Windows</a>.</p>
+
+<p>Within this post, Dirk said,</p>
+
+<blockquote>
+  <p>"You need to run the sourceCpp() call in each spawned process, or else get them your code."</p>
+</blockquote>
+
+<p>This was in response to questioner's use of distributing the <em>Rcpp</em> function to the worker processes. The questioner was sending the <em>Rcpp</em> function via:</p>
+
+<pre><code>clusterExport(cl = cl, varlist = "payoff")
+</code></pre>
+
+<p>I'm confused as to why this doesn't work. My thoughts are that this was what the objective of the <code>clusterExport()</code> is for.</p>
+
+        </details>
+      </div>
+    </div>
+
+  </div>
+
 </article> <article class="qa" id="qa-13995266">
 
   <div class="question">
@@ -3677,128 +3865,13 @@ return someOutput;
 
   </div>
 
-</article> <article class="qa" id="qa-48363076">
+</article> <article class="qa" id="qa-51054227">
 
   <div class="question">
 
     <div class="stats">
       <div class="votes">
-        <span class="score">4</span>
-        <div class="viewcount">votes</div>
-      </div>
-      <div class="views">
-        <span class="score">1.6k</span>
-        <div class="viewcount">views</div>
-      </div>
-    </div>
-
-    <div class="content">
-      <div class="title">
-        <h3>Declare a variable as a reference in Rcpp</h3>
-        <a href="https://stackoverflow.com/questions/48363076/declare-a-variable-as-a-reference-in-rcpp" target="_blank">[see original]</a>
-      </div>
-      <div class="tags"><span>rcpp</span><span>rcpp11</span></div>
-      <div class="author">
-        <span class="gravatar">
-          <a href="https://stackoverflow.com/users/2978524/user2978524" target="_blank"><img src="https://www.gravatar.com/avatar/?s=256&d=identicon&r=PG&f=1" alt="" width="32" height="32"></a>
-        </span>
-        <a href="https://stackoverflow.com/users/2978524/user2978524" target="_blank">user2978524</a>
-        asked Jan 21 '18 at 02:22
-      </div>
-      <div class="body">
-        <details>
-          <summary>Click to expand question</summary>
-          <p>In C++, we can declare a variable as a reference.</p>
-
-<pre><code>int a = 10;
-int&amp; b = a;
-</code></pre>
-
-<p>If we set <code>b=15</code>, <code>a</code> also changes.</p>
-
-<p>I want to do the similar thing in Rcpp. </p>
-
-<pre><code>List X = obj_from_R["X"];
-IntegerVector x_i = X[index];
-x_i = value;
-</code></pre>
-
-<p>I want to update an object from R called <code>X</code> by inserting a value to one of its vector. The code above did not work, so I tried this:</p>
-
-<pre><code>IntegerVector&amp; x_i = X[index];
-</code></pre>
-
-<p>and received an error.</p>
-
-<pre><code>error: non-const lvalue reference to type 'IntegerVector'
-      (aka 'Vector&lt;13&gt;') cannot bind to a temporary of type 'Proxy' (aka 'generic_proxy&lt;19&gt;')
-</code></pre>
-
-        </details>
-      </div>
-    </div>
-
-  </div>
-
-  <div class="answer">
-
-    <div class="stats">
-      <div class="votes answer-accepted-FALSE">
-        <span class="score">12</span>
-        <div class="viewcount">votes</div>
-      </div>
-    </div>
-
-    <div class="content">
-      <div class="author">
-        <span class="gravatar">
-          <a href="https://stackoverflow.com/users/1345455/coatless" target="_blank"><img src="https://i.stack.imgur.com/Q6Q2u.jpg?s=256&g=1" alt="" width="32" height="32"></a>
-        </span>
-        <a href="https://stackoverflow.com/users/1345455/coatless" target="_blank">coatless</a>
-        replied Jan 21 '18 at 02:51
-      </div>
-      <div class="body">
-        <details>
-          <summary>Click to expand answer</summary>
-          <p>In C++, we can declare a variable as a reference.</p>
-
-<pre><code>int a = 10;
-int&amp; b = a;
-</code></pre>
-
-<p>If we set <code>b=15</code>, <code>a</code> also changes.</p>
-
-<p>I want to do the similar thing in Rcpp. </p>
-
-<pre><code>List X = obj_from_R["X"];
-IntegerVector x_i = X[index];
-x_i = value;
-</code></pre>
-
-<p>I want to update an object from R called <code>X</code> by inserting a value to one of its vector. The code above did not work, so I tried this:</p>
-
-<pre><code>IntegerVector&amp; x_i = X[index];
-</code></pre>
-
-<p>and received an error.</p>
-
-<pre><code>error: non-const lvalue reference to type 'IntegerVector'
-      (aka 'Vector&lt;13&gt;') cannot bind to a temporary of type 'Proxy' (aka 'generic_proxy&lt;19&gt;')
-</code></pre>
-
-        </details>
-      </div>
-    </div>
-
-  </div>
-
-</article> <article class="qa" id="qa-37060211">
-
-  <div class="question">
-
-    <div class="stats">
-      <div class="votes">
-        <span class="score">13</span>
+        <span class="score">32</span>
         <div class="viewcount">votes</div>
       </div>
       <div class="views">
@@ -3809,82 +3882,91 @@ x_i = value;
 
     <div class="content">
       <div class="title">
-        <h3>efficiently locf by groups in a single R data.table</h3>
-        <a href="https://stackoverflow.com/questions/37060211/efficiently-locf-by-groups-in-a-single-r-data-table" target="_blank">[see original]</a>
+        <h3>Why is this naive matrix multiplication faster than base R&#39;s?</h3>
+        <a href="https://stackoverflow.com/questions/51054227/why-is-this-naive-matrix-multiplication-faster-than-base-rs" target="_blank">[see original]</a>
       </div>
-      <div class="tags"><span>r</span><span>dataframe</span><span>data.table</span><span>dplyr</span><span>rcpp</span></div>
+      <div class="tags"><span>r</span><span>performance</span><span>rcpp</span><span>matrix-multiplication</span></div>
       <div class="author">
         <span class="gravatar">
-          <a href="https://stackoverflow.com/users/280708/carl-anderson" target="_blank"><img src="https://i.stack.imgur.com/NS0O4.png?s=256&g=1" alt="" width="32" height="32"></a>
+          <a href="https://stackoverflow.com/users/4941645/cliff-ab" target="_blank"><img src="https://i.stack.imgur.com/Nxh5k.png?s=256&g=1" alt="" width="32" height="32"></a>
         </span>
-        <a href="https://stackoverflow.com/users/280708/carl-anderson" target="_blank">carl.anderson</a>
-        asked May 05 '16 at 20:59
+        <a href="https://stackoverflow.com/users/4941645/cliff-ab" target="_blank">Cliff AB</a>
+        asked Jun 27 '18 at 03:41
       </div>
       <div class="body">
         <details>
           <summary>Click to expand question</summary>
-          <p>I have a large, wide <code>data.table</code> (20m rows) keyed by a person ID but with lots of columns (~150) that have lots of null values.  Each column is a recorded state / attribute that I wish to carry forward for each person.  Each person may have anywhere from 10 to 10,000 observations and there are about 500,000 people in the set.  Values from one person can not 'bleed' into the following person, so my solution must respect the person ID column and group appropriately.</p>
+          <p>In R, matrix multiplication is very optimized, i.e. is really just a call to BLAS/LAPACK. However, I'm surprised this very naive C++ code for matrix-vector multiplication seems reliably 30% faster. </p>
 
-<p>For demonstration purposes - here's a very small sample input:</p>
+<pre><code> library(Rcpp)
 
-<pre><code>DT = data.table(
-  id=c(1, 1, 1, 1, 2, 2, 2, 2, 3, 3, 3, 3),
-  aa=c("A", NA, "B", "C", NA, NA, "D", "E", "F", NA, NA, NA),
-  bb=c(NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA),
-  cc=c(1, NA, NA, NA, NA, 4, NA, 5, 6, NA, 7, NA)
-)
+ # Simple C++ code for matrix multiplication
+ mm_code = 
+ "NumericVector my_mm(NumericMatrix m, NumericVector v){
+   int nRow = m.rows();
+   int nCol = m.cols();
+   NumericVector ans(nRow);
+   double v_j;
+   for(int j = 0; j &lt; nCol; j++){
+     v_j = v[j];
+     for(int i = 0; i &lt; nRow; i++){
+       ans[i] += m(i,j) * v_j;
+     }
+   }
+   return(ans);
+ }
+ "
+ # Compiling
+ my_mm = cppFunction(code = mm_code)
+
+ # Simulating data to use
+ nRow = 10^4
+ nCol = 10^4
+
+ m = matrix(rnorm(nRow * nCol), nrow = nRow)
+ v = rnorm(nCol)
+
+ system.time(my_ans &lt;- my_mm(m, v))
+#&gt;    user  system elapsed 
+#&gt;   0.103   0.001   0.103 
+ system.time(r_ans &lt;- m %*% v)
+#&gt;   user  system elapsed 
+#&gt;  0.154   0.001   0.154 
+
+ # Double checking answer is correct
+ max(abs(my_ans - r_ans))
+ #&gt; [1] 0
 </code></pre>
 
-<p>It looks like this:</p>
+<p>Does base R's <code>%*%</code> perform some type of data check that I'm skipping over?</p>
 
-<pre><code>    id aa bb cc
- 1:  1  A NA  1
- 2:  1 NA NA NA
- 3:  1  B NA NA
- 4:  1  C NA NA
- 5:  2 NA NA NA
- 6:  2 NA NA  4
- 7:  2  D NA NA
- 8:  2  E NA  5
- 9:  3  F NA  6
-10:  3 NA NA NA
-11:  3 NA NA  7
-12:  3 NA NA NA
+<p><strong>EDIT:</strong></p>
+
+<p>After understanding what's going on (thanks SO!), it's worth noting that this is a worst case scenario for R's <code>%*%</code>, i.e. matrix by vector. For example, @RalfStubner pointed out that using an RcppArmadillo implementation of a matrix-vector multiply is even faster than the naive implementation that I demonstrated, implying considerable faster than base R, but is virtually identical to base R's <code>%*%</code> for matrix-matrix multiply (when both matrices are large and square):</p>
+
+<pre><code> arma_code &lt;- 
+   "arma::mat arma_mm(const arma::mat&amp; m, const arma::mat&amp; m2) {
+ return m * m2;
+ };"
+ arma_mm = cppFunction(code = arma_code, depends = "RcppArmadillo")
+
+ nRow = 10^3 
+ nCol = 10^3
+
+ mat1 = matrix(rnorm(nRow * nCol), 
+               nrow = nRow)
+ mat2 = matrix(rnorm(nRow * nCol), 
+               nrow = nRow)
+
+ system.time(arma_mm(mat1, mat2))
+#&gt;   user  system elapsed 
+#&gt;   0.798   0.008   0.814 
+ system.time(mat1 %*% mat2)
+#&gt;   user  system elapsed 
+#&gt;   0.807   0.005   0.822  
 </code></pre>
 
-<p>My expected output looks like this:</p>
-
-<pre><code>    id aa bb cc
- 1:  1  A NA  1
- 2:  1  A NA  1
- 3:  1  B NA  1
- 4:  1  C NA  1
- 5:  2 NA NA NA
- 6:  2 NA NA  4
- 7:  2  D NA  4
- 8:  2  E NA  5
- 9:  3  F NA  6
-10:  3  F NA  6
-11:  3  F NA  7
-12:  3  F NA  7
-</code></pre>
-
-<p>I've found a <code>data.table</code> solution that works, but it's terribly slow on my large data sets:</p>
-
-<pre><code>DT[, na.locf(.SD, na.rm=FALSE), by=id]
-</code></pre>
-
-<p>I've found equivalent solutions using dplyr that are equally slow.</p>
-
-<pre><code>GRP = DT %&gt;% group_by(id)
-data.table(GRP %&gt;% mutate_each(funs(blah=na.locf(., na.rm=FALSE))))
-</code></pre>
-
-<p>I was hopeful that I could come up with a rolling 'self' join using the <code>data.table</code> functionality, but I just can't seem to get it right (I suspect I would need to use <code>.N</code> but I just haven't figured it out).</p>
-
-<p>At this point I'm thinking I'll have to write something in Rcpp to efficiently apply the grouped locf.  </p>
-
-<p>I'm new to R, but I'm not new to C++ - so I'm confident I can do it.  I just feel like there should be an efficient way to do this in R using <code>data.table</code>.</p>
+<p>So R's current (v3.5.0) <code>%*%</code> is near optimal for matrix-matrix, but could be significantly sped up for matrix-vector if you're okay skipping the checking.</p>
 
         </details>
       </div>
@@ -3896,7 +3978,7 @@ data.table(GRP %&gt;% mutate_each(funs(blah=na.locf(., na.rm=FALSE))))
 
     <div class="stats">
       <div class="votes answer-accepted-TRUE">
-        <span class="score">27</span>
+        <span class="score">32</span>
         <div class="viewcount">votes</div>
       </div>
     </div>
@@ -3904,76 +3986,85 @@ data.table(GRP %&gt;% mutate_each(funs(blah=na.locf(., na.rm=FALSE))))
     <div class="content">
       <div class="author">
         <span class="gravatar">
-          <a href="https://stackoverflow.com/users/2414948/alexis-laz" target="_blank"><img src="https://www.gravatar.com/avatar/f4a4db8db8724f88b7de4340a42778a5?s=256&d=identicon&r=PG" alt="" width="32" height="32"></a>
+          <a href="https://stackoverflow.com/users/980833/josh-obrien" target="_blank"><img src="https://www.gravatar.com/avatar/1e253bbe2b531090dd01a6c248107c89?s=256&d=identicon&r=PG" alt="" width="32" height="32"></a>
         </span>
-        <a href="https://stackoverflow.com/users/2414948/alexis-laz" target="_blank">alexis_laz</a>
-        replied May 06 '16 at 09:16
+        <a href="https://stackoverflow.com/users/980833/josh-obrien" target="_blank">Josh O&#39;Brien</a>
+        replied Jun 27 '18 at 04:38
       </div>
       <div class="body">
         <details>
           <summary>Click to expand answer</summary>
-          <p>I have a large, wide <code>data.table</code> (20m rows) keyed by a person ID but with lots of columns (~150) that have lots of null values.  Each column is a recorded state / attribute that I wish to carry forward for each person.  Each person may have anywhere from 10 to 10,000 observations and there are about 500,000 people in the set.  Values from one person can not 'bleed' into the following person, so my solution must respect the person ID column and group appropriately.</p>
+          <p>In R, matrix multiplication is very optimized, i.e. is really just a call to BLAS/LAPACK. However, I'm surprised this very naive C++ code for matrix-vector multiplication seems reliably 30% faster. </p>
 
-<p>For demonstration purposes - here's a very small sample input:</p>
+<pre><code> library(Rcpp)
 
-<pre><code>DT = data.table(
-  id=c(1, 1, 1, 1, 2, 2, 2, 2, 3, 3, 3, 3),
-  aa=c("A", NA, "B", "C", NA, NA, "D", "E", "F", NA, NA, NA),
-  bb=c(NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA),
-  cc=c(1, NA, NA, NA, NA, 4, NA, 5, 6, NA, 7, NA)
-)
+ # Simple C++ code for matrix multiplication
+ mm_code = 
+ "NumericVector my_mm(NumericMatrix m, NumericVector v){
+   int nRow = m.rows();
+   int nCol = m.cols();
+   NumericVector ans(nRow);
+   double v_j;
+   for(int j = 0; j &lt; nCol; j++){
+     v_j = v[j];
+     for(int i = 0; i &lt; nRow; i++){
+       ans[i] += m(i,j) * v_j;
+     }
+   }
+   return(ans);
+ }
+ "
+ # Compiling
+ my_mm = cppFunction(code = mm_code)
+
+ # Simulating data to use
+ nRow = 10^4
+ nCol = 10^4
+
+ m = matrix(rnorm(nRow * nCol), nrow = nRow)
+ v = rnorm(nCol)
+
+ system.time(my_ans &lt;- my_mm(m, v))
+#&gt;    user  system elapsed 
+#&gt;   0.103   0.001   0.103 
+ system.time(r_ans &lt;- m %*% v)
+#&gt;   user  system elapsed 
+#&gt;  0.154   0.001   0.154 
+
+ # Double checking answer is correct
+ max(abs(my_ans - r_ans))
+ #&gt; [1] 0
 </code></pre>
 
-<p>It looks like this:</p>
+<p>Does base R's <code>%*%</code> perform some type of data check that I'm skipping over?</p>
 
-<pre><code>    id aa bb cc
- 1:  1  A NA  1
- 2:  1 NA NA NA
- 3:  1  B NA NA
- 4:  1  C NA NA
- 5:  2 NA NA NA
- 6:  2 NA NA  4
- 7:  2  D NA NA
- 8:  2  E NA  5
- 9:  3  F NA  6
-10:  3 NA NA NA
-11:  3 NA NA  7
-12:  3 NA NA NA
+<p><strong>EDIT:</strong></p>
+
+<p>After understanding what's going on (thanks SO!), it's worth noting that this is a worst case scenario for R's <code>%*%</code>, i.e. matrix by vector. For example, @RalfStubner pointed out that using an RcppArmadillo implementation of a matrix-vector multiply is even faster than the naive implementation that I demonstrated, implying considerable faster than base R, but is virtually identical to base R's <code>%*%</code> for matrix-matrix multiply (when both matrices are large and square):</p>
+
+<pre><code> arma_code &lt;- 
+   "arma::mat arma_mm(const arma::mat&amp; m, const arma::mat&amp; m2) {
+ return m * m2;
+ };"
+ arma_mm = cppFunction(code = arma_code, depends = "RcppArmadillo")
+
+ nRow = 10^3 
+ nCol = 10^3
+
+ mat1 = matrix(rnorm(nRow * nCol), 
+               nrow = nRow)
+ mat2 = matrix(rnorm(nRow * nCol), 
+               nrow = nRow)
+
+ system.time(arma_mm(mat1, mat2))
+#&gt;   user  system elapsed 
+#&gt;   0.798   0.008   0.814 
+ system.time(mat1 %*% mat2)
+#&gt;   user  system elapsed 
+#&gt;   0.807   0.005   0.822  
 </code></pre>
 
-<p>My expected output looks like this:</p>
-
-<pre><code>    id aa bb cc
- 1:  1  A NA  1
- 2:  1  A NA  1
- 3:  1  B NA  1
- 4:  1  C NA  1
- 5:  2 NA NA NA
- 6:  2 NA NA  4
- 7:  2  D NA  4
- 8:  2  E NA  5
- 9:  3  F NA  6
-10:  3  F NA  6
-11:  3  F NA  7
-12:  3  F NA  7
-</code></pre>
-
-<p>I've found a <code>data.table</code> solution that works, but it's terribly slow on my large data sets:</p>
-
-<pre><code>DT[, na.locf(.SD, na.rm=FALSE), by=id]
-</code></pre>
-
-<p>I've found equivalent solutions using dplyr that are equally slow.</p>
-
-<pre><code>GRP = DT %&gt;% group_by(id)
-data.table(GRP %&gt;% mutate_each(funs(blah=na.locf(., na.rm=FALSE))))
-</code></pre>
-
-<p>I was hopeful that I could come up with a rolling 'self' join using the <code>data.table</code> functionality, but I just can't seem to get it right (I suspect I would need to use <code>.N</code> but I just haven't figured it out).</p>
-
-<p>At this point I'm thinking I'll have to write something in Rcpp to efficiently apply the grouped locf.  </p>
-
-<p>I'm new to R, but I'm not new to C++ - so I'm confident I can do it.  I just feel like there should be an efficient way to do this in R using <code>data.table</code>.</p>
+<p>So R's current (v3.5.0) <code>%*%</code> is near optimal for matrix-matrix, but could be significantly sped up for matrix-vector if you're okay skipping the checking.</p>
 
         </details>
       </div>
