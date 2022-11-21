@@ -33,7 +33,7 @@
 <li><a data-weight='1' href='https://stackoverflow.com/users/65863/remy-lebeau'>Remy Lebeau</a></li>
 <li><a data-weight='1' href='https://stackoverflow.com/users/324364/joran'>joran</a></li>
 <li><a data-weight='1' href='https://stackoverflow.com/users/559784/arun'>Arun</a></li>
-<li><a data-weight='1' href='https://stackoverflow.com/users/5793905/alexis'>Alexis</a></li>
+<li><a data-weight='1' href='https://stackoverflow.com/users/2761575/dww'>dww</a></li>
 <li><a data-weight='1' href='https://stackoverflow.com/users/1315472/nairolf'>Nairolf</a></li>
 <li><a data-weight='1' href='https://stackoverflow.com/users/1968/konrad-rudolph'>Konrad Rudolph</a></li>
 <li><a data-weight='1' href='https://stackoverflow.com/users/173985/thell'>Thell</a></li>
@@ -54,8 +54,8 @@
 <li><a href='#qa-19823915'>how can I handle vectors without knowing the type in Rcpp</a></li>
 <li><a href='#qa-21225662'>calling a user-defined R function from C++ using Rcpp</a></li>
 <li><a href='#qa-38016851'>Call R functions in Rcpp</a></li>
-<li><a href='#qa-22828361'>Rcpp function to select (and to return) a sub-dataframe</a></li>
 <li><a href='#qa-51110244'>In Rcpp, how to get a user-defined structure from C into R</a></li>
+<li><a href='#qa-22828361'>Rcpp function to select (and to return) a sub-dataframe</a></li>
 <li><a href='#qa-43221681'>Changing R&#39;s Seed from Rcpp to Guarantee Reproducibility</a></li>
 <li><a href='#qa-41602024'>Should I prefer Rcpp::NumericVector over std::vector?</a></li>
 <li><a href='#qa-9949202'>1-dimensional Matrix is changed to a vector in R</a></li>
@@ -79,7 +79,7 @@
         <div class="viewcount">votes</div>
       </div>
       <div class="views">
-        <span class="score">106.1k</span>
+        <span class="score">106.3k</span>
         <div class="viewcount">views</div>
       </div>
     </div>
@@ -186,7 +186,7 @@
         <div class="viewcount">votes</div>
       </div>
       <div class="views">
-        <span class="score">90k</span>
+        <span class="score">90.4k</span>
         <div class="viewcount">views</div>
       </div>
     </div>
@@ -563,7 +563,7 @@ clusterCall(cl, funCPP1, A, 0.5)
         <div class="viewcount">votes</div>
       </div>
       <div class="views">
-        <span class="score">87.3k</span>
+        <span class="score">87.5k</span>
         <div class="viewcount">views</div>
       </div>
     </div>
@@ -652,11 +652,11 @@ for (i in nrow(pred_precipitation))
 
     <div class="stats">
       <div class="votes">
-        <span class="score">76</span>
+        <span class="score">77</span>
         <div class="viewcount">votes</div>
       </div>
       <div class="views">
-        <span class="score">30.9k</span>
+        <span class="score">31k</span>
         <div class="viewcount">views</div>
       </div>
     </div>
@@ -974,7 +974,7 @@ Using Armadillo classes as suggested in the answer below make things very slight
         <div class="viewcount">votes</div>
       </div>
       <div class="views">
-        <span class="score">82.5k</span>
+        <span class="score">82.6k</span>
         <div class="viewcount">views</div>
       </div>
     </div>
@@ -1045,7 +1045,7 @@ Using Armadillo classes as suggested in the answer below make things very slight
         <div class="viewcount">votes</div>
       </div>
       <div class="views">
-        <span class="score">2.8k</span>
+        <span class="score">2.9k</span>
         <div class="viewcount">views</div>
       </div>
     </div>
@@ -1430,7 +1430,7 @@ NumericVector callFunction(NumericVector x, Function f) {
         <div class="viewcount">votes</div>
       </div>
       <div class="views">
-        <span class="score">10.5k</span>
+        <span class="score">10.6k</span>
         <div class="viewcount">views</div>
       </div>
     </div>
@@ -1962,6 +1962,127 @@ double std(NumericVector x)
 
   </div>
 
+</article> <article class="qa" id="qa-51110244">
+
+  <div class="question">
+
+    <div class="stats">
+      <div class="votes">
+        <span class="score">7</span>
+        <div class="viewcount">votes</div>
+      </div>
+      <div class="views">
+        <span class="score">954</span>
+        <div class="viewcount">views</div>
+      </div>
+    </div>
+
+    <div class="content">
+      <div class="title">
+        <h3>In Rcpp, how to get a user-defined structure from C into R</h3>
+        <a href="https://stackoverflow.com/questions/51110244/in-rcpp-how-to-get-a-user-defined-structure-from-c-into-r" target="_blank">[see original]</a>
+      </div>
+      <div class="tags"><span>rcpp</span></div>
+      <div class="author">
+        <span class="gravatar">
+          <a href="https://stackoverflow.com/users/1229531/mark-bower" target="_blank"><img src="https://www.gravatar.com/avatar/5cc3bd54bff10b3e161b0ca9261dac0a?s=256&d=identicon&r=PG" alt="" width="32" height="32"></a>
+        </span>
+        <a href="https://stackoverflow.com/users/1229531/mark-bower" target="_blank">Mark Bower</a>
+        asked Jun 29 '18 at 22:45
+      </div>
+      <div class="body">
+        <details>
+          <summary>Click to expand question</summary>
+          <p>Am using Rcpp packages and can get my C function to compile and run in R, but now I want to return a large, user-defined data structure to R. The fields in the structure are either numbers or strings - no new or odd types within the structure. The example below is simplified and doesn't compile, but it conveys the idea of my problem. </p>
+
+<pre><code>    typedef struct {
+        char*   firstname[128];
+        char*   lastname[128];
+        int      nbrOfSamples;
+    } HEADER_INFO;
+
+    // [[Rcpp::export]]
+    HEADER_INFO* read_header(Rcpp::StringVector strings) {
+        FILE *fp;
+        MEF_HEADER_INFO *header;
+
+        char * filename = (char*)(strings(0));
+        char * password = (char*)(strings(1));
+
+        header = (HEADER_INFO*)malloc(sizeof(HEADER_INFO));
+        memset(header, 0, sizeof(HEADER_INFO));
+
+        fp = fopen(filename, "r");
+        (void)read_header(header, password);
+        return header;
+    }
+</code></pre>
+
+<p>I'm pretty sure that I could package the entries in the header back into a StringVector, but that seems like a brute-force approach. My question is whether a more elegant solution exists. It is not clear to me what form such a structure would even have in R: a named List?</p>
+
+<p>Thanks!</p>
+
+        </details>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="answer">
+
+    <div class="stats">
+      <div class="votes answer-accepted-TRUE">
+        <span class="score">11</span>
+        <div class="viewcount">votes</div>
+      </div>
+    </div>
+
+    <div class="content">
+      <div class="author">
+        <span class="gravatar">
+          <a href="https://stackoverflow.com/users/8416610/ralf-stubner" target="_blank"><img src="https://lh5.googleusercontent.com/-cmim3CrZ9Wo/AAAAAAAAAAI/AAAAAAAAAjs/hnKTOHALc6M/photo.jpg?sz=256" alt="" width="32" height="32"></a>
+        </span>
+        <a href="https://stackoverflow.com/users/8416610/ralf-stubner" target="_blank">Ralf Stubner</a>
+        replied Jul 01 '18 at 08:58
+      </div>
+      <div class="body">
+        <details>
+          <summary>Click to expand answer</summary>
+          <p>Am using Rcpp packages and can get my C function to compile and run in R, but now I want to return a large, user-defined data structure to R. The fields in the structure are either numbers or strings - no new or odd types within the structure. The example below is simplified and doesn't compile, but it conveys the idea of my problem. </p>
+
+<pre><code>    typedef struct {
+        char*   firstname[128];
+        char*   lastname[128];
+        int      nbrOfSamples;
+    } HEADER_INFO;
+
+    // [[Rcpp::export]]
+    HEADER_INFO* read_header(Rcpp::StringVector strings) {
+        FILE *fp;
+        MEF_HEADER_INFO *header;
+
+        char * filename = (char*)(strings(0));
+        char * password = (char*)(strings(1));
+
+        header = (HEADER_INFO*)malloc(sizeof(HEADER_INFO));
+        memset(header, 0, sizeof(HEADER_INFO));
+
+        fp = fopen(filename, "r");
+        (void)read_header(header, password);
+        return header;
+    }
+</code></pre>
+
+<p>I'm pretty sure that I could package the entries in the header back into a StringVector, but that seems like a brute-force approach. My question is whether a more elegant solution exists. It is not clear to me what form such a structure would even have in R: a named List?</p>
+
+<p>Thanks!</p>
+
+        </details>
+      </div>
+    </div>
+
+  </div>
+
 </article> <article class="qa" id="qa-22828361">
 
   <div class="question">
@@ -2108,127 +2229,6 @@ Rcpp::DataFrame myVecSubset(Rcpp::DataFrame myDF, int ID){
 <p>2) Is there anyway that I can combine id_sub, alpha_sub, and mess_sub into an R data frame and return it?</p>
 
 <p>I really appreciate your help.</p>
-
-        </details>
-      </div>
-    </div>
-
-  </div>
-
-</article> <article class="qa" id="qa-51110244">
-
-  <div class="question">
-
-    <div class="stats">
-      <div class="votes">
-        <span class="score">6</span>
-        <div class="viewcount">votes</div>
-      </div>
-      <div class="views">
-        <span class="score">951</span>
-        <div class="viewcount">views</div>
-      </div>
-    </div>
-
-    <div class="content">
-      <div class="title">
-        <h3>In Rcpp, how to get a user-defined structure from C into R</h3>
-        <a href="https://stackoverflow.com/questions/51110244/in-rcpp-how-to-get-a-user-defined-structure-from-c-into-r" target="_blank">[see original]</a>
-      </div>
-      <div class="tags"><span>rcpp</span></div>
-      <div class="author">
-        <span class="gravatar">
-          <a href="https://stackoverflow.com/users/1229531/mark-bower" target="_blank"><img src="https://www.gravatar.com/avatar/5cc3bd54bff10b3e161b0ca9261dac0a?s=256&d=identicon&r=PG" alt="" width="32" height="32"></a>
-        </span>
-        <a href="https://stackoverflow.com/users/1229531/mark-bower" target="_blank">Mark Bower</a>
-        asked Jun 29 '18 at 22:45
-      </div>
-      <div class="body">
-        <details>
-          <summary>Click to expand question</summary>
-          <p>Am using Rcpp packages and can get my C function to compile and run in R, but now I want to return a large, user-defined data structure to R. The fields in the structure are either numbers or strings - no new or odd types within the structure. The example below is simplified and doesn't compile, but it conveys the idea of my problem. </p>
-
-<pre><code>    typedef struct {
-        char*   firstname[128];
-        char*   lastname[128];
-        int      nbrOfSamples;
-    } HEADER_INFO;
-
-    // [[Rcpp::export]]
-    HEADER_INFO* read_header(Rcpp::StringVector strings) {
-        FILE *fp;
-        MEF_HEADER_INFO *header;
-
-        char * filename = (char*)(strings(0));
-        char * password = (char*)(strings(1));
-
-        header = (HEADER_INFO*)malloc(sizeof(HEADER_INFO));
-        memset(header, 0, sizeof(HEADER_INFO));
-
-        fp = fopen(filename, "r");
-        (void)read_header(header, password);
-        return header;
-    }
-</code></pre>
-
-<p>I'm pretty sure that I could package the entries in the header back into a StringVector, but that seems like a brute-force approach. My question is whether a more elegant solution exists. It is not clear to me what form such a structure would even have in R: a named List?</p>
-
-<p>Thanks!</p>
-
-        </details>
-      </div>
-    </div>
-
-  </div>
-
-  <div class="answer">
-
-    <div class="stats">
-      <div class="votes answer-accepted-TRUE">
-        <span class="score">10</span>
-        <div class="viewcount">votes</div>
-      </div>
-    </div>
-
-    <div class="content">
-      <div class="author">
-        <span class="gravatar">
-          <a href="https://stackoverflow.com/users/8416610/ralf-stubner" target="_blank"><img src="https://lh5.googleusercontent.com/-cmim3CrZ9Wo/AAAAAAAAAAI/AAAAAAAAAjs/hnKTOHALc6M/photo.jpg?sz=256" alt="" width="32" height="32"></a>
-        </span>
-        <a href="https://stackoverflow.com/users/8416610/ralf-stubner" target="_blank">Ralf Stubner</a>
-        replied Jul 01 '18 at 08:58
-      </div>
-      <div class="body">
-        <details>
-          <summary>Click to expand answer</summary>
-          <p>Am using Rcpp packages and can get my C function to compile and run in R, but now I want to return a large, user-defined data structure to R. The fields in the structure are either numbers or strings - no new or odd types within the structure. The example below is simplified and doesn't compile, but it conveys the idea of my problem. </p>
-
-<pre><code>    typedef struct {
-        char*   firstname[128];
-        char*   lastname[128];
-        int      nbrOfSamples;
-    } HEADER_INFO;
-
-    // [[Rcpp::export]]
-    HEADER_INFO* read_header(Rcpp::StringVector strings) {
-        FILE *fp;
-        MEF_HEADER_INFO *header;
-
-        char * filename = (char*)(strings(0));
-        char * password = (char*)(strings(1));
-
-        header = (HEADER_INFO*)malloc(sizeof(HEADER_INFO));
-        memset(header, 0, sizeof(HEADER_INFO));
-
-        fp = fopen(filename, "r");
-        (void)read_header(header, password);
-        return header;
-    }
-</code></pre>
-
-<p>I'm pretty sure that I could package the entries in the header back into a StringVector, but that seems like a brute-force approach. My question is whether a more elegant solution exists. It is not clear to me what form such a structure would even have in R: a named List?</p>
-
-<p>Thanks!</p>
 
         </details>
       </div>
@@ -2827,7 +2827,7 @@ data.table(GRP %&gt;% mutate_each(funs(blah=na.locf(., na.rm=FALSE))))
         <div class="viewcount">votes</div>
       </div>
       <div class="views">
-        <span class="score">419</span>
+        <span class="score">422</span>
         <div class="viewcount">views</div>
       </div>
     </div>
@@ -2950,7 +2950,7 @@ n = 15
         <div class="viewcount">votes</div>
       </div>
       <div class="views">
-        <span class="score">1.3k</span>
+        <span class="score">1.4k</span>
         <div class="viewcount">views</div>
       </div>
     </div>
