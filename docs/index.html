@@ -42,8 +42,8 @@
   <nav><ul><li><a href='#qa-2908822'>Speed up the loop operation in R</a></li>
 <li><a href='#qa-68416435'>Rcpp package doesn&#39;t include Rcpp_precious_remove</a></li>
 <li><a href='#qa-11300048'>Rcpp pass by reference vs. by value</a></li>
-<li><a href='#qa-6074310'>Using Rcpp within parallel code via snow to make a cluster</a></li>
 <li><a href='#qa-11275187'>Replace negative values by zero</a></li>
+<li><a href='#qa-6074310'>Using Rcpp within parallel code via snow to make a cluster</a></li>
 <li><a href='#qa-43597632'>Understanding the contents of the Makevars file in R (macros, variables, ~/.R/Makevars and pkg/src/Makevars)</a></li>
 <li><a href='#qa-48069990'>Multithreaded &amp; SIMD vectorized Mandelbrot in R using Rcpp &amp; OpenMP</a></li>
 <li><a href='#qa-5233769'>Practical limits of R data frame</a></li>
@@ -79,7 +79,7 @@
         <div class="viewcount">votes</div>
       </div>
       <div class="views">
-        <span class="score">108.2k</span>
+        <span class="score">108.3k</span>
         <div class="viewcount">views</div>
       </div>
     </div>
@@ -186,7 +186,7 @@
         <div class="viewcount">votes</div>
       </div>
       <div class="views">
-        <span class="score">93.8k</span>
+        <span class="score">94k</span>
         <div class="viewcount">views</div>
       </div>
     </div>
@@ -424,6 +424,99 @@ cpp_if &lt;- cxxfunction(signature(a=&quot;numeric&quot;), cpp_if_src, plugin=&q
 
   </div>
 
+</article> <article class="qa" id="qa-11275187">
+
+  <div class="question">
+
+    <div class="stats">
+      <div class="votes">
+        <span class="score">31</span>
+        <div class="viewcount">votes</div>
+      </div>
+      <div class="views">
+        <span class="score">90.2k</span>
+        <div class="viewcount">views</div>
+      </div>
+    </div>
+
+    <div class="content">
+      <div class="title">
+        <h3>Replace negative values by zero</h3>
+        <a href="https://stackoverflow.com/questions/11275187/replace-negative-values-by-zero" target="_blank">[see original]</a>
+      </div>
+      <div class="tags"><span>r</span><span>if-statement</span><span>for-loop</span><span>conditional-statements</span><span>rcpp</span></div>
+      <div class="author">
+        <span class="gravatar">
+          <a href="https://stackoverflow.com/users/1403232/fabian-stolz" target="_blank"><img src="https://www.gravatar.com/avatar/83158c1b3e818e3e3477baa50b2afa02?s=256&d=identicon&r=PG" alt="" width="32" height="32"></a>
+        </span>
+        <a href="https://stackoverflow.com/users/1403232/fabian-stolz" target="_blank">Fabian Stolz</a>
+        asked Jun 30 '12 at 15:09
+      </div>
+      <div class="body">
+        <details>
+          <summary>Click to expand question</summary>
+          <p>We want to set all values in an array zero that are negative.</p>
+
+<p>I tried out a a lot of stuff but did not yet achieve a working solution.
+I thought about a for loop with condition, however this seems not to work.</p>
+
+<pre><code>#pred_precipitation is our array
+pred_precipitation &lt;-rnorm(25,2,4)     
+
+for (i in nrow(pred_precipitation))
+{
+  if (pred_precipitation[i]&lt;0) {pred_precipitation[i] = 0}
+  else{pred_precipitation[i] = pred_precipitation[i]}
+}
+</code></pre>
+
+        </details>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="answer">
+
+    <div class="stats">
+      <div class="votes answer-accepted-TRUE">
+        <span class="score">69</span>
+        <div class="viewcount">votes</div>
+      </div>
+    </div>
+
+    <div class="content">
+      <div class="author">
+        <span class="gravatar">
+          <a href="https://stackoverflow.com/users/636656/ari-b-friedman" target="_blank"><img src="https://www.gravatar.com/avatar/5a804caeb905aec31a7531d38314bf16?s=256&d=identicon&r=PG" alt="" width="32" height="32"></a>
+        </span>
+        <a href="https://stackoverflow.com/users/636656/ari-b-friedman" target="_blank">Ari B. Friedman</a>
+        replied Jun 30 '12 at 15:15
+      </div>
+      <div class="body">
+        <details>
+          <summary>Click to expand answer</summary>
+          <p>We want to set all values in an array zero that are negative.</p>
+
+<p>I tried out a a lot of stuff but did not yet achieve a working solution.
+I thought about a for loop with condition, however this seems not to work.</p>
+
+<pre><code>#pred_precipitation is our array
+pred_precipitation &lt;-rnorm(25,2,4)     
+
+for (i in nrow(pred_precipitation))
+{
+  if (pred_precipitation[i]&lt;0) {pred_precipitation[i] = 0}
+  else{pred_precipitation[i] = pred_precipitation[i]}
+}
+</code></pre>
+
+        </details>
+      </div>
+    </div>
+
+  </div>
+
 </article> <article class="qa" id="qa-6074310">
 
   <div class="question">
@@ -553,99 +646,6 @@ clusterCall(cl, funCPP1, A, 0.5)
 
   </div>
 
-</article> <article class="qa" id="qa-11275187">
-
-  <div class="question">
-
-    <div class="stats">
-      <div class="votes">
-        <span class="score">31</span>
-        <div class="viewcount">votes</div>
-      </div>
-      <div class="views">
-        <span class="score">90.1k</span>
-        <div class="viewcount">views</div>
-      </div>
-    </div>
-
-    <div class="content">
-      <div class="title">
-        <h3>Replace negative values by zero</h3>
-        <a href="https://stackoverflow.com/questions/11275187/replace-negative-values-by-zero" target="_blank">[see original]</a>
-      </div>
-      <div class="tags"><span>r</span><span>if-statement</span><span>for-loop</span><span>conditional-statements</span><span>rcpp</span></div>
-      <div class="author">
-        <span class="gravatar">
-          <a href="https://stackoverflow.com/users/1403232/fabian-stolz" target="_blank"><img src="https://www.gravatar.com/avatar/83158c1b3e818e3e3477baa50b2afa02?s=256&d=identicon&r=PG" alt="" width="32" height="32"></a>
-        </span>
-        <a href="https://stackoverflow.com/users/1403232/fabian-stolz" target="_blank">Fabian Stolz</a>
-        asked Jun 30 '12 at 15:09
-      </div>
-      <div class="body">
-        <details>
-          <summary>Click to expand question</summary>
-          <p>We want to set all values in an array zero that are negative.</p>
-
-<p>I tried out a a lot of stuff but did not yet achieve a working solution.
-I thought about a for loop with condition, however this seems not to work.</p>
-
-<pre><code>#pred_precipitation is our array
-pred_precipitation &lt;-rnorm(25,2,4)     
-
-for (i in nrow(pred_precipitation))
-{
-  if (pred_precipitation[i]&lt;0) {pred_precipitation[i] = 0}
-  else{pred_precipitation[i] = pred_precipitation[i]}
-}
-</code></pre>
-
-        </details>
-      </div>
-    </div>
-
-  </div>
-
-  <div class="answer">
-
-    <div class="stats">
-      <div class="votes answer-accepted-TRUE">
-        <span class="score">69</span>
-        <div class="viewcount">votes</div>
-      </div>
-    </div>
-
-    <div class="content">
-      <div class="author">
-        <span class="gravatar">
-          <a href="https://stackoverflow.com/users/636656/ari-b-friedman" target="_blank"><img src="https://www.gravatar.com/avatar/5a804caeb905aec31a7531d38314bf16?s=256&d=identicon&r=PG" alt="" width="32" height="32"></a>
-        </span>
-        <a href="https://stackoverflow.com/users/636656/ari-b-friedman" target="_blank">Ari B. Friedman</a>
-        replied Jun 30 '12 at 15:15
-      </div>
-      <div class="body">
-        <details>
-          <summary>Click to expand answer</summary>
-          <p>We want to set all values in an array zero that are negative.</p>
-
-<p>I tried out a a lot of stuff but did not yet achieve a working solution.
-I thought about a for loop with condition, however this seems not to work.</p>
-
-<pre><code>#pred_precipitation is our array
-pred_precipitation &lt;-rnorm(25,2,4)     
-
-for (i in nrow(pred_precipitation))
-{
-  if (pred_precipitation[i]&lt;0) {pred_precipitation[i] = 0}
-  else{pred_precipitation[i] = pred_precipitation[i]}
-}
-</code></pre>
-
-        </details>
-      </div>
-    </div>
-
-  </div>
-
 </article> <article class="qa" id="qa-43597632">
 
   <div class="question">
@@ -656,7 +656,7 @@ for (i in nrow(pred_precipitation))
         <div class="viewcount">votes</div>
       </div>
       <div class="views">
-        <span class="score">31.9k</span>
+        <span class="score">32k</span>
         <div class="viewcount">views</div>
       </div>
     </div>
@@ -795,7 +795,7 @@ CXX_STD = CXX11
 
     <div class="stats">
       <div class="votes">
-        <span class="score">7</span>
+        <span class="score">8</span>
         <div class="viewcount">votes</div>
       </div>
       <div class="views">
@@ -821,7 +821,6 @@ CXX_STD = CXX11
         <details>
           <summary>Click to expand question</summary>
           <p>As an <code>OpenMP</code> &amp; <code>Rcpp</code> performance test I wanted to check how fast I could calculate the Mandelbrot set in R using the most straightforward and simple <code>Rcpp</code>+<code>OpenMP</code> implementation. Currently what I did was:</p>
-
 <pre><code>#include &lt;Rcpp.h&gt;
 #include &lt;omp.h&gt;
 // [[Rcpp::plugins(openmp)]]
@@ -835,7 +834,7 @@ Rcpp::NumericMatrix mandelRcpp(const double x_min, const double x_max, const dou
   double x_step = (x_max - x_min) / res_x;
   double y_step = (y_max - y_min) / res_y;
   int r,c;
-#pragma omp parallel for default(shared) private(c) schedule(dynamic,1)
+#pragma omp parallel for default(shared) private(c) schedule(dynamic,1) collapse(2)
   for (r = 0; r &lt; res_y; r++) {
     for (c = 0; c &lt; res_x; c++) {
       double zx = 0.0, zy = 0.0, new_zx;
@@ -852,27 +851,22 @@ Rcpp::NumericMatrix mandelRcpp(const double x_min, const double x_max, const dou
   return ret;
 }
 </code></pre>
-
 <p>And then in R:</p>
-
 <pre><code>library(Rcpp)
-sourceCpp("mandelRcpp.cpp")
+sourceCpp(&quot;mandelRcpp.cpp&quot;)
 xlims=c(-0.74877,-0.74872);
 ylims=c(0.065053,0.065103);
 x_res=y_res=1080L; nb_iter=10000L;
 system.time(m &lt;- mandelRcpp(xlims[[1]], xlims[[2]], ylims[[1]], ylims[[2]], x_res, y_res, nb_iter)) 
 # 0.92s
 rainbow=c(rgb(0.47,0.11,0.53),rgb(0.27,0.18,0.73),rgb(0.25,0.39,0.81),rgb(0.30,0.57,0.75),rgb(0.39,0.67,0.60),rgb(0.51,0.73,0.44),rgb(0.67,0.74,0.32),rgb(0.81,0.71,0.26),rgb(0.89,0.60,0.22),rgb(0.89,0.39,0.18),rgb(0.86,0.13,0.13))
-    cols=c(colorRampPalette(rainbow)(100),rev(colorRampPalette(rainbow)(100)),"black") # palette
+    cols=c(colorRampPalette(rainbow)(100),rev(colorRampPalette(rainbow)(100)),&quot;black&quot;) # palette
 par(mar=c(0, 0, 0, 0))
 system.time(image(m^(1/7), col=cols, asp=diff(ylims)/diff(xlims), axes=F, useRaster=T)) 
 # 0.5s
 </code></pre>
-
-<p><a href="https://i.stack.imgur.com/DWfh0.png" rel="nofollow noreferrer"><img src="https://i.stack.imgur.com/DWfh0.png" alt="enter image description here"></a></p>
-
+<p><a href="https://i.stack.imgur.com/DWfh0.png" rel="nofollow noreferrer"><img src="https://i.stack.imgur.com/DWfh0.png" alt="enter image description here" /></a></p>
 <p>I was unsure though if there is any other obvious speed improvements I could take advantage of aside from OpenMP multithreading, e.g. via <code>simd</code> vectorization? (using simd options in the openmp <code>#pragma</code> didn't seem to do anything)</p>
-
 <p>PS at first my code was crashing but I later found this was solved by replacing <code>ret[r,c] = n;</code> with <code>ret(r,c) = n;</code>
 Using Armadillo classes as suggested in the answer below make things very slightly faster, though the timings are almost the same. Also flipped around <code>x</code> and <code>y</code> so it comes out in the right orientation when plotted with <code>image()</code>. Using 8 threads speed is ca. 350 times faster than the vectorized plain R Mandelbrot version <a href="https://github.com/mylesmharrison/mandelbrot/blob/master/mandelbrot.R" rel="nofollow noreferrer">here</a> and also about 7.3 times faster than the (non-multithreaded) Python/Numba version <a href="https://www.ibm.com/developerworks/community/blogs/jfp/entry/How_To_Compute_Mandelbrodt_Set_Quickly?lang=en" rel="nofollow noreferrer">here</a> (similar to PyCUDA or PyOpenCL speeds), so quite happy with that... <a href="https://stackoverflow.com/questions/48119360/performant-2d-opengl-graphics-in-r-for-fast-display-of-raster-image-using-qtpain">Rasterizing/display now seems the bottleneck in R....</a></p>
 
@@ -903,7 +897,6 @@ Using Armadillo classes as suggested in the answer below make things very slight
         <details>
           <summary>Click to expand answer</summary>
           <p>As an <code>OpenMP</code> &amp; <code>Rcpp</code> performance test I wanted to check how fast I could calculate the Mandelbrot set in R using the most straightforward and simple <code>Rcpp</code>+<code>OpenMP</code> implementation. Currently what I did was:</p>
-
 <pre><code>#include &lt;Rcpp.h&gt;
 #include &lt;omp.h&gt;
 // [[Rcpp::plugins(openmp)]]
@@ -917,7 +910,7 @@ Rcpp::NumericMatrix mandelRcpp(const double x_min, const double x_max, const dou
   double x_step = (x_max - x_min) / res_x;
   double y_step = (y_max - y_min) / res_y;
   int r,c;
-#pragma omp parallel for default(shared) private(c) schedule(dynamic,1)
+#pragma omp parallel for default(shared) private(c) schedule(dynamic,1) collapse(2)
   for (r = 0; r &lt; res_y; r++) {
     for (c = 0; c &lt; res_x; c++) {
       double zx = 0.0, zy = 0.0, new_zx;
@@ -934,27 +927,22 @@ Rcpp::NumericMatrix mandelRcpp(const double x_min, const double x_max, const dou
   return ret;
 }
 </code></pre>
-
 <p>And then in R:</p>
-
 <pre><code>library(Rcpp)
-sourceCpp("mandelRcpp.cpp")
+sourceCpp(&quot;mandelRcpp.cpp&quot;)
 xlims=c(-0.74877,-0.74872);
 ylims=c(0.065053,0.065103);
 x_res=y_res=1080L; nb_iter=10000L;
 system.time(m &lt;- mandelRcpp(xlims[[1]], xlims[[2]], ylims[[1]], ylims[[2]], x_res, y_res, nb_iter)) 
 # 0.92s
 rainbow=c(rgb(0.47,0.11,0.53),rgb(0.27,0.18,0.73),rgb(0.25,0.39,0.81),rgb(0.30,0.57,0.75),rgb(0.39,0.67,0.60),rgb(0.51,0.73,0.44),rgb(0.67,0.74,0.32),rgb(0.81,0.71,0.26),rgb(0.89,0.60,0.22),rgb(0.89,0.39,0.18),rgb(0.86,0.13,0.13))
-    cols=c(colorRampPalette(rainbow)(100),rev(colorRampPalette(rainbow)(100)),"black") # palette
+    cols=c(colorRampPalette(rainbow)(100),rev(colorRampPalette(rainbow)(100)),&quot;black&quot;) # palette
 par(mar=c(0, 0, 0, 0))
 system.time(image(m^(1/7), col=cols, asp=diff(ylims)/diff(xlims), axes=F, useRaster=T)) 
 # 0.5s
 </code></pre>
-
-<p><a href="https://i.stack.imgur.com/DWfh0.png" rel="nofollow noreferrer"><img src="https://i.stack.imgur.com/DWfh0.png" alt="enter image description here"></a></p>
-
+<p><a href="https://i.stack.imgur.com/DWfh0.png" rel="nofollow noreferrer"><img src="https://i.stack.imgur.com/DWfh0.png" alt="enter image description here" /></a></p>
 <p>I was unsure though if there is any other obvious speed improvements I could take advantage of aside from OpenMP multithreading, e.g. via <code>simd</code> vectorization? (using simd options in the openmp <code>#pragma</code> didn't seem to do anything)</p>
-
 <p>PS at first my code was crashing but I later found this was solved by replacing <code>ret[r,c] = n;</code> with <code>ret(r,c) = n;</code>
 Using Armadillo classes as suggested in the answer below make things very slightly faster, though the timings are almost the same. Also flipped around <code>x</code> and <code>y</code> so it comes out in the right orientation when plotted with <code>image()</code>. Using 8 threads speed is ca. 350 times faster than the vectorized plain R Mandelbrot version <a href="https://github.com/mylesmharrison/mandelbrot/blob/master/mandelbrot.R" rel="nofollow noreferrer">here</a> and also about 7.3 times faster than the (non-multithreaded) Python/Numba version <a href="https://www.ibm.com/developerworks/community/blogs/jfp/entry/How_To_Compute_Mandelbrodt_Set_Quickly?lang=en" rel="nofollow noreferrer">here</a> (similar to PyCUDA or PyOpenCL speeds), so quite happy with that... <a href="https://stackoverflow.com/questions/48119360/performant-2d-opengl-graphics-in-r-for-fast-display-of-raster-image-using-qtpain">Rasterizing/display now seems the bottleneck in R....</a></p>
 
@@ -974,7 +962,7 @@ Using Armadillo classes as suggested in the answer below make things very slight
         <div class="viewcount">votes</div>
       </div>
       <div class="views">
-        <span class="score">84.1k</span>
+        <span class="score">84.2k</span>
         <div class="viewcount">views</div>
       </div>
     </div>
@@ -1878,7 +1866,7 @@ double std(NumericVector x)
         <div class="viewcount">votes</div>
       </div>
       <div class="views">
-        <span class="score">1k</span>
+        <span class="score">1.1k</span>
         <div class="viewcount">views</div>
       </div>
     </div>
@@ -2733,7 +2721,7 @@ data.table(GRP %&gt;% mutate_each(funs(blah=na.locf(., na.rm=FALSE))))
         <div class="viewcount">votes</div>
       </div>
       <div class="views">
-        <span class="score">434</span>
+        <span class="score">435</span>
         <div class="viewcount">views</div>
       </div>
     </div>
@@ -2933,7 +2921,7 @@ My solution so far is to export both functions in the Namespace file which cause
         <div class="viewcount">votes</div>
       </div>
       <div class="views">
-        <span class="score">538</span>
+        <span class="score">541</span>
         <div class="viewcount">views</div>
       </div>
     </div>
@@ -3096,7 +3084,7 @@ My solution so far is to export both functions in the Namespace file which cause
         <div class="viewcount">votes</div>
       </div>
       <div class="views">
-        <span class="score">956</span>
+        <span class="score">957</span>
         <div class="viewcount">views</div>
       </div>
     </div>
