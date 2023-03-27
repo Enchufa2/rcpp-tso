@@ -25,7 +25,6 @@
 <li><a data-weight='5' href='https://stackoverflow.com/users/499163/romain-francois'>Romain Francois</a></li>
 <li><a data-weight='1' href='https://stackoverflow.com/users/2414948/alexis-laz'>alexis_laz</a></li>
 <li><a data-weight='1' href='https://stackoverflow.com/users/378229/allan-engelhardt'>Allan Engelhardt</a></li>
-<li><a data-weight='1' href='https://stackoverflow.com/users/173985/thell'>Thell</a></li>
 <li><a data-weight='1' href='https://stackoverflow.com/users/1900149/tonytonov'>tonytonov</a></li>
 <li><a data-weight='1' href='https://stackoverflow.com/users/3573401/khashaa'>Khashaa</a></li>
 <li><a data-weight='2' href='https://stackoverflow.com/users/1869097/nrussell'>nrussell</a></li>
@@ -37,6 +36,7 @@
 <li><a data-weight='1' href='https://stackoverflow.com/users/2761575/dww'>dww</a></li>
 <li><a data-weight='1' href='https://stackoverflow.com/users/1315472/nairolf'>Nairolf</a></li>
 <li><a data-weight='1' href='https://stackoverflow.com/users/1968/konrad-rudolph'>Konrad Rudolph</a></li>
+<li><a data-weight='1' href='https://stackoverflow.com/users/173985/thell'>Thell</a></li>
 <li><a data-weight='1' href='https://stackoverflow.com/users/1191259/frank'>Frank</a></li></ul>
   </header>
   <nav><ul><li><a href='#qa-2908822'>Speed up the loop operation in R</a></li>
@@ -79,7 +79,7 @@
         <div class="viewcount">votes</div>
       </div>
       <div class="views">
-        <span class="score">108.3k</span>
+        <span class="score">108.4k</span>
         <div class="viewcount">views</div>
       </div>
     </div>
@@ -186,7 +186,7 @@
         <div class="viewcount">votes</div>
       </div>
       <div class="views">
-        <span class="score">94k</span>
+        <span class="score">94.2k</span>
         <div class="viewcount">views</div>
       </div>
     </div>
@@ -434,7 +434,7 @@ cpp_if &lt;- cxxfunction(signature(a=&quot;numeric&quot;), cpp_if_src, plugin=&q
         <div class="viewcount">votes</div>
       </div>
       <div class="views">
-        <span class="score">90.2k</span>
+        <span class="score">90.4k</span>
         <div class="viewcount">views</div>
       </div>
     </div>
@@ -652,7 +652,7 @@ clusterCall(cl, funCPP1, A, 0.5)
 
     <div class="stats">
       <div class="votes">
-        <span class="score">78</span>
+        <span class="score">79</span>
         <div class="viewcount">votes</div>
       </div>
       <div class="views">
@@ -727,7 +727,7 @@ CXX_STD = CXX11
 
     <div class="stats">
       <div class="votes answer-accepted-TRUE">
-        <span class="score">120</span>
+        <span class="score">121</span>
         <div class="viewcount">votes</div>
       </div>
     </div>
@@ -799,7 +799,7 @@ CXX_STD = CXX11
         <div class="viewcount">votes</div>
       </div>
       <div class="views">
-        <span class="score">1.4k</span>
+        <span class="score">1.5k</span>
         <div class="viewcount">views</div>
       </div>
     </div>
@@ -962,7 +962,7 @@ Using Armadillo classes as suggested in the answer below make things very slight
         <div class="viewcount">votes</div>
       </div>
       <div class="views">
-        <span class="score">84.2k</span>
+        <span class="score">84.3k</span>
         <div class="viewcount">views</div>
       </div>
     </div>
@@ -1418,7 +1418,7 @@ NumericVector callFunction(NumericVector x, Function f) {
         <div class="viewcount">votes</div>
       </div>
       <div class="views">
-        <span class="score">1.6k</span>
+        <span class="score">1.7k</span>
         <div class="viewcount">views</div>
       </div>
     </div>
@@ -1759,7 +1759,7 @@ int mySuminC(){
         <div class="viewcount">votes</div>
       </div>
       <div class="views">
-        <span class="score">8.7k</span>
+        <span class="score">8.8k</span>
         <div class="viewcount">views</div>
       </div>
     </div>
@@ -1862,7 +1862,7 @@ double std(NumericVector x)
 
     <div class="stats">
       <div class="votes">
-        <span class="score">7</span>
+        <span class="score">8</span>
         <div class="viewcount">votes</div>
       </div>
       <div class="views">
@@ -1887,33 +1887,30 @@ double std(NumericVector x)
       <div class="body">
         <details>
           <summary>Click to expand question</summary>
-          <p>Am using Rcpp packages and can get my C function to compile and run in R, but now I want to return a large, user-defined data structure to R. The fields in the structure are either numbers or strings - no new or odd types within the structure. The example below is simplified and doesn't compile, but it conveys the idea of my problem. </p>
+          <p>Am using Rcpp packages and can get my C function to compile and run in R, but now I want to return a large, user-defined data structure to R. The fields in the structure are either numbers or strings - no new or odd types within the structure. The example below is simplified and doesn't compile, but it conveys the idea of my problem.</p>
+<pre class="lang-c prettyprint-override"><code>typedef struct {
+  char*    firstname[128];
+  char*    lastname[128];
+  int      nbrOfSamples;
+} HEADER_INFO;
 
-<pre><code>    typedef struct {
-        char*   firstname[128];
-        char*   lastname[128];
-        int      nbrOfSamples;
-    } HEADER_INFO;
-
-    // [[Rcpp::export]]
-    HEADER_INFO* read_header(Rcpp::StringVector strings) {
-        FILE *fp;
-        MEF_HEADER_INFO *header;
-
-        char * filename = (char*)(strings(0));
-        char * password = (char*)(strings(1));
-
-        header = (HEADER_INFO*)malloc(sizeof(HEADER_INFO));
-        memset(header, 0, sizeof(HEADER_INFO));
-
-        fp = fopen(filename, "r");
-        (void)read_header(header, password);
-        return header;
-    }
+// [[Rcpp::export]]
+HEADER_INFO* read_header(Rcpp::StringVector strings) {
+  FILE *fp;
+  MEF_HEADER_INFO *header;
+    
+  char * filename = (char*)(strings(0));
+  char * password = (char*)(strings(1));
+    
+  header = (HEADER_INFO*)malloc(sizeof(HEADER_INFO));
+  memset(header, 0, sizeof(HEADER_INFO));
+    
+  fp = fopen(filename, &quot;r&quot;);
+  (void)read_header(header, password);
+  return header;
+}
 </code></pre>
-
 <p>I'm pretty sure that I could package the entries in the header back into a StringVector, but that seems like a brute-force approach. My question is whether a more elegant solution exists. It is not clear to me what form such a structure would even have in R: a named List?</p>
-
 <p>Thanks!</p>
 
         </details>
@@ -1926,7 +1923,7 @@ double std(NumericVector x)
 
     <div class="stats">
       <div class="votes answer-accepted-TRUE">
-        <span class="score">11</span>
+        <span class="score">12</span>
         <div class="viewcount">votes</div>
       </div>
     </div>
@@ -1942,33 +1939,30 @@ double std(NumericVector x)
       <div class="body">
         <details>
           <summary>Click to expand answer</summary>
-          <p>Am using Rcpp packages and can get my C function to compile and run in R, but now I want to return a large, user-defined data structure to R. The fields in the structure are either numbers or strings - no new or odd types within the structure. The example below is simplified and doesn't compile, but it conveys the idea of my problem. </p>
+          <p>Am using Rcpp packages and can get my C function to compile and run in R, but now I want to return a large, user-defined data structure to R. The fields in the structure are either numbers or strings - no new or odd types within the structure. The example below is simplified and doesn't compile, but it conveys the idea of my problem.</p>
+<pre class="lang-c prettyprint-override"><code>typedef struct {
+  char*    firstname[128];
+  char*    lastname[128];
+  int      nbrOfSamples;
+} HEADER_INFO;
 
-<pre><code>    typedef struct {
-        char*   firstname[128];
-        char*   lastname[128];
-        int      nbrOfSamples;
-    } HEADER_INFO;
-
-    // [[Rcpp::export]]
-    HEADER_INFO* read_header(Rcpp::StringVector strings) {
-        FILE *fp;
-        MEF_HEADER_INFO *header;
-
-        char * filename = (char*)(strings(0));
-        char * password = (char*)(strings(1));
-
-        header = (HEADER_INFO*)malloc(sizeof(HEADER_INFO));
-        memset(header, 0, sizeof(HEADER_INFO));
-
-        fp = fopen(filename, "r");
-        (void)read_header(header, password);
-        return header;
-    }
+// [[Rcpp::export]]
+HEADER_INFO* read_header(Rcpp::StringVector strings) {
+  FILE *fp;
+  MEF_HEADER_INFO *header;
+    
+  char * filename = (char*)(strings(0));
+  char * password = (char*)(strings(1));
+    
+  header = (HEADER_INFO*)malloc(sizeof(HEADER_INFO));
+  memset(header, 0, sizeof(HEADER_INFO));
+    
+  fp = fopen(filename, &quot;r&quot;);
+  (void)read_header(header, password);
+  return header;
+}
 </code></pre>
-
 <p>I'm pretty sure that I could package the entries in the header back into a StringVector, but that seems like a brute-force approach. My question is whether a more elegant solution exists. It is not clear to me what form such a structure would even have in R: a named List?</p>
-
 <p>Thanks!</p>
 
         </details>
@@ -2921,7 +2915,7 @@ My solution so far is to export both functions in the Namespace file which cause
         <div class="viewcount">votes</div>
       </div>
       <div class="views">
-        <span class="score">541</span>
+        <span class="score">543</span>
         <div class="viewcount">views</div>
       </div>
     </div>
@@ -3084,7 +3078,7 @@ My solution so far is to export both functions in the Namespace file which cause
         <div class="viewcount">votes</div>
       </div>
       <div class="views">
-        <span class="score">957</span>
+        <span class="score">959</span>
         <div class="viewcount">views</div>
       </div>
     </div>
@@ -3884,7 +3878,7 @@ return someOutput;
         <div class="viewcount">votes</div>
       </div>
       <div class="views">
-        <span class="score">11.1k</span>
+        <span class="score">11.2k</span>
         <div class="viewcount">views</div>
       </div>
     </div>
