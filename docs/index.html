@@ -59,8 +59,8 @@
 <li><a href='#qa-43221681'>Changing R&#39;s Seed from Rcpp to Guarantee Reproducibility</a></li>
 <li><a href='#qa-41602024'>Should I prefer Rcpp::NumericVector over std::vector?</a></li>
 <li><a href='#qa-9949202'>1-dimensional Matrix is changed to a vector in R</a></li>
-<li><a href='#qa-18570526'>How to build a R package which use Rcpp with external c++ libraries?</a></li>
 <li><a href='#qa-37060211'>efficiently locf by groups in a single R data.table</a></li>
+<li><a href='#qa-18570526'>How to build a R package which use Rcpp with external c++ libraries?</a></li>
 <li><a href='#qa-45549992'>Group vector on conditional sum</a></li>
 <li><a href='#qa-46039132'>Renaming and Hiding an Exported Rcpp function in an R Package</a></li>
 <li><a href='#qa-27371543'>how many vectors can be added in DataFrame::create( vec1, vec2 ... )?</a></li>
@@ -186,7 +186,7 @@
         <div class="viewcount">votes</div>
       </div>
       <div class="views">
-        <span class="score">98.7k</span>
+        <span class="score">98.8k</span>
         <div class="viewcount">views</div>
       </div>
     </div>
@@ -434,7 +434,7 @@ cpp_if &lt;- cxxfunction(signature(a=&quot;numeric&quot;), cpp_if_src, plugin=&q
         <div class="viewcount">votes</div>
       </div>
       <div class="views">
-        <span class="score">96.7k</span>
+        <span class="score">96.8k</span>
         <div class="viewcount">views</div>
       </div>
     </div>
@@ -799,7 +799,7 @@ CXX_STD = CXX11
         <div class="viewcount">votes</div>
       </div>
       <div class="views">
-        <span class="score">88.1k</span>
+        <span class="score">88.2k</span>
         <div class="viewcount">views</div>
       </div>
     </div>
@@ -1630,7 +1630,7 @@ fint = cxxfunction(signature(x = "SEXP"), '
         <div class="viewcount">votes</div>
       </div>
       <div class="views">
-        <span class="score">7.1k</span>
+        <span class="score">7.2k</span>
         <div class="viewcount">views</div>
       </div>
     </div>
@@ -2439,83 +2439,6 @@ I would like to keep 1-D matrix as a matrix. Actually, I need to throw many kind
 
   </div>
 
-</article> <article class="qa" id="qa-18570526">
-
-  <div class="question">
-
-    <div class="stats">
-      <div class="votes">
-        <span class="score">13</span>
-        <div class="viewcount">votes</div>
-      </div>
-      <div class="views">
-        <span class="score">6.6k</span>
-        <div class="viewcount">views</div>
-      </div>
-    </div>
-
-    <div class="content">
-      <div class="title">
-        <h3>How to build a R package which use Rcpp with external c++ libraries?</h3>
-        <a href="https://stackoverflow.com/questions/18570526/how-to-build-a-r-package-which-use-rcpp-with-external-c-libraries" target="_blank">[see original]</a>
-      </div>
-      <div class="tags"><span>rcpp</span></div>
-      <div class="author">
-        <span class="gravatar">
-          <a href="https://stackoverflow.com/users/1246858/xiaobo-gu" target="_blank"><img src="https://www.gravatar.com/avatar/8fd1216a20b5974775353711e1eead59?s=256&d=identicon&r=PG&f=y&so-version=2" alt="" width="32" height="32"></a>
-        </span>
-        <a href="https://stackoverflow.com/users/1246858/xiaobo-gu" target="_blank">Xiaobo Gu</a>
-        asked Sep 02 '13 at 10:04
-      </div>
-      <div class="body">
-        <details>
-          <summary>Click to expand question</summary>
-          <p>Such as boost, where can I specify the following: </p>
-
-<pre><code>1.External c++ header file include path 
-2.External c++ source file 
-3.External c++ link library file path
-</code></pre>
-
-        </details>
-      </div>
-    </div>
-
-  </div>
-
-  <div class="answer">
-
-    <div class="stats">
-      <div class="votes answer-accepted-FALSE">
-        <span class="score">15</span>
-        <div class="viewcount">votes</div>
-      </div>
-    </div>
-
-    <div class="content">
-      <div class="author">
-        <span class="gravatar">
-          <a href="https://stackoverflow.com/users/143305/dirk-is-no-longer-here" target="_blank"><img src="https://www.gravatar.com/avatar/4e96ca7ae02c37e7d940d17997d780e5?s=256&d=identicon&r=PG" alt="" width="32" height="32"></a>
-        </span>
-        <a href="https://stackoverflow.com/users/143305/dirk-is-no-longer-here" target="_blank">Dirk is no longer here</a>
-        replied Sep 02 '13 at 18:01
-      </div>
-      <div class="body">
-        <details>
-          <summary>Click to expand answer</summary>
-          <p>Such as boost, where can I specify the following: </p>
-
-<pre><code>1.External c++ header file include path 
-2.External c++ source file 
-3.External c++ link library file path
-</code></pre>
-
-        </details>
-      </div>
-    </div>
-
-  </div>
-
 </article> <article class="qa" id="qa-37060211">
 
   <div class="question">
@@ -2526,7 +2449,7 @@ I would like to keep 1-D matrix as a matrix. Actually, I need to throw many kind
         <div class="viewcount">votes</div>
       </div>
       <div class="views">
-        <span class="score">3.4k</span>
+        <span class="score">3.5k</span>
         <div class="viewcount">views</div>
       </div>
     </div>
@@ -2698,6 +2621,83 @@ data.table(GRP %&gt;% mutate_each(funs(blah=na.locf(., na.rm=FALSE))))
 <p>At this point I'm thinking I'll have to write something in Rcpp to efficiently apply the grouped locf.  </p>
 
 <p>I'm new to R, but I'm not new to C++ - so I'm confident I can do it.  I just feel like there should be an efficient way to do this in R using <code>data.table</code>.</p>
+
+        </details>
+      </div>
+    </div>
+
+  </div>
+
+</article> <article class="qa" id="qa-18570526">
+
+  <div class="question">
+
+    <div class="stats">
+      <div class="votes">
+        <span class="score">13</span>
+        <div class="viewcount">votes</div>
+      </div>
+      <div class="views">
+        <span class="score">6.6k</span>
+        <div class="viewcount">views</div>
+      </div>
+    </div>
+
+    <div class="content">
+      <div class="title">
+        <h3>How to build a R package which use Rcpp with external c++ libraries?</h3>
+        <a href="https://stackoverflow.com/questions/18570526/how-to-build-a-r-package-which-use-rcpp-with-external-c-libraries" target="_blank">[see original]</a>
+      </div>
+      <div class="tags"><span>rcpp</span></div>
+      <div class="author">
+        <span class="gravatar">
+          <a href="https://stackoverflow.com/users/1246858/xiaobo-gu" target="_blank"><img src="https://www.gravatar.com/avatar/8fd1216a20b5974775353711e1eead59?s=256&d=identicon&r=PG&f=y&so-version=2" alt="" width="32" height="32"></a>
+        </span>
+        <a href="https://stackoverflow.com/users/1246858/xiaobo-gu" target="_blank">Xiaobo Gu</a>
+        asked Sep 02 '13 at 10:04
+      </div>
+      <div class="body">
+        <details>
+          <summary>Click to expand question</summary>
+          <p>Such as boost, where can I specify the following: </p>
+
+<pre><code>1.External c++ header file include path 
+2.External c++ source file 
+3.External c++ link library file path
+</code></pre>
+
+        </details>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="answer">
+
+    <div class="stats">
+      <div class="votes answer-accepted-FALSE">
+        <span class="score">15</span>
+        <div class="viewcount">votes</div>
+      </div>
+    </div>
+
+    <div class="content">
+      <div class="author">
+        <span class="gravatar">
+          <a href="https://stackoverflow.com/users/143305/dirk-is-no-longer-here" target="_blank"><img src="https://www.gravatar.com/avatar/4e96ca7ae02c37e7d940d17997d780e5?s=256&d=identicon&r=PG" alt="" width="32" height="32"></a>
+        </span>
+        <a href="https://stackoverflow.com/users/143305/dirk-is-no-longer-here" target="_blank">Dirk is no longer here</a>
+        replied Sep 02 '13 at 18:01
+      </div>
+      <div class="body">
+        <details>
+          <summary>Click to expand answer</summary>
+          <p>Such as boost, where can I specify the following: </p>
+
+<pre><code>1.External c++ header file include path 
+2.External c++ source file 
+3.External c++ link library file path
+</code></pre>
 
         </details>
       </div>
@@ -2915,7 +2915,7 @@ My solution so far is to export both functions in the Namespace file which cause
         <div class="viewcount">votes</div>
       </div>
       <div class="views">
-        <span class="score">575</span>
+        <span class="score">576</span>
         <div class="viewcount">views</div>
       </div>
     </div>
@@ -3297,7 +3297,7 @@ Rcpp::List callOptimFun(SEXP x) {
         <div class="viewcount">votes</div>
       </div>
       <div class="views">
-        <span class="score">12.4k</span>
+        <span class="score">12.5k</span>
         <div class="viewcount">views</div>
       </div>
     </div>
@@ -3878,7 +3878,7 @@ return someOutput;
         <div class="viewcount">votes</div>
       </div>
       <div class="views">
-        <span class="score">12.9k</span>
+        <span class="score">13k</span>
         <div class="viewcount">views</div>
       </div>
     </div>
