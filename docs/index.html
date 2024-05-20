@@ -8,8 +8,8 @@
   <header>
     <h1>Rcpp Top StackOverflow Q&A</h1>
     <h2>Top users by number of answers</h2>
-    <ul class="cloud"><li><a data-weight='1' href='https://stackoverflow.com/users/817778/eddi'>eddi</a></li>
-<li><a data-weight='16' href='https://stackoverflow.com/users/143305/dirk-is-no-longer-here'>Dirk is no longer here</a></li>
+    <ul class="cloud"><li><a data-weight='16' href='https://stackoverflow.com/users/143305/dirk-is-no-longer-here'>Dirk is no longer here</a></li>
+<li><a data-weight='1' href='https://stackoverflow.com/users/817778/eddi'>eddi</a></li>
 <li><a data-weight='1' href='https://stackoverflow.com/users/316644/digemall'>digEmAll</a></li>
 <li><a data-weight='1' href='https://stackoverflow.com/users/8203448/henine'>henine</a></li>
 <li><a data-weight='1' href='https://stackoverflow.com/users/636656/ari-b-friedman'>Ari B. Friedman</a></li>
@@ -45,8 +45,8 @@
 <li><a href='#qa-11275187'>Replace negative values by zero</a></li>
 <li><a href='#qa-6074310'>Using Rcpp within parallel code via snow to make a cluster</a></li>
 <li><a href='#qa-43597632'>Understanding the contents of the Makevars file in R (macros, variables, ~/.R/Makevars and pkg/src/Makevars)</a></li>
-<li><a href='#qa-5233769'>Practical limits of R data frame</a></li>
 <li><a href='#qa-48069990'>Multithreaded &amp; SIMD vectorized Mandelbrot in R using Rcpp &amp; OpenMP</a></li>
+<li><a href='#qa-5233769'>Practical limits of R data frame</a></li>
 <li><a href='#qa-20474303'>using C function from other package in Rcpp</a></li>
 <li><a href='#qa-26241085'>Rcpp function check if missing value</a></li>
 <li><a href='#qa-36594628'>Call a function from c++ via environment Rcpp</a></li>
@@ -186,7 +186,7 @@
         <div class="viewcount">votes</div>
       </div>
       <div class="views">
-        <span class="score">99k</span>
+        <span class="score">99.1k</span>
         <div class="viewcount">views</div>
       </div>
     </div>
@@ -434,7 +434,7 @@ cpp_if &lt;- cxxfunction(signature(a=&quot;numeric&quot;), cpp_if_src, plugin=&q
         <div class="viewcount">votes</div>
       </div>
       <div class="views">
-        <span class="score">97.4k</span>
+        <span class="score">97.5k</span>
         <div class="viewcount">views</div>
       </div>
     </div>
@@ -527,7 +527,7 @@ for (i in nrow(pred_precipitation))
         <div class="viewcount">votes</div>
       </div>
       <div class="views">
-        <span class="score">4.1k</span>
+        <span class="score">4.2k</span>
         <div class="viewcount">views</div>
       </div>
     </div>
@@ -735,7 +735,7 @@ CXX_STD = CXX11
     <div class="content">
       <div class="author">
         <span class="gravatar">
-          <a href="https://stackoverflow.com/users/1345455/coatless" target="_blank"><img src="https://i.stack.imgur.com/Q6Q2u.jpg?s=256&g=1" alt="" width="32" height="32"></a>
+          <a href="https://stackoverflow.com/users/1345455/coatless" target="_blank"><img src="https://i.sstatic.net/Q6Q2u.jpg?s=256" alt="" width="32" height="32"></a>
         </span>
         <a href="https://stackoverflow.com/users/1345455/coatless" target="_blank">coatless</a>
         replied Apr 24 '17 at 23:30
@@ -782,77 +782,6 @@ CXX_STD = CXX11
 <p>I am aware of the information contained in <a href="https://cran.r-project.org/doc/manuals/r-release/R-exts.html" rel="noreferrer">Writing R Extensions</a> and <a href="https://cran.r-project.org/doc/manuals/r-release/R-admin.html#Customizing-package-compilation" rel="noreferrer">R Installation and Administration</a>, but I am not able to extract more information beyond my current level of understanding to answer the above questions.</p>
 
 <p>I am adding a <code>Rcpp</code> tag because I suppose that answers to these questions will be most relevant to users of <code>Rcpp</code>, but I am aware that this is probably not directly related to <code>Rcpp</code>, so the tag might be removed if deemed appropriate.</p>
-
-        </details>
-      </div>
-    </div>
-
-  </div>
-
-</article> <article class="qa" id="qa-5233769">
-
-  <div class="question">
-
-    <div class="stats">
-      <div class="votes">
-        <span class="score">62</span>
-        <div class="viewcount">votes</div>
-      </div>
-      <div class="views">
-        <span class="score">88.5k</span>
-        <div class="viewcount">views</div>
-      </div>
-    </div>
-
-    <div class="content">
-      <div class="title">
-        <h3>Practical limits of R data frame</h3>
-        <a href="https://stackoverflow.com/questions/5233769/practical-limits-of-r-data-frame" target="_blank">[see original]</a>
-      </div>
-      <div class="tags"><span>r</span><span>performance</span><span>dataframe</span><span>rcpp</span></div>
-      <div class="author">
-        <span class="gravatar">
-          <a href="https://stackoverflow.com/users/220669/egon" target="_blank"><img src="https://www.gravatar.com/avatar/0932d5b60d6a0023cbbb97764117589c?s=256&d=identicon&r=PG" alt="" width="32" height="32"></a>
-        </span>
-        <a href="https://stackoverflow.com/users/220669/egon" target="_blank">Egon</a>
-        asked Mar 08 '11 at 14:24
-      </div>
-      <div class="body">
-        <details>
-          <summary>Click to expand question</summary>
-          <p>I have been reading about how read.table is not efficient for large data files. Also how R is not suited for large data sets. So I was wondering where I can find what the practical limits are and any performance charts for (1) Reading in data of various sizes (2) working with data of varying sizes. </p>
-
-<p>In effect, I want to know when the performance deteriorates and when I hit a road block. Also any comparison against C++/MATLAB or other languages would be really helpful. finally if there is any special performance comparison for Rcpp and RInside, that would be great!</p>
-
-        </details>
-      </div>
-    </div>
-
-  </div>
-
-  <div class="answer">
-
-    <div class="stats">
-      <div class="votes answer-accepted-TRUE">
-        <span class="score">61</span>
-        <div class="viewcount">votes</div>
-      </div>
-    </div>
-
-    <div class="content">
-      <div class="author">
-        <span class="gravatar">
-          <a href="https://stackoverflow.com/users/378229/allan-engelhardt" target="_blank"><img src="https://www.gravatar.com/avatar/435a3e74513c0dd2639890afb8d31c55?s=256&d=identicon&r=PG" alt="" width="32" height="32"></a>
-        </span>
-        <a href="https://stackoverflow.com/users/378229/allan-engelhardt" target="_blank">Allan Engelhardt</a>
-        replied Mar 08 '11 at 15:07
-      </div>
-      <div class="body">
-        <details>
-          <summary>Click to expand answer</summary>
-          <p>I have been reading about how read.table is not efficient for large data files. Also how R is not suited for large data sets. So I was wondering where I can find what the practical limits are and any performance charts for (1) Reading in data of various sizes (2) working with data of varying sizes. </p>
-
-<p>In effect, I want to know when the performance deteriorates and when I hit a road block. Also any comparison against C++/MATLAB or other languages would be really helpful. finally if there is any special performance comparison for Rcpp and RInside, that would be great!</p>
 
         </details>
       </div>
@@ -936,7 +865,7 @@ par(mar=c(0, 0, 0, 0))
 system.time(image(m^(1/7), col=cols, asp=diff(ylims)/diff(xlims), axes=F, useRaster=T)) 
 # 0.5s
 </code></pre>
-<p><a href="https://i.stack.imgur.com/DWfh0.png" rel="nofollow noreferrer"><img src="https://i.stack.imgur.com/DWfh0.png" alt="enter image description here" /></a></p>
+<p><a href="https://i.sstatic.net/DWfh0.png" rel="nofollow noreferrer"><img src="https://i.sstatic.net/DWfh0.png" alt="enter image description here" /></a></p>
 <p>I was unsure though if there is any other obvious speed improvements I could take advantage of aside from OpenMP multithreading, e.g. via <code>simd</code> vectorization? (using simd options in the openmp <code>#pragma</code> didn't seem to do anything)</p>
 <p>PS at first my code was crashing but I later found this was solved by replacing <code>ret[r,c] = n;</code> with <code>ret(r,c) = n;</code>
 Using Armadillo classes as suggested in the answer below make things very slightly faster, though the timings are almost the same. Also flipped around <code>x</code> and <code>y</code> so it comes out in the right orientation when plotted with <code>image()</code>. Using 8 threads speed is ca. 350 times faster than the vectorized plain R Mandelbrot version <a href="https://github.com/mylesmharrison/mandelbrot/blob/master/mandelbrot.R" rel="nofollow noreferrer">here</a> and also about 7.3 times faster than the (non-multithreaded) Python/Numba version <a href="https://www.ibm.com/developerworks/community/blogs/jfp/entry/How_To_Compute_Mandelbrodt_Set_Quickly?lang=en" rel="nofollow noreferrer">here</a> (similar to PyCUDA or PyOpenCL speeds), so quite happy with that... <a href="https://stackoverflow.com/questions/48119360/performant-2d-opengl-graphics-in-r-for-fast-display-of-raster-image-using-qtpain">Rasterizing/display now seems the bottleneck in R....</a></p>
@@ -959,7 +888,7 @@ Using Armadillo classes as suggested in the answer below make things very slight
     <div class="content">
       <div class="author">
         <span class="gravatar">
-          <a href="https://stackoverflow.com/users/1345455/coatless" target="_blank"><img src="https://i.stack.imgur.com/Q6Q2u.jpg?s=256&g=1" alt="" width="32" height="32"></a>
+          <a href="https://stackoverflow.com/users/1345455/coatless" target="_blank"><img src="https://i.sstatic.net/Q6Q2u.jpg?s=256" alt="" width="32" height="32"></a>
         </span>
         <a href="https://stackoverflow.com/users/1345455/coatless" target="_blank">coatless</a>
         replied Jan 03 '18 at 02:04
@@ -1012,10 +941,81 @@ par(mar=c(0, 0, 0, 0))
 system.time(image(m^(1/7), col=cols, asp=diff(ylims)/diff(xlims), axes=F, useRaster=T)) 
 # 0.5s
 </code></pre>
-<p><a href="https://i.stack.imgur.com/DWfh0.png" rel="nofollow noreferrer"><img src="https://i.stack.imgur.com/DWfh0.png" alt="enter image description here" /></a></p>
+<p><a href="https://i.sstatic.net/DWfh0.png" rel="nofollow noreferrer"><img src="https://i.sstatic.net/DWfh0.png" alt="enter image description here" /></a></p>
 <p>I was unsure though if there is any other obvious speed improvements I could take advantage of aside from OpenMP multithreading, e.g. via <code>simd</code> vectorization? (using simd options in the openmp <code>#pragma</code> didn't seem to do anything)</p>
 <p>PS at first my code was crashing but I later found this was solved by replacing <code>ret[r,c] = n;</code> with <code>ret(r,c) = n;</code>
 Using Armadillo classes as suggested in the answer below make things very slightly faster, though the timings are almost the same. Also flipped around <code>x</code> and <code>y</code> so it comes out in the right orientation when plotted with <code>image()</code>. Using 8 threads speed is ca. 350 times faster than the vectorized plain R Mandelbrot version <a href="https://github.com/mylesmharrison/mandelbrot/blob/master/mandelbrot.R" rel="nofollow noreferrer">here</a> and also about 7.3 times faster than the (non-multithreaded) Python/Numba version <a href="https://www.ibm.com/developerworks/community/blogs/jfp/entry/How_To_Compute_Mandelbrodt_Set_Quickly?lang=en" rel="nofollow noreferrer">here</a> (similar to PyCUDA or PyOpenCL speeds), so quite happy with that... <a href="https://stackoverflow.com/questions/48119360/performant-2d-opengl-graphics-in-r-for-fast-display-of-raster-image-using-qtpain">Rasterizing/display now seems the bottleneck in R....</a></p>
+
+        </details>
+      </div>
+    </div>
+
+  </div>
+
+</article> <article class="qa" id="qa-5233769">
+
+  <div class="question">
+
+    <div class="stats">
+      <div class="votes">
+        <span class="score">62</span>
+        <div class="viewcount">votes</div>
+      </div>
+      <div class="views">
+        <span class="score">88.6k</span>
+        <div class="viewcount">views</div>
+      </div>
+    </div>
+
+    <div class="content">
+      <div class="title">
+        <h3>Practical limits of R data frame</h3>
+        <a href="https://stackoverflow.com/questions/5233769/practical-limits-of-r-data-frame" target="_blank">[see original]</a>
+      </div>
+      <div class="tags"><span>r</span><span>performance</span><span>dataframe</span><span>rcpp</span></div>
+      <div class="author">
+        <span class="gravatar">
+          <a href="https://stackoverflow.com/users/220669/egon" target="_blank"><img src="https://www.gravatar.com/avatar/0932d5b60d6a0023cbbb97764117589c?s=256&d=identicon&r=PG" alt="" width="32" height="32"></a>
+        </span>
+        <a href="https://stackoverflow.com/users/220669/egon" target="_blank">Egon</a>
+        asked Mar 08 '11 at 14:24
+      </div>
+      <div class="body">
+        <details>
+          <summary>Click to expand question</summary>
+          <p>I have been reading about how read.table is not efficient for large data files. Also how R is not suited for large data sets. So I was wondering where I can find what the practical limits are and any performance charts for (1) Reading in data of various sizes (2) working with data of varying sizes. </p>
+
+<p>In effect, I want to know when the performance deteriorates and when I hit a road block. Also any comparison against C++/MATLAB or other languages would be really helpful. finally if there is any special performance comparison for Rcpp and RInside, that would be great!</p>
+
+        </details>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="answer">
+
+    <div class="stats">
+      <div class="votes answer-accepted-TRUE">
+        <span class="score">61</span>
+        <div class="viewcount">votes</div>
+      </div>
+    </div>
+
+    <div class="content">
+      <div class="author">
+        <span class="gravatar">
+          <a href="https://stackoverflow.com/users/378229/allan-engelhardt" target="_blank"><img src="https://www.gravatar.com/avatar/435a3e74513c0dd2639890afb8d31c55?s=256&d=identicon&r=PG" alt="" width="32" height="32"></a>
+        </span>
+        <a href="https://stackoverflow.com/users/378229/allan-engelhardt" target="_blank">Allan Engelhardt</a>
+        replied Mar 08 '11 at 15:07
+      </div>
+      <div class="body">
+        <details>
+          <summary>Click to expand answer</summary>
+          <p>I have been reading about how read.table is not efficient for large data files. Also how R is not suited for large data sets. So I was wondering where I can find what the practical limits are and any performance charts for (1) Reading in data of various sizes (2) working with data of varying sizes. </p>
+
+<p>In effect, I want to know when the performance deteriorates and when I hit a road block. Also any comparison against C++/MATLAB or other languages would be really helpful. finally if there is any special performance comparison for Rcpp and RInside, that would be great!</p>
 
         </details>
       </div>
@@ -1046,7 +1046,7 @@ Using Armadillo classes as suggested in the answer below make things very slight
       <div class="tags"><span>c++</span><span>c</span><span>r</span><span>rcpp</span></div>
       <div class="author">
         <span class="gravatar">
-          <a href="https://stackoverflow.com/users/471093/baptiste" target="_blank"><img src="https://i.stack.imgur.com/9r2gc.png?s=256&g=1" alt="" width="32" height="32"></a>
+          <a href="https://stackoverflow.com/users/471093/baptiste" target="_blank"><img src="https://i.sstatic.net/9r2gc.png?s=256" alt="" width="32" height="32"></a>
         </span>
         <a href="https://stackoverflow.com/users/471093/baptiste" target="_blank">baptiste</a>
         asked Dec 09 '13 at 15:28
@@ -1116,7 +1116,7 @@ integratecpp(0, pi)
     <div class="content">
       <div class="author">
         <span class="gravatar">
-          <a href="https://stackoverflow.com/users/499163/romain-francois" target="_blank"><img src="https://i.stack.imgur.com/3TpUO.jpg?s=256&g=1" alt="" width="32" height="32"></a>
+          <a href="https://stackoverflow.com/users/499163/romain-francois" target="_blank"><img src="https://i.sstatic.net/3TpUO.jpg?s=256" alt="" width="32" height="32"></a>
         </span>
         <a href="https://stackoverflow.com/users/499163/romain-francois" target="_blank">Romain Francois</a>
         replied Dec 09 '13 at 16:51
@@ -1197,7 +1197,7 @@ integratecpp(0, pi)
       <div class="tags"><span>r</span><span>rcpp</span></div>
       <div class="author">
         <span class="gravatar">
-          <a href="https://stackoverflow.com/users/1259856/giorgio-spedicato" target="_blank"><img src="https://i.stack.imgur.com/b2wqN.jpg?s=256&g=1" alt="" width="32" height="32"></a>
+          <a href="https://stackoverflow.com/users/1259856/giorgio-spedicato" target="_blank"><img src="https://i.sstatic.net/b2wqN.jpg?s=256" alt="" width="32" height="32"></a>
         </span>
         <a href="https://stackoverflow.com/users/1259856/giorgio-spedicato" target="_blank">Giorgio Spedicato</a>
         asked Oct 07 '14 at 16:45
@@ -1472,7 +1472,7 @@ NumericVector callFunction(NumericVector x, Function f) {
     <div class="content">
       <div class="author">
         <span class="gravatar">
-          <a href="https://stackoverflow.com/users/1345455/coatless" target="_blank"><img src="https://i.stack.imgur.com/Q6Q2u.jpg?s=256&g=1" alt="" width="32" height="32"></a>
+          <a href="https://stackoverflow.com/users/1345455/coatless" target="_blank"><img src="https://i.sstatic.net/Q6Q2u.jpg?s=256" alt="" width="32" height="32"></a>
         </span>
         <a href="https://stackoverflow.com/users/1345455/coatless" target="_blank">coatless</a>
         replied Jul 22 '16 at 05:11
@@ -1578,7 +1578,7 @@ fint = cxxfunction(signature(x = "SEXP"), '
     <div class="content">
       <div class="author">
         <span class="gravatar">
-          <a href="https://stackoverflow.com/users/499163/romain-francois" target="_blank"><img src="https://i.stack.imgur.com/3TpUO.jpg?s=256&g=1" alt="" width="32" height="32"></a>
+          <a href="https://stackoverflow.com/users/499163/romain-francois" target="_blank"><img src="https://i.sstatic.net/3TpUO.jpg?s=256" alt="" width="32" height="32"></a>
         </span>
         <a href="https://stackoverflow.com/users/499163/romain-francois" target="_blank">Romain Francois</a>
         replied Nov 07 '13 at 06:33
@@ -1759,7 +1759,7 @@ int mySuminC(){
         <div class="viewcount">votes</div>
       </div>
       <div class="views">
-        <span class="score">9.6k</span>
+        <span class="score">9.7k</span>
         <div class="viewcount">views</div>
       </div>
     </div>
@@ -1820,7 +1820,7 @@ double std(NumericVector x)
     <div class="content">
       <div class="author">
         <span class="gravatar">
-          <a href="https://stackoverflow.com/users/1345455/coatless" target="_blank"><img src="https://i.stack.imgur.com/Q6Q2u.jpg?s=256&g=1" alt="" width="32" height="32"></a>
+          <a href="https://stackoverflow.com/users/1345455/coatless" target="_blank"><img src="https://i.sstatic.net/Q6Q2u.jpg?s=256" alt="" width="32" height="32"></a>
         </span>
         <a href="https://stackoverflow.com/users/1345455/coatless" target="_blank">coatless</a>
         replied Jun 24 '16 at 16:03
@@ -2134,7 +2134,7 @@ Rcpp::DataFrame myVecSubset(Rcpp::DataFrame myDF, int ID){
         <div class="viewcount">votes</div>
       </div>
       <div class="views">
-        <span class="score">2.2k</span>
+        <span class="score">2.3k</span>
         <div class="viewcount">views</div>
       </div>
     </div>
@@ -2196,7 +2196,7 @@ vec randdraw(int d, int n){
     <div class="content">
       <div class="author">
         <span class="gravatar">
-          <a href="https://stackoverflow.com/users/1345455/coatless" target="_blank"><img src="https://i.stack.imgur.com/Q6Q2u.jpg?s=256&g=1" alt="" width="32" height="32"></a>
+          <a href="https://stackoverflow.com/users/1345455/coatless" target="_blank"><img src="https://i.sstatic.net/Q6Q2u.jpg?s=256" alt="" width="32" height="32"></a>
         </span>
         <a href="https://stackoverflow.com/users/1345455/coatless" target="_blank">coatless</a>
         replied Apr 05 '17 at 05:58
@@ -2256,7 +2256,7 @@ vec randdraw(int d, int n){
       <div class="tags"><span>c++</span><span>rcpp</span></div>
       <div class="author">
         <span class="gravatar">
-          <a href="https://stackoverflow.com/users/3986320/tim" target="_blank"><img src="https://i.stack.imgur.com/YB28g.jpg?s=256&g=1" alt="" width="32" height="32"></a>
+          <a href="https://stackoverflow.com/users/3986320/tim" target="_blank"><img src="https://i.sstatic.net/YB28g.jpg?s=256" alt="" width="32" height="32"></a>
         </span>
         <a href="https://stackoverflow.com/users/3986320/tim" target="_blank">Tim</a>
         asked Jan 11 '17 at 22:38
@@ -2305,7 +2305,7 @@ std::vector&lt;double&gt; bar(const std::vector&lt;double&gt;&amp; x) {
     <div class="content">
       <div class="author">
         <span class="gravatar">
-          <a href="https://stackoverflow.com/users/1345455/coatless" target="_blank"><img src="https://i.stack.imgur.com/Q6Q2u.jpg?s=256&g=1" alt="" width="32" height="32"></a>
+          <a href="https://stackoverflow.com/users/1345455/coatless" target="_blank"><img src="https://i.sstatic.net/Q6Q2u.jpg?s=256" alt="" width="32" height="32"></a>
         </span>
         <a href="https://stackoverflow.com/users/1345455/coatless" target="_blank">coatless</a>
         replied Jan 11 '17 at 22:59
@@ -2408,7 +2408,7 @@ I would like to keep 1-D matrix as a matrix. Actually, I need to throw many kind
     <div class="content">
       <div class="author">
         <span class="gravatar">
-          <a href="https://stackoverflow.com/users/324364/joran" target="_blank"><img src="https://i.stack.imgur.com/KIazX.jpg?s=256&g=1" alt="" width="32" height="32"></a>
+          <a href="https://stackoverflow.com/users/324364/joran" target="_blank"><img src="https://i.sstatic.net/KIazX.jpg?s=256" alt="" width="32" height="32"></a>
         </span>
         <a href="https://stackoverflow.com/users/324364/joran" target="_blank">joran</a>
         replied Mar 30 '12 at 19:21
@@ -2728,7 +2728,7 @@ data.table(GRP %&gt;% mutate_each(funs(blah=na.locf(., na.rm=FALSE))))
       <div class="tags"><span>r</span><span>performance</span><span>rcpp</span></div>
       <div class="author">
         <span class="gravatar">
-          <a href="https://stackoverflow.com/users/5635580/sotos" target="_blank"><img src="https://i.stack.imgur.com/00uoL.jpg?s=256&g=1" alt="" width="32" height="32"></a>
+          <a href="https://stackoverflow.com/users/5635580/sotos" target="_blank"><img src="https://i.sstatic.net/00uoL.jpg?s=256" alt="" width="32" height="32"></a>
         </span>
         <a href="https://stackoverflow.com/users/5635580/sotos" target="_blank">Sotos</a>
         asked Aug 07 '17 at 14:58
@@ -2884,7 +2884,7 @@ My solution so far is to export both functions in the Namespace file which cause
     <div class="content">
       <div class="author">
         <span class="gravatar">
-          <a href="https://stackoverflow.com/users/1345455/coatless" target="_blank"><img src="https://i.stack.imgur.com/Q6Q2u.jpg?s=256&g=1" alt="" width="32" height="32"></a>
+          <a href="https://stackoverflow.com/users/1345455/coatless" target="_blank"><img src="https://i.sstatic.net/Q6Q2u.jpg?s=256" alt="" width="32" height="32"></a>
         </span>
         <a href="https://stackoverflow.com/users/1345455/coatless" target="_blank">coatless</a>
         replied Sep 04 '17 at 15:16
@@ -2915,7 +2915,7 @@ My solution so far is to export both functions in the Namespace file which cause
         <div class="viewcount">votes</div>
       </div>
       <div class="views">
-        <span class="score">577</span>
+        <span class="score">578</span>
         <div class="viewcount">views</div>
       </div>
     </div>
@@ -2928,7 +2928,7 @@ My solution so far is to export both functions in the Namespace file which cause
       <div class="tags"><span>rcpp</span></div>
       <div class="author">
         <span class="gravatar">
-          <a href="https://stackoverflow.com/users/1033422/chris-snow" target="_blank"><img src="https://i.stack.imgur.com/I6uGA.png?s=256&g=1" alt="" width="32" height="32"></a>
+          <a href="https://stackoverflow.com/users/1033422/chris-snow" target="_blank"><img src="https://i.sstatic.net/I6uGA.png?s=256" alt="" width="32" height="32"></a>
         </span>
         <a href="https://stackoverflow.com/users/1033422/chris-snow" target="_blank">Chris Snow</a>
         asked Dec 09 '14 at 04:40
@@ -3195,7 +3195,7 @@ Rcpp::List callOptimFun(SEXP x) {
     <div class="content">
       <div class="author">
         <span class="gravatar">
-          <a href="https://stackoverflow.com/users/1345455/coatless" target="_blank"><img src="https://i.stack.imgur.com/Q6Q2u.jpg?s=256&g=1" alt="" width="32" height="32"></a>
+          <a href="https://stackoverflow.com/users/1345455/coatless" target="_blank"><img src="https://i.sstatic.net/Q6Q2u.jpg?s=256" alt="" width="32" height="32"></a>
         </span>
         <a href="https://stackoverflow.com/users/1345455/coatless" target="_blank">coatless</a>
         replied Sep 28 '17 at 17:35
@@ -3684,7 +3684,7 @@ return someOutput;
       <div class="tags"><span>r</span><span>performance</span><span>rcpp</span><span>matrix-multiplication</span></div>
       <div class="author">
         <span class="gravatar">
-          <a href="https://stackoverflow.com/users/4941645/cliff-ab" target="_blank"><img src="https://i.stack.imgur.com/Nxh5k.png?s=256&g=1" alt="" width="32" height="32"></a>
+          <a href="https://stackoverflow.com/users/4941645/cliff-ab" target="_blank"><img src="https://i.sstatic.net/Nxh5k.png?s=256" alt="" width="32" height="32"></a>
         </span>
         <a href="https://stackoverflow.com/users/4941645/cliff-ab" target="_blank">Cliff AB</a>
         asked Jun 27 '18 at 03:41
