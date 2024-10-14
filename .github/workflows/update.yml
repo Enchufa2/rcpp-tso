@@ -21,12 +21,13 @@ jobs:
         r-version: 'release'
     - name: Install Python dependencies
       run: |
-        apt-get -y upgrade && apt-get -y install libpng-dev
         python -m pip install --upgrade pip
         pip install stackapi
     - name: Install R dependencies
       run: |
-        install.packages(c("data.table", "reticulate", "glue"))
+        install.packages("pak", repos = sprintf("https://r-lib.github.io/p/pak/stable/%s/%s/%s",
+                         .Platform$pkgType, R.Version()$os, R.Version()$arch))
+        pak::pkg_install(c("data.table", "reticulate", "glue"))
       shell: Rscript {0}
     - name: Update
       run: |
