@@ -21,6 +21,7 @@ jobs:
         r-version: 'release'
     - name: Install Python dependencies
       run: |
+        apt-get -y upgrade && apt-get -y install libpng-dev
         python -m pip install --upgrade pip
         pip install stackapi
     - name: Install R dependencies

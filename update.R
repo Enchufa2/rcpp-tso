@@ -77,7 +77,7 @@ parts <- lapply(setNames(parts, parts), function(x) {
   readChar(filename, file.info(filename)$size)
 })
 parts$header <- glue::glue(parts$header, .open="{% ", .close=" %}")
-parts$qa <- glue::glue(parts$qa, .envir=res.qa, .open="{% ", .close=" %}")
+parts$qa <- with(res.qa, glue::glue(parts$qa, .open="{% ", .close=" %}"))
 
 dir.create("docs", showWarnings=FALSE)
 cat(parts$header, file="docs/index.html", append=FALSE)
