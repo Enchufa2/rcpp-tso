@@ -1,4 +1,5 @@
 library(data.table)
+reticulate::py_require("stackapi")
 
 flatten <- function(x) {
   data.table::rbindlist(lapply(x$items, function(i) {
