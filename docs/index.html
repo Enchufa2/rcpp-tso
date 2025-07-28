@@ -60,13 +60,13 @@
 <li><a href='#qa-41602024'>Should I prefer Rcpp::NumericVector over std::vector?</a></li>
 <li><a href='#qa-9949202'>1-dimensional Matrix is changed to a vector in R</a></li>
 <li><a href='#qa-37060211'>efficiently locf by groups in a single R data.table</a></li>
-<li><a href='#qa-18570526'>How to build a R package which use Rcpp with external c++ libraries?</a></li>
 <li><a href='#qa-30628333'>Building a tiny R package with CUDA and Rcpp</a></li>
+<li><a href='#qa-18570526'>How to build a R package which use Rcpp with external c++ libraries?</a></li>
 <li><a href='#qa-45549992'>Group vector on conditional sum</a></li>
 <li><a href='#qa-46039132'>Renaming and Hiding an Exported Rcpp function in an R Package</a></li>
 <li><a href='#qa-27371543'>how many vectors can be added in DataFrame::create( vec1, vec2 ... )?</a></li>
-<li><a href='#qa-48547750'>Cannot use &#39;sourceCpp&#39; from a file</a></li>
 <li><a href='#qa-46473895'>Calling R&#39;s optim function from within C++ using Rcpp</a></li>
+<li><a href='#qa-48547750'>Cannot use &#39;sourceCpp&#39; from a file</a></li>
 <li><a href='#qa-13995266'>Using 3rd party header files with Rcpp</a></li>
 <li><a href='#qa-3088650'>How do I create a list of vectors in Rcpp?</a></li></ul></nav>
   <section><article class="qa" id="qa-2908822">
@@ -434,7 +434,7 @@ cpp_if &lt;- cxxfunction(signature(a=&quot;numeric&quot;), cpp_if_src, plugin=&q
         <div class="viewcount">votes</div>
       </div>
       <div class="views">
-        <span class="score">102.5k</span>
+        <span class="score">102.6k</span>
         <div class="viewcount">views</div>
       </div>
     </div>
@@ -962,7 +962,7 @@ Using Armadillo classes as suggested in the answer below make things very slight
         <div class="viewcount">votes</div>
       </div>
       <div class="views">
-        <span class="score">91.3k</span>
+        <span class="score">91.4k</span>
         <div class="viewcount">views</div>
       </div>
     </div>
@@ -1511,7 +1511,7 @@ NumericVector callFunction(NumericVector x, Function f) {
         <div class="viewcount">votes</div>
       </div>
       <div class="views">
-        <span class="score">2.2k</span>
+        <span class="score">2.3k</span>
         <div class="viewcount">views</div>
       </div>
     </div>
@@ -2628,83 +2628,6 @@ data.table(GRP %&gt;% mutate_each(funs(blah=na.locf(., na.rm=FALSE))))
 
   </div>
 
-</article> <article class="qa" id="qa-18570526">
-
-  <div class="question">
-
-    <div class="stats">
-      <div class="votes">
-        <span class="score">13</span>
-        <div class="viewcount">votes</div>
-      </div>
-      <div class="views">
-        <span class="score">7k</span>
-        <div class="viewcount">views</div>
-      </div>
-    </div>
-
-    <div class="content">
-      <div class="title">
-        <h3>How to build a R package which use Rcpp with external c++ libraries?</h3>
-        <a href="https://stackoverflow.com/questions/18570526/how-to-build-a-r-package-which-use-rcpp-with-external-c-libraries" target="_blank">[see original]</a>
-      </div>
-      <div class="tags"><span>rcpp</span></div>
-      <div class="author">
-        <span class="gravatar">
-          <a href="https://stackoverflow.com/users/1246858/xiaobo-gu" target="_blank"><img src="https://www.gravatar.com/avatar/8fd1216a20b5974775353711e1eead59?s=256&d=identicon&r=PG&f=y&so-version=2" alt="" width="32" height="32"></a>
-        </span>
-        <a href="https://stackoverflow.com/users/1246858/xiaobo-gu" target="_blank">Xiaobo Gu</a>
-        asked Sep 02 '13 at 10:04
-      </div>
-      <div class="body">
-        <details>
-          <summary>Click to expand question</summary>
-          <p>Such as boost, where can I specify the following: </p>
-
-<pre><code>1.External c++ header file include path 
-2.External c++ source file 
-3.External c++ link library file path
-</code></pre>
-
-        </details>
-      </div>
-    </div>
-
-  </div>
-
-  <div class="answer">
-
-    <div class="stats">
-      <div class="votes answer-accepted-FALSE">
-        <span class="score">15</span>
-        <div class="viewcount">votes</div>
-      </div>
-    </div>
-
-    <div class="content">
-      <div class="author">
-        <span class="gravatar">
-          <a href="https://stackoverflow.com/users/143305/dirk-is-no-longer-here" target="_blank"><img src="https://www.gravatar.com/avatar/4e96ca7ae02c37e7d940d17997d780e5?s=256&d=identicon&r=PG" alt="" width="32" height="32"></a>
-        </span>
-        <a href="https://stackoverflow.com/users/143305/dirk-is-no-longer-here" target="_blank">Dirk is no longer here</a>
-        replied Sep 02 '13 at 18:01
-      </div>
-      <div class="body">
-        <details>
-          <summary>Click to expand answer</summary>
-          <p>Such as boost, where can I specify the following: </p>
-
-<pre><code>1.External c++ header file include path 
-2.External c++ source file 
-3.External c++ link library file path
-</code></pre>
-
-        </details>
-      </div>
-    </div>
-
-  </div>
-
 </article> <article class="qa" id="qa-30628333">
 
   <div class="question">
@@ -3146,6 +3069,83 @@ Slot "y":
 
   </div>
 
+</article> <article class="qa" id="qa-18570526">
+
+  <div class="question">
+
+    <div class="stats">
+      <div class="votes">
+        <span class="score">13</span>
+        <div class="viewcount">votes</div>
+      </div>
+      <div class="views">
+        <span class="score">7k</span>
+        <div class="viewcount">views</div>
+      </div>
+    </div>
+
+    <div class="content">
+      <div class="title">
+        <h3>How to build a R package which use Rcpp with external c++ libraries?</h3>
+        <a href="https://stackoverflow.com/questions/18570526/how-to-build-a-r-package-which-use-rcpp-with-external-c-libraries" target="_blank">[see original]</a>
+      </div>
+      <div class="tags"><span>rcpp</span></div>
+      <div class="author">
+        <span class="gravatar">
+          <a href="https://stackoverflow.com/users/1246858/xiaobo-gu" target="_blank"><img src="https://www.gravatar.com/avatar/8fd1216a20b5974775353711e1eead59?s=256&d=identicon&r=PG&f=y&so-version=2" alt="" width="32" height="32"></a>
+        </span>
+        <a href="https://stackoverflow.com/users/1246858/xiaobo-gu" target="_blank">Xiaobo Gu</a>
+        asked Sep 02 '13 at 10:04
+      </div>
+      <div class="body">
+        <details>
+          <summary>Click to expand question</summary>
+          <p>Such as boost, where can I specify the following: </p>
+
+<pre><code>1.External c++ header file include path 
+2.External c++ source file 
+3.External c++ link library file path
+</code></pre>
+
+        </details>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="answer">
+
+    <div class="stats">
+      <div class="votes answer-accepted-FALSE">
+        <span class="score">15</span>
+        <div class="viewcount">votes</div>
+      </div>
+    </div>
+
+    <div class="content">
+      <div class="author">
+        <span class="gravatar">
+          <a href="https://stackoverflow.com/users/143305/dirk-is-no-longer-here" target="_blank"><img src="https://www.gravatar.com/avatar/4e96ca7ae02c37e7d940d17997d780e5?s=256&d=identicon&r=PG" alt="" width="32" height="32"></a>
+        </span>
+        <a href="https://stackoverflow.com/users/143305/dirk-is-no-longer-here" target="_blank">Dirk is no longer here</a>
+        replied Sep 02 '13 at 18:01
+      </div>
+      <div class="body">
+        <details>
+          <summary>Click to expand answer</summary>
+          <p>Such as boost, where can I specify the following: </p>
+
+<pre><code>1.External c++ header file include path 
+2.External c++ source file 
+3.External c++ link library file path
+</code></pre>
+
+        </details>
+      </div>
+    </div>
+
+  </div>
+
 </article> <article class="qa" id="qa-45549992">
 
   <div class="question">
@@ -3356,7 +3356,7 @@ My solution so far is to export both functions in the Namespace file which cause
         <div class="viewcount">votes</div>
       </div>
       <div class="views">
-        <span class="score">607</span>
+        <span class="score">608</span>
         <div class="viewcount">views</div>
       </div>
     </div>
@@ -3502,215 +3502,6 @@ My solution so far is to export both functions in the Namespace file which cause
 <li>Have I hit a hard limit?</li>
 <li>Is there a workaround to allow me to add more than 20 vectors to a data frame?</li>
 </ol>
-
-        </details>
-      </div>
-    </div>
-
-  </div>
-
-</article> <article class="qa" id="qa-48547750">
-
-  <div class="question">
-
-    <div class="stats">
-      <div class="votes">
-        <span class="score">2</span>
-        <div class="viewcount">votes</div>
-      </div>
-      <div class="views">
-        <span class="score">1.8k</span>
-        <div class="viewcount">views</div>
-      </div>
-    </div>
-
-    <div class="content">
-      <div class="title">
-        <h3>Cannot use &#39;sourceCpp&#39; from a file</h3>
-        <a href="https://stackoverflow.com/questions/48547750/cannot-use-sourcecpp-from-a-file" target="_blank">[see original]</a>
-      </div>
-      <div class="tags"><span>c++</span><span>r</span><span>rcpp</span></div>
-      <div class="author">
-        <span class="gravatar">
-          <a href="https://stackoverflow.com/users/9295590/oriol" target="_blank"><img src="https://i.sstatic.net/oXA1Y.jpg?s=256" alt="" width="32" height="32"></a>
-        </span>
-        <a href="https://stackoverflow.com/users/9295590/oriol" target="_blank">Oriol</a>
-        asked Jan 31 '18 at 17:11
-      </div>
-      <div class="body">
-        <details>
-          <summary>Click to expand question</summary>
-          <p>I am trying to play with the <a href="https://en.wikipedia.org/wiki/Dirk_Eddelbuettel" rel="nofollow noreferrer">Rcpp</a> package from the R statistical software. Unfortunately, I cannot compile a basic example with the <em>sourceCpp</em> function. My toy example is the following:</p>
-<pre class="lang-c prettyprint-override"><code>#include &lt;Rcpp.h&gt;
-using namespace Rcpp;
-
-// [[Rcpp::export]]
-int hello(int a)
-{
-    return a;
-}
-</code></pre>
-<p>Saved into the file &quot;helloworldR.cpp.</p>
-<p>Then when I call <em>sourceCpp</em>:</p>
-<pre class="lang-c prettyprint-override"><code>library(Rcpp)
-sourceCpp(&quot;helloworldR.cpp&quot;)
-</code></pre>
-<p>I get the following error:</p>
-<pre class="lang-none prettyprint-override"><code>In file included from /home/userD/R/x86_64-pc-linux-gnu-library/3.4/Rcpp/include/RcppCommon.h:65:0,
-                  from /home/master/R/x86_64-pc-linux-gnu-library/3.4/Rcpp/include/Rcpp.h:27,
-                  from helloworldR.cpp:1:
- /home/userD/map:1:1: error: stray ‘\177’ in program
-  ^?ELF^B^A^A         ^B &gt; ^A    ^K@     @       Xw          @ 8   @   ^] ^F   ^E
-  ^
- /home/userD/map:1:8: warning: null character(s) ignored
-
-make: *** [helloworldR.o] Error 1
-g++  -I/usr/local/lib/R/include -DNDEBUG   -I&quot;/home/master/R/x86_64-pc-linux-gnu-library/3.4/Rcpp/include&quot; -I&quot;/home/userD&quot; -I/usr/local/include   -fpic  -g -O2  -c helloworldR.cpp -o helloworldR.o
- /usr/local/lib/R/etc/Makeconf:168: recipe for target 'helloworldR.o' failed
- Error in sourceCpp(&quot;helloworldR.cpp&quot;) :
-   Error 1 occurred building shared library.
-</code></pre>
-<p>But if I put the code as a string it works:</p>
-<pre class="lang-none prettyprint-override"><code>sourceCpp(code = &quot;#include &lt;Rcpp.h&gt;
- + using namespace Rcpp;
- +
- + // [[Rcpp::export]]
- + int hello(int a)
- + {
- +   return a;
- + }
- + &quot;)
- &gt; hello(2)
- [1] 2
-</code></pre>
-<p>What do you think it can be? Here is my session information:</p>
-<pre class="lang-none prettyprint-override"><code>sessionInfo()
- R version 3.4.3 (2017-11-30)
- Platform: x86_64-pc-linux-gnu (64-bit)
- Running under: Ubuntu 16.04.3 LTS
-
- Matrix products: default
- BLAS: /usr/local/lib/R/lib/libRblas.so
- LAPACK: /usr/local/lib/R/lib/libRlapack.so
-
- locale:
-  [1] LC_CTYPE=ca_ES.UTF-8       LC_NUMERIC=C
-  [3] LC_TIME=ca_ES.UTF-8        LC_COLLATE=ca_ES.UTF-8
-  [5] LC_MONETARY=ca_ES.UTF-8    LC_MESSAGES=ca_ES.UTF-8
-  [7] LC_PAPER=ca_ES.UTF-8       LC_NAME=C
-  [9] LC_ADDRESS=C               LC_TELEPHONE=C
- [11] LC_MEASUREMENT=ca_ES.UTF-8 LC_IDENTIFICATION=C
-
- attached base packages:
- [1] stats     graphics  grDevices utils     datasets  methods   base
-
- other attached packages:
- [1] ggplot2_2.2.1 Rcpp_0.12.15
-
- loaded via a namespace (and not attached):
-  [1] colorspace_1.3-2 scales_0.5.0     compiler_3.4.3   lazyeval_0.2.1
-  [5] plyr_1.8.4       tools_3.4.3      pillar_1.1.0     gtable_0.2.0
-  [9] tibble_1.4.2     grid_3.4.3       rlang_0.1.6      munsell_0.4.3
-</code></pre>
-
-        </details>
-      </div>
-    </div>
-
-  </div>
-
-  <div class="answer">
-
-    <div class="stats">
-      <div class="votes answer-accepted-FALSE">
-        <span class="score">0</span>
-        <div class="viewcount">votes</div>
-      </div>
-    </div>
-
-    <div class="content">
-      <div class="author">
-        <span class="gravatar">
-          <a href="https://stackoverflow.com/users/143305/dirk-is-no-longer-here" target="_blank"><img src="https://www.gravatar.com/avatar/4e96ca7ae02c37e7d940d17997d780e5?s=256&d=identicon&r=PG" alt="" width="32" height="32"></a>
-        </span>
-        <a href="https://stackoverflow.com/users/143305/dirk-is-no-longer-here" target="_blank">Dirk is no longer here</a>
-        replied Jan 31 '18 at 17:27
-      </div>
-      <div class="body">
-        <details>
-          <summary>Click to expand answer</summary>
-          <p>I am trying to play with the <a href="https://en.wikipedia.org/wiki/Dirk_Eddelbuettel" rel="nofollow noreferrer">Rcpp</a> package from the R statistical software. Unfortunately, I cannot compile a basic example with the <em>sourceCpp</em> function. My toy example is the following:</p>
-<pre class="lang-c prettyprint-override"><code>#include &lt;Rcpp.h&gt;
-using namespace Rcpp;
-
-// [[Rcpp::export]]
-int hello(int a)
-{
-    return a;
-}
-</code></pre>
-<p>Saved into the file &quot;helloworldR.cpp.</p>
-<p>Then when I call <em>sourceCpp</em>:</p>
-<pre class="lang-c prettyprint-override"><code>library(Rcpp)
-sourceCpp(&quot;helloworldR.cpp&quot;)
-</code></pre>
-<p>I get the following error:</p>
-<pre class="lang-none prettyprint-override"><code>In file included from /home/userD/R/x86_64-pc-linux-gnu-library/3.4/Rcpp/include/RcppCommon.h:65:0,
-                  from /home/master/R/x86_64-pc-linux-gnu-library/3.4/Rcpp/include/Rcpp.h:27,
-                  from helloworldR.cpp:1:
- /home/userD/map:1:1: error: stray ‘\177’ in program
-  ^?ELF^B^A^A         ^B &gt; ^A    ^K@     @       Xw          @ 8   @   ^] ^F   ^E
-  ^
- /home/userD/map:1:8: warning: null character(s) ignored
-
-make: *** [helloworldR.o] Error 1
-g++  -I/usr/local/lib/R/include -DNDEBUG   -I&quot;/home/master/R/x86_64-pc-linux-gnu-library/3.4/Rcpp/include&quot; -I&quot;/home/userD&quot; -I/usr/local/include   -fpic  -g -O2  -c helloworldR.cpp -o helloworldR.o
- /usr/local/lib/R/etc/Makeconf:168: recipe for target 'helloworldR.o' failed
- Error in sourceCpp(&quot;helloworldR.cpp&quot;) :
-   Error 1 occurred building shared library.
-</code></pre>
-<p>But if I put the code as a string it works:</p>
-<pre class="lang-none prettyprint-override"><code>sourceCpp(code = &quot;#include &lt;Rcpp.h&gt;
- + using namespace Rcpp;
- +
- + // [[Rcpp::export]]
- + int hello(int a)
- + {
- +   return a;
- + }
- + &quot;)
- &gt; hello(2)
- [1] 2
-</code></pre>
-<p>What do you think it can be? Here is my session information:</p>
-<pre class="lang-none prettyprint-override"><code>sessionInfo()
- R version 3.4.3 (2017-11-30)
- Platform: x86_64-pc-linux-gnu (64-bit)
- Running under: Ubuntu 16.04.3 LTS
-
- Matrix products: default
- BLAS: /usr/local/lib/R/lib/libRblas.so
- LAPACK: /usr/local/lib/R/lib/libRlapack.so
-
- locale:
-  [1] LC_CTYPE=ca_ES.UTF-8       LC_NUMERIC=C
-  [3] LC_TIME=ca_ES.UTF-8        LC_COLLATE=ca_ES.UTF-8
-  [5] LC_MONETARY=ca_ES.UTF-8    LC_MESSAGES=ca_ES.UTF-8
-  [7] LC_PAPER=ca_ES.UTF-8       LC_NAME=C
-  [9] LC_ADDRESS=C               LC_TELEPHONE=C
- [11] LC_MEASUREMENT=ca_ES.UTF-8 LC_IDENTIFICATION=C
-
- attached base packages:
- [1] stats     graphics  grDevices utils     datasets  methods   base
-
- other attached packages:
- [1] ggplot2_2.2.1 Rcpp_0.12.15
-
- loaded via a namespace (and not attached):
-  [1] colorspace_1.3-2 scales_0.5.0     compiler_3.4.3   lazyeval_0.2.1
-  [5] plyr_1.8.4       tools_3.4.3      pillar_1.1.0     gtable_0.2.0
-  [9] tibble_1.4.2     grid_3.4.3       rlang_0.1.6      munsell_0.4.3
-</code></pre>
 
         </details>
       </div>
@@ -3930,6 +3721,215 @@ Rcpp::List callOptimFun(SEXP x) {
 </code></pre>
 
 <p>I am not familiar with C++. What may be the problem? Thanks!</p>
+
+        </details>
+      </div>
+    </div>
+
+  </div>
+
+</article> <article class="qa" id="qa-48547750">
+
+  <div class="question">
+
+    <div class="stats">
+      <div class="votes">
+        <span class="score">2</span>
+        <div class="viewcount">votes</div>
+      </div>
+      <div class="views">
+        <span class="score">1.8k</span>
+        <div class="viewcount">views</div>
+      </div>
+    </div>
+
+    <div class="content">
+      <div class="title">
+        <h3>Cannot use &#39;sourceCpp&#39; from a file</h3>
+        <a href="https://stackoverflow.com/questions/48547750/cannot-use-sourcecpp-from-a-file" target="_blank">[see original]</a>
+      </div>
+      <div class="tags"><span>c++</span><span>r</span><span>rcpp</span></div>
+      <div class="author">
+        <span class="gravatar">
+          <a href="https://stackoverflow.com/users/9295590/oriol" target="_blank"><img src="https://i.sstatic.net/oXA1Y.jpg?s=256" alt="" width="32" height="32"></a>
+        </span>
+        <a href="https://stackoverflow.com/users/9295590/oriol" target="_blank">Oriol</a>
+        asked Jan 31 '18 at 17:11
+      </div>
+      <div class="body">
+        <details>
+          <summary>Click to expand question</summary>
+          <p>I am trying to play with the <a href="https://en.wikipedia.org/wiki/Dirk_Eddelbuettel" rel="nofollow noreferrer">Rcpp</a> package from the R statistical software. Unfortunately, I cannot compile a basic example with the <em>sourceCpp</em> function. My toy example is the following:</p>
+<pre class="lang-c prettyprint-override"><code>#include &lt;Rcpp.h&gt;
+using namespace Rcpp;
+
+// [[Rcpp::export]]
+int hello(int a)
+{
+    return a;
+}
+</code></pre>
+<p>Saved into the file &quot;helloworldR.cpp.</p>
+<p>Then when I call <em>sourceCpp</em>:</p>
+<pre class="lang-c prettyprint-override"><code>library(Rcpp)
+sourceCpp(&quot;helloworldR.cpp&quot;)
+</code></pre>
+<p>I get the following error:</p>
+<pre class="lang-none prettyprint-override"><code>In file included from /home/userD/R/x86_64-pc-linux-gnu-library/3.4/Rcpp/include/RcppCommon.h:65:0,
+                  from /home/master/R/x86_64-pc-linux-gnu-library/3.4/Rcpp/include/Rcpp.h:27,
+                  from helloworldR.cpp:1:
+ /home/userD/map:1:1: error: stray ‘\177’ in program
+  ^?ELF^B^A^A         ^B &gt; ^A    ^K@     @       Xw          @ 8   @   ^] ^F   ^E
+  ^
+ /home/userD/map:1:8: warning: null character(s) ignored
+
+make: *** [helloworldR.o] Error 1
+g++  -I/usr/local/lib/R/include -DNDEBUG   -I&quot;/home/master/R/x86_64-pc-linux-gnu-library/3.4/Rcpp/include&quot; -I&quot;/home/userD&quot; -I/usr/local/include   -fpic  -g -O2  -c helloworldR.cpp -o helloworldR.o
+ /usr/local/lib/R/etc/Makeconf:168: recipe for target 'helloworldR.o' failed
+ Error in sourceCpp(&quot;helloworldR.cpp&quot;) :
+   Error 1 occurred building shared library.
+</code></pre>
+<p>But if I put the code as a string it works:</p>
+<pre class="lang-none prettyprint-override"><code>sourceCpp(code = &quot;#include &lt;Rcpp.h&gt;
+ + using namespace Rcpp;
+ +
+ + // [[Rcpp::export]]
+ + int hello(int a)
+ + {
+ +   return a;
+ + }
+ + &quot;)
+ &gt; hello(2)
+ [1] 2
+</code></pre>
+<p>What do you think it can be? Here is my session information:</p>
+<pre class="lang-none prettyprint-override"><code>sessionInfo()
+ R version 3.4.3 (2017-11-30)
+ Platform: x86_64-pc-linux-gnu (64-bit)
+ Running under: Ubuntu 16.04.3 LTS
+
+ Matrix products: default
+ BLAS: /usr/local/lib/R/lib/libRblas.so
+ LAPACK: /usr/local/lib/R/lib/libRlapack.so
+
+ locale:
+  [1] LC_CTYPE=ca_ES.UTF-8       LC_NUMERIC=C
+  [3] LC_TIME=ca_ES.UTF-8        LC_COLLATE=ca_ES.UTF-8
+  [5] LC_MONETARY=ca_ES.UTF-8    LC_MESSAGES=ca_ES.UTF-8
+  [7] LC_PAPER=ca_ES.UTF-8       LC_NAME=C
+  [9] LC_ADDRESS=C               LC_TELEPHONE=C
+ [11] LC_MEASUREMENT=ca_ES.UTF-8 LC_IDENTIFICATION=C
+
+ attached base packages:
+ [1] stats     graphics  grDevices utils     datasets  methods   base
+
+ other attached packages:
+ [1] ggplot2_2.2.1 Rcpp_0.12.15
+
+ loaded via a namespace (and not attached):
+  [1] colorspace_1.3-2 scales_0.5.0     compiler_3.4.3   lazyeval_0.2.1
+  [5] plyr_1.8.4       tools_3.4.3      pillar_1.1.0     gtable_0.2.0
+  [9] tibble_1.4.2     grid_3.4.3       rlang_0.1.6      munsell_0.4.3
+</code></pre>
+
+        </details>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="answer">
+
+    <div class="stats">
+      <div class="votes answer-accepted-FALSE">
+        <span class="score">0</span>
+        <div class="viewcount">votes</div>
+      </div>
+    </div>
+
+    <div class="content">
+      <div class="author">
+        <span class="gravatar">
+          <a href="https://stackoverflow.com/users/143305/dirk-is-no-longer-here" target="_blank"><img src="https://www.gravatar.com/avatar/4e96ca7ae02c37e7d940d17997d780e5?s=256&d=identicon&r=PG" alt="" width="32" height="32"></a>
+        </span>
+        <a href="https://stackoverflow.com/users/143305/dirk-is-no-longer-here" target="_blank">Dirk is no longer here</a>
+        replied Jan 31 '18 at 17:27
+      </div>
+      <div class="body">
+        <details>
+          <summary>Click to expand answer</summary>
+          <p>I am trying to play with the <a href="https://en.wikipedia.org/wiki/Dirk_Eddelbuettel" rel="nofollow noreferrer">Rcpp</a> package from the R statistical software. Unfortunately, I cannot compile a basic example with the <em>sourceCpp</em> function. My toy example is the following:</p>
+<pre class="lang-c prettyprint-override"><code>#include &lt;Rcpp.h&gt;
+using namespace Rcpp;
+
+// [[Rcpp::export]]
+int hello(int a)
+{
+    return a;
+}
+</code></pre>
+<p>Saved into the file &quot;helloworldR.cpp.</p>
+<p>Then when I call <em>sourceCpp</em>:</p>
+<pre class="lang-c prettyprint-override"><code>library(Rcpp)
+sourceCpp(&quot;helloworldR.cpp&quot;)
+</code></pre>
+<p>I get the following error:</p>
+<pre class="lang-none prettyprint-override"><code>In file included from /home/userD/R/x86_64-pc-linux-gnu-library/3.4/Rcpp/include/RcppCommon.h:65:0,
+                  from /home/master/R/x86_64-pc-linux-gnu-library/3.4/Rcpp/include/Rcpp.h:27,
+                  from helloworldR.cpp:1:
+ /home/userD/map:1:1: error: stray ‘\177’ in program
+  ^?ELF^B^A^A         ^B &gt; ^A    ^K@     @       Xw          @ 8   @   ^] ^F   ^E
+  ^
+ /home/userD/map:1:8: warning: null character(s) ignored
+
+make: *** [helloworldR.o] Error 1
+g++  -I/usr/local/lib/R/include -DNDEBUG   -I&quot;/home/master/R/x86_64-pc-linux-gnu-library/3.4/Rcpp/include&quot; -I&quot;/home/userD&quot; -I/usr/local/include   -fpic  -g -O2  -c helloworldR.cpp -o helloworldR.o
+ /usr/local/lib/R/etc/Makeconf:168: recipe for target 'helloworldR.o' failed
+ Error in sourceCpp(&quot;helloworldR.cpp&quot;) :
+   Error 1 occurred building shared library.
+</code></pre>
+<p>But if I put the code as a string it works:</p>
+<pre class="lang-none prettyprint-override"><code>sourceCpp(code = &quot;#include &lt;Rcpp.h&gt;
+ + using namespace Rcpp;
+ +
+ + // [[Rcpp::export]]
+ + int hello(int a)
+ + {
+ +   return a;
+ + }
+ + &quot;)
+ &gt; hello(2)
+ [1] 2
+</code></pre>
+<p>What do you think it can be? Here is my session information:</p>
+<pre class="lang-none prettyprint-override"><code>sessionInfo()
+ R version 3.4.3 (2017-11-30)
+ Platform: x86_64-pc-linux-gnu (64-bit)
+ Running under: Ubuntu 16.04.3 LTS
+
+ Matrix products: default
+ BLAS: /usr/local/lib/R/lib/libRblas.so
+ LAPACK: /usr/local/lib/R/lib/libRlapack.so
+
+ locale:
+  [1] LC_CTYPE=ca_ES.UTF-8       LC_NUMERIC=C
+  [3] LC_TIME=ca_ES.UTF-8        LC_COLLATE=ca_ES.UTF-8
+  [5] LC_MONETARY=ca_ES.UTF-8    LC_MESSAGES=ca_ES.UTF-8
+  [7] LC_PAPER=ca_ES.UTF-8       LC_NAME=C
+  [9] LC_ADDRESS=C               LC_TELEPHONE=C
+ [11] LC_MEASUREMENT=ca_ES.UTF-8 LC_IDENTIFICATION=C
+
+ attached base packages:
+ [1] stats     graphics  grDevices utils     datasets  methods   base
+
+ other attached packages:
+ [1] ggplot2_2.2.1 Rcpp_0.12.15
+
+ loaded via a namespace (and not attached):
+  [1] colorspace_1.3-2 scales_0.5.0     compiler_3.4.3   lazyeval_0.2.1
+  [5] plyr_1.8.4       tools_3.4.3      pillar_1.1.0     gtable_0.2.0
+  [9] tibble_1.4.2     grid_3.4.3       rlang_0.1.6      munsell_0.4.3
+</code></pre>
 
         </details>
       </div>
